@@ -1,0 +1,38 @@
+{
+		"team-1": [
+			{"name": "Alex", "txt": "не понравился... действительно, строит всезнайку, а челку нормально подстричь не может"},
+			{"name": "Camber", "txt": "Hello guys, nice to have you on the platform! There will be a lot of great stuff coming soon. We will keep you posted for the latest news."},
+			{"name": "Tina", "txt": "Hello guys, nice to have you on the platform!"},
+			{"name": "Andrew", "txt": "Hello guys"},
+			{"name": "Tina Andrew", "txt": "nice to have you on the platform!"},
+			{"name": "Tim Ande", "txt": "niceplatform!"},
+			{"name": "Andrew", "txt": "Hello guys"}
+		],
+		"team-2": [
+			{"name": "Alex", "txt": "Большое спасибо великолепному мастеру парикмахеру за её золотые ручки!!!"},
+			{"name": "Camber", "txt": "Hello guys, nice to have you on the platform! There will be a lot of great stuff coming soon. We will keep you posted for the latest news."},
+			{"name": "Tina", "txt": "Hello guys, nice to have you on the platform!"},
+			{"name": "Andrew", "txt": "Hello guys"},
+			{"name": "Tina Andrew", "txt": "nice to have you on the platform!"},
+			{"name": "Tim Ande", "txt": "niceplatform!"},
+			{"name": "Andrew", "txt": "Hello guys"}
+		],
+		"team-3": [
+			{"name": "Alex", "txt": "Волшебный салон!"},
+			{"name": "Camber", "txt": "Hello guys, nice to have you on the platform! There will be a lot of great stuff coming soon. We will keep you posted for the latest news."},
+			{"name": "Tina", "txt": "Hello guys, nice to have you on the platform!"},
+			{"name": "Andrew", "txt": "Hello guys"},
+			{"name": "Tina Andrew", "txt": "nice to have you on the platform!"},
+			{"name": "Tim Ande", "txt": "niceplatform!"},
+			{"name": "Andrew", "txt": "Hello guys"}
+		],
+		"team-4": [
+			{"name": "Alex", "txt": "Хочу выразить ОГРОМНУЮ благодарность сотрудникам салона "},
+			{"name": "Camber", "txt": "Hello guys, nice to have you on the platform! There will be a lot of great stuff coming soon. We will keep you posted for the latest news."},
+			{"name": "Tina", "txt": "Hello guys, nice to have you on the platform!"},
+			{"name": "Andrew", "txt": "Hello guys"},
+			{"name": "Tina Andrew", "txt": "nice to have you on the platform!"},
+			{"name": "Tim Ande", "txt": "niceplatform!"},
+			{"name": "Andrew", "txt": "Hello guys"}
+		]
+	}
