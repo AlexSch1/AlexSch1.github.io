@@ -1153,20 +1153,29 @@ $(function(){
 				goodsFromSesion = JSON.parse(sessionStorage.getItem('goods'));
 				$('.order-basket').find('#basket-offer').removeAttr('disabled');
 				$('.order-basket').find('#basket-offer').css('opacity', '1');
+
 				let priceG = 0;
 				goodsFromSesion.forEach((value) => {
 					let p = parseFloat(value['price']);
 					priceG += p;
+					let c = Math.round(priceG * 100) / 100;	
 					$('.cost-all').html('');
-					$('.cost-all').append(`Итого:${priceG}`);					
-				});				
+					$('.cost-all').append(`Итого:${c}`);					
+				});		
+
 			}
+			
+			
+
+
 			
 			$('.basket-goods').html('');
 			goodsFromSesion.forEach((value) => {
 				html = template(value);
 				$('.basket-goods').append(html);
 			});
+
+
 
 		}
 
@@ -1208,7 +1217,7 @@ $(function(){
 				priceG += p;	
 			});
 
-			let c = Math.round(priceG * 100) / 100
+			let c = Math.round(priceG * 100) / 100;
 			$('.cost-all').html('');
 			$('.cost-all').append(`Итого:${c}`);
 
@@ -1281,7 +1290,7 @@ $(function(){
 			if (!send) {
 				$('.send-was').addClass('was');
 				$('.send-was').html('');
-				$('.send-was').append('Заказ оформлен');
+				$('.send-was').html('Заказ оформлен');
 				$('.order-basket').find('#basket-offer').attr('disabled', 'disabled');
 				$('.order-basket').find('#basket-offer').css('opacity', '0.5');
 			} else {

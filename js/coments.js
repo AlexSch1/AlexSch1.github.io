@@ -1,6 +1,7 @@
 //Comments
 $(function(){
-	let JsonComments = {
+
+	let JsonComments_1 = {
 		'user': [
 			{'name': 'Alex', 'txt': 'Chance too good. God level bars. Im so proud of LifeOfDesiigner 1 song in the country. Panda! Dont be scared of the truth because we need to restart the human foundation in truth I stand with the most humility. We are so blessed!'},
 			{'name': 'Camber', 'txt': 'Hello guys, nice to have you on the platform! There will be a lot of great stuff coming soon. We will keep you posted for the latest news.'},
@@ -11,6 +12,8 @@ $(function(){
 			{'name': 'Andrew', 'txt': 'Hello guys'}
 		]
 	};
+
+	let JsonComments = JSON.parse(localStorage.getItem('commentUser'));
 
 	function baseComment() {
 		let jsComment = $('#comments-media').html();
@@ -28,7 +31,6 @@ $(function(){
 	
 
 	$(document).on('click', '.btn-more', function(EO) {
-		
 		writeNewComment();
 	});
 
@@ -63,16 +65,27 @@ $(function(){
 	//Доюавление нового комента
 	$(document).on('click', '.add-comment', function(EO) {
 		let area = $('#exampleBlogPost').val();
+		let nameUsrer = $('#new-user-name').val();
+		let setUser = {};
+
 		if(!area) return;
 
+		if (nameUsrer === '') {
+			setUser['name'] = 'user';
+		} else {
+			setUser['name'] = nameUsrer;
+		}
+
 		//Добавляем в объект новогый комент ---- это пока что неизвестный пользователь
-		let setUser = {};
-		setUser['name'] = 'user';
+		
+		
 		setUser['txt'] = area;
 		JsonComments['user'].unshift(setUser);
 
 		baseComment();
 		$('#exampleBlogPost').val('');
+
+		localStorage.setItem('commentUser', JSON.stringify(JsonComments));
 
 	});
 

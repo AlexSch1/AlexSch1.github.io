@@ -48,3 +48,15 @@
 		if(localStorage.getItem('comment')) return
 		localStorage.setItem('comment', JSON.stringify(date));
 	}
+
+	$.ajax('../json/conemts.json', {
+		type: 'GET',
+		dataType: 'json',
+		success: dataLoadedConemt2,
+		error:errorHandler 
+	});
+
+	function dataLoadedConemt2(date) {
+		if(localStorage.getItem('commentUser')) return
+			localStorage.setItem('commentUser', JSON.stringify(date));
+	}
