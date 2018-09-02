@@ -40,7 +40,6 @@ $( function() {
 
 //Open-Close Menu ========== complite
 $(function() {
-
 	let reserv = document.getElementById('reservation');
 	reserv.addEventListener('click', function(EO){
 		let target = EO.target;	
@@ -125,15 +124,14 @@ $(function(){
 		}
 
 		let URLjoin = newURL.join('_');
-
 		let filterStr;
+
 		if (filter !== undefined) {
 			filterStr = '';
 			if (filter.length !== 0) {	
 				filter.forEach((value) => {
 					filterStr += `_${value}`;
 				});
-
 				URLjoin += filterStr;
 				location.hash = URLjoin;
 				return;
@@ -174,17 +172,12 @@ $(function(){
 
 	function myHashChange() {
 		let URLHash = window.location.hash;
-		let stateStr = URLHash.substr(1);
-
-		if (stateStr === 'admin') {
-			writePageAdmin();
-			return;
-		}
+		let stateStr = URLHash.substr(1);		
 
 		if (stateStr !== "") {
 			let parst = stateStr.split("_");
 			urlNoEmpty(parst);
-		}else {
+		} else {
 			pageState.home = 'Home1';
 			pageState.cotalog = 'AllProducts';
 			switchToState({'home': 'Home1', 'cotalog': 'AllProducts'});
@@ -192,8 +185,6 @@ $(function(){
 			writeCotalogTypeProduct();
 		}	
 	}
-
-
 
 
 	//========== Отрисовка таблицы
@@ -288,7 +279,6 @@ $(function(){
 			return;
 		}
 
-
 		let other = test(filter_arry, pageStateFilter);
 
 		if(other) {	
@@ -320,6 +310,7 @@ $(function(){
 			
 	}
 
+	//========== Отрисовка, если есть фильтры у коталога
 	function writeFilterPage(filter_mass, stateCotalog) {
 		//Берем из локала продукты
 		let tableReserveFromLocal = localStorage.getItem('products');
@@ -537,7 +528,6 @@ $(function(){
 	function WriteTableReserv(name) {
 		let tableReserveFromLocal = localStorage.getItem('tableView');
 		let parsC = JSON.parse(tableReserveFromLocal);
-
 		let info = $('#table-reserve-item-template-1').html();
 		let template = Handlebars.compile(info);
 		let html = template(parsC[name]);
@@ -582,7 +572,6 @@ $(function(){
 
 		//==========  Устанавливаем дату над табл. в зависимости от УРЛА
 	function getDayLine() {
-
 		let day = new Date().getDate();
 		let datePage = $('.now-day').html();
 
@@ -599,26 +588,24 @@ $(function(){
 	}
 
 	//==========  Отрисовка страниц == СЕКЦИЯ COTALOG
+	//========== Всте товары
 	function getAllProtucts() {
 		let tableReserveFromLocal = localStorage.getItem('products');
 		let parsProduct = JSON.parse(tableReserveFromLocal);
-
 		let productsAll = $('#products-all').html();
 		let tamplateAllProd = Handlebars.compile(productsAll);
-
-
 		let itemAllProducts = tamplateAllProd(parsProduct);
 		$('.products-right-bar #prods').html(itemAllProducts);
 	}
 
+	//==========Товары по типам
 	function getTypeProducts(name) {
 		$('.products-right-bar #prods').html('');
 		let tableReserveFromLocal = localStorage.getItem('products');
 		let parsProduct = JSON.parse(tableReserveFromLocal);
 
 		parsProduct.cotalogs.forEach((value, key) => {
-
-			for(let keyObj in value) {
+			for (let keyObj in value) {
 				let innerHTML = '';
 
 				if(value[keyObj] !== name) continue;
@@ -637,7 +624,7 @@ $(function(){
 		let stateStr = URLHash.substr(1);
 		let parst = stateStr.split("_")[1]; //название страницы Home 1-2-3
 
-		switch(parst) {
+		switch (parst) {
 			case 'AllProducts':
 				chekTabsBrod('AllProducts');
 				break;
@@ -656,7 +643,6 @@ $(function(){
 			case 'Shampoo':
 				chekTabsBrod('Shampoo');
 				break;					
-
 		}
 
 
@@ -676,7 +662,6 @@ $(function(){
 		}
 
 	}
-
 
 
 	//==========  Обработка клика Tabs категории
@@ -734,18 +719,16 @@ $(function(){
 		function setDayNext() {
 			if(nowDay > limit ) return;
 			homePage++;
+
 			if(homePage > 3) return;
 
 			let dayForObj = pageState.home.substr(0, 4);
 
 			if (pageState.home === 'Home1') {
 				dayForObj += '2';
-
 				switchToState({'home': dayForObj});
-
 			} else if (pageState.home === 'Home2') {
 				dayForObj += '3';
-
 				switchToState({'home': dayForObj});
 			}	
 
@@ -758,12 +741,9 @@ $(function(){
 
 			if (pageState.home === 'Home3') {
 				dayForObj += '2';
-
 				switchToState({'home': dayForObj});
-
 			}else if (pageState.home === 'Home2') {
 				dayForObj += '1';
-
 				switchToState({'home': dayForObj});
 			}
 
@@ -792,85 +772,6 @@ $(function(){
 		}
 	});
 
-
-	function writePageAdmin() {
-		$('section').get().forEach((value) => {
-			if ( $(value).attr('id') !== 'admin') {
-				$(value).remove();
-			}
-		});
-		$('.buttom-line').html('<h2 id="exit-admin">Exit</h2>');
-
-		let reservInfo =JSON.parse(localStorage.getItem('reservInfo'));
-
-		let info = $('#admin-one').html();
-		let template = Handlebars.compile(info);
-		let html;
-			
-		let	newInfo = [];
-		let num = 1
-		reservInfo.forEach((value) => {
-			let obj = {};
-			obj['num'] = num;
-			obj['code'] = value['code'];
-			obj['name'] = value['name'];
-			obj['tel'] = value['tel'];
-
-			if (value['barber'] === 'barber1') {
-				obj['barber'] = 'Рома';
-			} else if (value['barber'] === 'barber2') {
-				obj['barber'] = 'Артем';
-			} else if (value['barber'] === 'barber3') {
-				obj['barber'] = 'Эдвард';
-			} else {
-				obj['barber'] = 'Лиза';
-			}
-
-			obj['service'] = [];
-
-			value['service'].forEach((val) => {
-				obj['service'].push(val);
-			});
-			newInfo.push(obj);
-			num++;
-		});
-
-		$('#admin-table').find('tbody').html('');
-		newInfo.forEach((value) => {
-			html = template(value);
-			$('#admin-table').find('tbody').append(html);
-		});
-
-
-
-		let goodsvInfo =JSON.parse(localStorage.getItem('orderWas'));
-
-		let	newInfoGoods = [];
-		let num2 = 1;
-
-		goodsvInfo.forEach((value) => {
-			let obj = {};
-			obj['num'] = num2;
-			obj['name'] = value['nameClient'];
-			obj['tel'] = value['telClient'];
-			obj['goods'] = value['goods'];
-			newInfoGoods.push(obj);
-			num2++;
-		});
-		console.log(newInfoGoods)	
-
-		let info2 = $('#admin-two').html();
-		let template2 = Handlebars.compile(info2);
-		let html2;
-		$('#admin-goods').find('tbody').html('');
-
-		newInfoGoods.forEach((value) => {
-			html2 = template2(value);
-			$('#admin-goods').find('tbody').append(html2);
-		});
-
-
-	}
 
 	//==========  Запускаем слежку за УРЛом
 	myHashChange();
@@ -937,8 +838,6 @@ $(function(){
 				
 			});
 			let inputRadio = $( thisForm ).find('input[type="radio"]:checked').val();
-
-			console.log(answe)
 
 			//Добавля. все в новый объект - Код-Имя-Телефон-Выбранные уcлуги
 			let infoClientReservFromLocal = localStorage.getItem('reservInfo');
@@ -1052,11 +951,11 @@ $(function(){
 				input.style.border = "3px solid rgba(255, 0, 0, 0.51)";
 				input.setAttribute('placeholder', 'заполните поле');
 				return 1;
-			}else {
+			} else {
 				input.style.border = "3px solid transparent";
 				return;
 			}
-		}else if (type === 'tel') {
+		} else if (type === 'tel') {
 			if (value.length <= 0) {
 				input.style.border = "3px solid rgba(255, 0, 0, 0.51)";
 				input.setAttribute('placeholder', 'заполните поле');
@@ -1156,33 +1055,12 @@ $(function(){
 
 	});
 
-	$(document).on('click', '#use-subm', function(EO) {
-		let name = $('#use-modal').find('input[type="name"]').val();
-		let password = $('#use-modal').find('input[type="password"]').val();
-		EO.preventDefault();
-		if (name === 'admin' && password === 'admin') {
-			location.hash = 'admin';
-			return;
-		}
-	});
-
-	$(document).on('click', '#exit-admin', function() {
-			$('#admin').remove();
-
-			pageState.home = 'Home1';
-			pageState.cotalog = 'AllProducts';
-			switchToState({'home': 'Home1', 'cotalog': 'AllProducts'});
-			window.location.reload();
-			
-
-	});
-
 
 });
 
 
 
-
+//========== owlCarousel
 $(function(){
 	$(document).ready(function(){
 		$('.owl-carousel').owlCarousel({
@@ -1207,8 +1085,7 @@ $(function(){
 
 
 
-//Basket
-
+//========== Работа с Корзиной
 $(function(){
 
 	function Basket() {		
@@ -1216,6 +1093,12 @@ $(function(){
 
 		function clickOnInBasket(value, price, picture) {
 			$('.basket-add').css('display', 'block');
+			$('.basket-add').addClass('animated rubberBand');
+			
+			setTimeout(()=>{
+				$('.basket-add').removeClass('rubberBand');	
+			},500);	
+
 			let itemGoods = {};
 			let name = value.trim();			
 
@@ -1236,50 +1119,55 @@ $(function(){
 				goods.push(itemGoods);
 				sessionStorage.setItem('goods', JSON.stringify(goods))
 			}
+
+			let lengthGoods = goods.length;
+			$('.basket-add').html(lengthGoods);
+
+			let priceG = 0;
+			goods.forEach((value) => {
+				let p = parseFloat(value['price']);
+				priceG += p;
+			});
+			let c = Math.round(priceG * 100) / 100
+			$('.bas-num').html(c);
+
 		}
 
 		function clickOnBasket() {
 			let goodsFromSesion;
 			let info = $('#goods-script').html();
 			let template = Handlebars.compile(info);
-			let html;
-			let fresh = orderWasFlesh();
-
-			if (fresh) {
-				goodsFromSesion = JSON.parse(sessionStorage.getItem('orderSesion'));
-				let onjGoods = goodsFromSesion[0]['goods'];
-				$('.basket-goods').html('');
-				onjGoods.forEach((value) => {
-					html = template(value);
-					$('.basket-goods').append(html);
-				});
-
-				$('.send-was').addClass('was');
-				$('.send-was').html('');
-				$('.send-was').append('Заказ оформлен');
-				$('.order-basket').find('#basket-offer').attr('disabled', 'disabled');
-				$('.order-basket').find('#basket-offer').css('opacity', '0.5');
-				return;
-			}
+			let html;			
 
 			if (!sessionStorage.getItem('goods')) {
-				$('.basket-goods').html('Корзину пуста')
+				$('.send-was').html('Корзину пуста').css({
+					'text-align': 'center',
+					'padding-top': '50px'
+				});
 				goods = [];
 				$('.order-basket').find('#basket-offer').attr('disabled', 'disabled');
-				$('.order-basket').find('#basket-offer').css('opacity', '0.5');
+				$('.order-basket').find('#basket-offer').css('opacity', '0.3');
 				return;
 			} else {
+				$('.send-was').html('');
 				goodsFromSesion = JSON.parse(sessionStorage.getItem('goods'));
 				$('.order-basket').find('#basket-offer').removeAttr('disabled');
 				$('.order-basket').find('#basket-offer').css('opacity', '1');
+				let priceG = 0;
+				goodsFromSesion.forEach((value) => {
+					let p = parseFloat(value['price']);
+					priceG += p;
+					$('.cost-all').html('');
+					$('.cost-all').append(`Итого:${priceG}`);					
+				});				
 			}
-
 			
 			$('.basket-goods').html('');
 			goodsFromSesion.forEach((value) => {
 				html = template(value);
 				$('.basket-goods').append(html);
 			});
+
 		}
 
 		function clickOnDelete(name) {
@@ -1298,12 +1186,34 @@ $(function(){
 				sessionStorage.removeItem('goods');
 				$('.order-basket').find('#basket-offer').attr('disabled', 'disabled');
 				$('.order-basket').find('#basket-offer').css('opacity', '0.5');
-				$('.basket-goods').append('Корзину пуста');
+				$('.send-was').html('Корзину пуста').css({
+					'text-align': 'center',
+					'padding-top': '50px'
+				});
 				$('.basket-add').css('display', 'none');
+				$('.cost-all').html('');
+				$('.bas-num').html('0');
+				let = nameClient = $('.order-basket').find('input[type="text"]');
+				let = telClient = $('.order-basket').find('input[type="tel"]');
+				nameClient[0].style.border = "3px solid transparent";
+				$(nameClient).attr('placeholder', 'Ваше имя');
+				telClient[0].style.border = "3px solid transparent";
+				$(telClient).attr('placeholder', 'Ваш телефон');
 				return;
 			}
 
-			sessionStorage.setItem('goods', JSON.stringify(goodsFromSesion))
+			let priceG = 0;
+			goodsFromSesion.forEach((value) => {
+				let p = parseFloat(value['price']);
+				priceG += p;	
+			});
+
+			let c = Math.round(priceG * 100) / 100
+			$('.cost-all').html('');
+			$('.cost-all').append(`Итого:${c}`);
+
+			sessionStorage.setItem('goods', JSON.stringify(goodsFromSesion));
+
 		}
 
 		function clickOnSend() {		
@@ -1368,7 +1278,6 @@ $(function(){
 				}
 			}
 
-
 			if (!send) {
 				$('.send-was').addClass('was');
 				$('.send-was').html('');
@@ -1379,50 +1288,74 @@ $(function(){
 				return;
 			}
 
-			let orderPushInLocal = [];
-			
+			let orderPushInLocal = [];		
 			let goodObj = {};
 
 			goodObj['nameClient'] = nameClient;
 			goodObj['telClient'] = telClient;
 			goodObj['goods'] = [];
-			let doodsItem = $('.good-item').get();
-			console.log(doodsItem)
+
+			let doodsItem = $('.good-item').get();				
 			
-
 			doodsItem.forEach((value) => {
-
 				let obj = {};
 				obj['name'] = $(value).find('.name-goods').html().trim();
 				obj['number'] = $(value).find('input[type="number"]').val();
 				obj['size'] = $(value).find('.cost').html().trim();	
 				obj['img'] = $(value).find('img').attr('src');
+				
 				goodObj['goods'].push(obj);		
 			});
 
 			
-
 			if (!localStorage.getItem('orderWas')) {
 				orderPushInLocal.push(goodObj);
 				localStorage.setItem('orderWas', JSON.stringify(orderPushInLocal));
+				sessionStorage.setItem('sessionGoodsSend', JSON.stringify(orderPushInLocal))
 			} else {
 				let orderWasFromLocal = JSON.parse(localStorage.getItem('orderWas'));
 				orderWasFromLocal.push(goodObj);
-				localStorage.setItem('orderWas', JSON.stringify(orderWasFromLocal));	
+				localStorage.setItem('orderWas', JSON.stringify(orderWasFromLocal));
+
+				orderPushInLocal.push(goodObj);	
+				sessionStorage.setItem('sessionGoodsSend', JSON.stringify(orderPushInLocal));
 			}
+	
+			setTimeout(() => {
+				$('.send-was').html('');
+				sessionStorage.removeItem('goods');
+				$('.order-basket').find('#basket-offer').attr('disabled', 'disabled');
+				$('.order-basket').find('#basket-offer').css('opacity', '0.5');
+				$('.basket-add').css('display', 'none');
+				$('.cost-all').html('');
+				$('.bas-num').html('0');
+				$('.basket-goods').html('');
+				$('.send-was').removeClass('was');				
+			},5000);
 
-			let insesion = [];
-			insesion.push(goodObj);
+			setTimeout(() => {
+				$('.basket-goods').html('Данные отправленны, мы с вами свяжемся');		
+			},5100);
 
-			sessionStorage.setItem('orderSesion', JSON.stringify(insesion));
+			setTimeout(() => {
+				$('.basket-goods').html('');	
+				$('.send-was').html('Корзину пуста').css({
+					'text-align': 'center',
+					'padding-top': '50px'
+				});	
+			},10500);
 
 		}
 
 		function orderWasFlesh() {
-			if (sessionStorage.getItem('orderSesion')) {
-				return true;
+
+			if (sessionStorage.getItem('goods')) {
+				let goodsFromSesion = JSON.parse(sessionStorage.getItem('goods'));
+				let lengthGoods = goodsFromSesion.length;
+				$('.basket-add').html(lengthGoods);
 			} 
-			return false;			
+			return false;	
+
 		}
 
 		return {
@@ -1436,6 +1369,8 @@ $(function(){
 
 	let foo = Basket();
 
+	foo.orderWasFlesh();
+
 	if (sessionStorage.getItem('goods')) {
 		$('.basket-add').css('display', 'block');
 	}
@@ -1446,12 +1381,69 @@ $(function(){
 		let nameGoods = $(target).find('.product-title').html();
 		let priceGoods = $(target).find('.price').text();
 		let img = $(target).prev().find('img').attr('src');
+		let imgFx = $(target).prev().find('img');
+
+		imgFx.addClass('animated rubberBand');
+
+		setTimeout(()=>{
+			imgFx.removeClass('animated rubberBand');	
+		},1000);
+
+		let i = imgFx[0].getBoundingClientRect();
+		let imgfxClone = imgFx.clone();
+		let basket = $('.icon-shopping-basket');
+		
+		imgfxClone.css({
+			'opacity': 1,
+			'width': imgFx.width(),
+			'position' : 'absolute',
+			'z-index' : '9999',
+			top: imgFx.offset().top,
+			left: i.x
+		}).appendTo("body").animate({
+			'opacity': 0.05,
+			top: basket.offset().top,
+			left: basket[0].getBoundingClientRect().x,
+			'width': 0
+		}, 1000, () => {
+			imgfxClone.remove();
+		});
+
 		foo.addInBasket(nameGoods, priceGoods, img);
 	});
 
 	$('.icon-shopping-basket').on('click', function(EO) {
 		foo.openBasket();
 	});	
+
+	$(document).on('click', '.basket-goods', function(EO) {
+		let target = EO.target;
+
+		if (target.tagName !== 'INPUT') return;
+
+		let valueInput = $(target).val();
+		let nameGood = $(target).closest('.good-item').find('.name-goods').text().trim();		
+		let goodsFromSesion = JSON.parse(sessionStorage.getItem('goods'));
+
+		goodsFromSesion.forEach((value) => {
+			if (value['name'] === nameGood) {
+				let prise = value['price'];
+				prise *= valueInput;
+				value['price'] = prise;
+			}
+		});	
+
+		let priceG = 0;
+		goodsFromSesion.forEach((value) => {
+			let p = parseFloat(value['price']);
+			priceG += p;
+			
+		});
+		let c = Math.round(priceG * 100) / 100
+		$('.cost-all').html('');
+		$('.cost-all').append(`Итого:${c}`);
+
+	});
 
 	$(document).on('click', '.delite', function(EO) {
 		let target = EO.target.parentNode;
@@ -1465,40 +1457,56 @@ $(function(){
 
 });
 
-//basket scroll
+
+
+//========== Корзину, прокрутка, появление
 $(function() {
 	let table = $('#reservation')[0].getBoundingClientRect().bottom + window.pageYOffset;
-
-	window.onscroll = function() {
-		if (window.pageYOffset > table ) {
-			$('.icon-shopping-basket').addClass('scroll animated bounceInRight');
-		} else {
-			$('.icon-shopping-basket').removeClass('scroll');
-		}
-	}
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-$(function(){
+	let span = $('<span class="bas-num">0</span>');
+	let span2 = $('<span></span>');
 	
+	window.onscroll = scrollBasret;
+
+	function scrollBasret() {
+		if (window.pageYOffset > table ) {
+			$('.basket').addClass('scroll animated bounceInRight');
+			$('.basket').append(span)
+		} else {
+			$('.basket').removeClass('scroll');
+			$('.basket .bas-num').remove();
+		}
+
+		if (sessionStorage.getItem('goods')) {
+			let goodsFromSesion = JSON.parse(sessionStorage.getItem('goods'));
+			let priceG = 0;
+			goodsFromSesion.forEach((value) => {
+				let p = parseFloat(value['price']);
+				priceG += p;
+			});
+			let c = Math.round(priceG * 100) / 100
+			$('.bas-num').html(c);
+		} 
+	}
+
+	scrollBasret();
 
 })
 
 
+//========== Вход в админку
+$(function(){
+
+	$(document).on('click', '#use-subm', function(EO) {
+		let name = $('#use-modal').find('input[type="name"]').val();
+		let password = $('#use-modal').find('input[type="password"]').val();
+		
+		if (name !== 'admin' || password !== 'admin') {
+			EO.preventDefault();
+			return;
+		}	
+	});
+
+})
 
 
 

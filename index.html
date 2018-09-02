@@ -75,7 +75,7 @@
 					<div class="col">
 						<div class="using">
 							<div class="basket">
-								<i class="icon-shopping-basket" data-toggle="modal" data-target=".bd-example-modal-lg"><span class="basket-add">+</span></i>	
+								<i class="icon-shopping-basket" data-toggle="modal" data-target=".bd-example-modal-lg"><span class="basket-add"></span></i>	
 							</div>
 							<div>
 								<i class="icon-user-o" data-toggle="modal" data-target=".bd-example-modal-sm"></i>
@@ -87,7 +87,7 @@
 			</div>
 		</div>
 	</header>
-
+	
 	<!-- Banner -->	
 	<section id="baner">
 		<div class="container">
@@ -556,18 +556,18 @@
 							</div>
 
 							<div class="btn-more-comm">
-								<buttom href="" class="btn-my btn-more">More Comment</buttom>
+								<buttom href="" class="btn-my btn-more">Ещё</buttom>
 							</div>
 
 							<div class="media-post">
 								<div class="post-body">
-									<h3 class="title text-center">Add your comment</h3>
+									<h3 class="title text-center">Добавь комментарий</h3>
 									<div class="text">
-										<label class="" for="exampleBlogPost"> Write some nice stuff or nothing...</label>
+										<label class="" for="exampleBlogPost"> ваш комментарий...</label>
 										<textarea class="form-control" rows="5" id="exampleBlogPost" ></textarea>
 									</div>
 									<div class="post-footer">
-										<buttom href="" class="btn-my add-comment">Add Comment</buttom>
+										<buttom href="" class="btn-my add-comment">Отправить</buttom>
 									</div>
 								</div>
 							</div>
@@ -627,87 +627,9 @@
 
 
 
-	<section id="admin">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="reserv-admin">	
-						<table class="table" id="admin-table">
-							<thead>
-								<tr>
-									<th scope="col">#</th>
-									<th scope="col">Имя</th>
-									<th scope="col">Барбер</th>
-									<th scope="col">Tелефон</th>
-									<th scope="col">Услуга</th>
-									<th scope="col">Code</th>
-								</tr>
-							</thead>
-							<tbody>
-								
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col">
-					<div class="goods-admin">	
-						<table class="table" id="admin-goods">
-							<thead>
-								<tr>
-									<th scope="col">#</th>
-									<th scope="col">Имя</th>
-									<th scope="col">Tелефон</th>									
-									<th scope="col">Товары</th>									
-								</tr>
-							</thead>
-							<tbody>
-								
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 
-	<script id="admin-one" type="text/x-handlebars-template">
-		<tr>
-			<th scope="row">{{num}}</th>
-			<td>{{name}}</td>
-			<td>{{barber}}</td>
-			<td>{{tel}}</td>
-			<td>{{service}}</td>
-			<td>{{code}}</td>
-		</tr>
-	</script>	
-	<script id="admin-two" type="text/x-handlebars-template">
-		<tr>
-			<th scope="row">{{num}}</th>
-			<td>{{name}}</td>
-			<td>{{tel}}</td>	
-			<td id="goods-item">
-				{{#each goods}}
-				<div class=item-goods-goods>
-					<div class="item-g-1">
-						<h5>Товар</h5>
-						<p>{{name}}</p>
-					</div>
 
-					<div class="item-g-2">
-						<h5>Кол-во</h5>
-						<p>{{number}}</p>
-					</div>
-					<div class="item-g-3">
-						<h5>Цена</h5>
-						<p>{{size}}</p>
-					</div>
-				</div>
-				{{/each}}
-			</td>			
-		</tr>
-	</script>	
+	
 
 
 	
@@ -725,13 +647,11 @@
 						<label for="exampleInputPassword1">Password (admin)</label>
 						<input type="password" class="form-control">
 					</div>
-					<a href="#" class="button-u" id="use-subm">Submit</a>
+					<a href="admin.html" class="button-u" id="use-subm">Submit</a>
 				</div>
 			</div>
 		</div>
-	</div>
-
-	
+	</div>	
 
 	<div class="popapForReservOnClick">
 		<div class="inner">
@@ -845,7 +765,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col">
-							<div class="send-was"</div>
+							<div class="send-was"></div>
 						</div>
 					</div>
 					<div class="row">
@@ -856,9 +776,14 @@
 					</div>
 					<div class="row">
 						<div class="col">
+							<div class="cost-all"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
 							<div class="order-basket">
 								<input type="text" name="nameRegistoru" placeholder="Ваше имя">
-								<input type="tel" name="mailRegistoru" placeholder="Выш телефон">
+								<input type="tel" name="mailRegistoru" placeholder="Ваш телефон">
 								<button id="basket-offer">Оформить</button>
 							</div>
 						</div>

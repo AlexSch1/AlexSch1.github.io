@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>OptimizedHTML 4</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#000">
+	<!-- Custom Browsers Color End -->
+	
+	<link rel="stylesheet" href="css/main.min.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<header id="header">
+		<div class="top-line ">
+			<div class="container">
+				<div class="row align-items-center ">
+					<div class="col ">
+						<div class="phone">
+							Call us <span>(0044)1234 4412</span>
+						</div>
+					</div>
+					<div class="col">
+						<div class="welcome">
+							Welcome to BarberShop
+						</div>
+					</div>
+					<div class="col">
+						<div class="social">
+							<i class="icon-youtube"></i>
+							<i class="icon-facebook-official"></i>
+							<i class="icon-tumblr-squared"></i>
+							<i class="icon-camera"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<div class="buttom-line buttom-line-a">	
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col">
+						<div class="logo">
+							<span>barber</span>
+							<span>s</span>
+							<span>hop.</span>
+						</div>
+					</div>
+					<div class="col">
+						<div class="using">
+							<div>
+								<a href="index.html">Exit</a>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</header>
+	
+	<section id="admin">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="reserv-admin">	
+						<table class="table" id="admin-table">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Имя</th>
+									<th scope="col">Барбер</th>
+									<th scope="col">Tелефон</th>
+									<th scope="col">Услуга</th>
+									<th scope="col">Code</th>
+								</tr>
+							</thead>
+							<tbody>							
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="goods-admin">	
+						<table class="table" id="admin-goods">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Имя</th>
+									<th scope="col">Tелефон</th>									
+									<th scope="col">Товары</th>									
+									<th scope="col"></th>									
+								</tr>
+							</thead>
+							<tbody>			
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="new-goods">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="new-goods">
+						<div class="form-goods">
+							<h4>Новый товар</h4>
+							<div class="form-new-goods">
+								<label for="inputEmail3" class="col-sm-2 col-form-label">Цена</label>								
+								<input type="text" class="form-control" id="input-price" placeholder="цена">
+							</div>			
+							<div class="form-new-goods">
+								<label for="input-name" class="col-sm-2 col-form-label">Имя</label>								
+								<input type="text" class="form-control" id="input-name" placeholder="имя">								
+							</div>
+							<div class="form-new-goods">
+								<label for="" >Фото</label>								
+								<input type="text" class="form-control" id="input-img" placeholder="фото">	
+							</div>
+							<div class="form-new-goods">
+								<label for="" >Категория</label>
+								<select name="type">
+									<option value="Crem">Crem</option>
+									<option value="Gel">Gel</option>
+									<option value="Shampoo">Shampoo</option>
+									<option value="Powder">Powder</option>
+									<option value="Sprey">Sprey</option>
+								</select>
+							</div>
+							<div class="form-new-goods">
+								<label for="" >Hold</label>
+								<select name="hold" >
+									<option value="low">low</option>
+									<option value="high">high</option>
+									<option value="medium">medium</option>
+								</select>
+							</div>
+							<div class="form-new-goods">
+								<label for="" >Shine</label>
+								<select name="shine">
+									<option value="low">low</option>
+									<option value="high">high</option>
+									<option value="medium">medium</option>
+								</select>
+							</div>
+							<div class="form-new-goods-sbn">
+								<button  class="btn btn-add-godd">Добавить</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="all-list-goods">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="list-goods-wrap">	
+						<table class="table" id="goods-list-head">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Имя</th>
+									<th scope="col">Цены</th>
+									<th scope="col">Type</th>
+									<th scope="col"></th>
+								</tr>
+							</thead>
+							<tbody>
+								
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="all-goods-admin">
+		<div class="container">
+			<div class="row">
+				<div class="col">	
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script id="admin-one" type="text/x-handlebars-template">
+		<tr>
+			<th scope="row">{{num}}</th>
+			<td>{{name}}</td>
+			<td>{{barber}}</td>
+			<td>{{tel}}</td>
+			<td>{{service}}</td>
+			<td>{{code}}</td>
+		</tr>
+	</script>	
+
+	<script id="admin-two" type="text/x-handlebars-template">
+		<tr>
+			<th scope="row">{{num}}</th>
+			<td>{{name}}</td>
+			<td>{{tel}}</td>	
+			<td id="goods-item">
+				{{#each goods}}
+				<div class=item-goods-goods>
+					<div class="item-g-1">
+						<h5>Товар</h5>
+						<p>{{name}}</p>
+					</div>
+					<div class="item-g-2">
+						<h5>Кол-во</h5>
+						<p>{{number}}</p>
+					</div>
+					<div class="item-g-3">
+						<h5>Цена</h5>
+						<p>{{size}}</p>
+					</div>
+				</div>
+				{{/each}}
+			</td>	
+			<td class="delete-admin-goods" >X</td>		
+		</tr>
+	</script>	
+
+	<script id="admin-goods-list" type="text/x-handlebars-template">
+		<tr>
+			<th scope="row">{{num}}</th>
+			<td>{{name}}</td>
+			<td class="cheng-price" contenteditable="true">{{size}}</td>
+			<td>{{type}}</td>
+			<td class="delete-admin-list" >X</td>
+		</tr>
+	</script>	
+
+	
+	<script src="js/scripts-admin.min.js"></script>
+
+</body>
+</html>
