@@ -1,0 +1,379 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 14px
+	//min-width: 320px
+	position: relative
+	line-height: 1.45
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+a
+	color: inherit
+	font-weight: inherit
+	font-style: inherit
+	text-decoration: none
+	&:hover
+		color: #231f20
+		transition: all 0.35s ease-in-out
+		text-decoration: none
+
+ul
+	padding: 0
+	margin: 0
+
+.my-btn
+	text-transform: uppercase
+	border-radius: 4px
+	border: none
+
+.my-btn-pr,.my-btn-sec
+	font-style: 13px
+	line-height: 1.33
+	padding: 22px 30px
+	font-weight: 400
+	letter-spacing: 1px
+
+.my-btn-pr
+	background-color: #70cbce
+	color: #fff
+	&:hover
+		background-color: #8be2e5
+		color: #fff
+		transition: all .35s ease-in-out
+
+.my-btn-sec
+	background-color: #fff
+	color: #231f20
+	&:hover
+		background-color: #ededed
+		transition: all .35s ease-in-out
+
+
+
+
+
+
+/* ==========================================================================
+   nav
+   ========================================================================== */
+.navbar
+	position: fixed
+	top: -60px
+	left: 0
+	width: 100%
+	background: #70cbce
+	min-height: 60px
+	z-index: 2
+	transition: top 0.7s ease 0s
+	.nav
+		padding-top: 8px
+		list-style-type: none
+		display: flex
+		li
+			margin-right: 10px
+			a
+				&:hover
+					color: #fff
+
+.navbar.open
+	top: 0
+
+.icon-menu
+	position: absolute
+	display: none
+	right: 5%
+	font-size: 20px
+	&:hover
+		cursor: pointer
+.nav-m
+	display: none
+
+.nav-mobile
+	position: relative
+	display: none
+	margin-top: 40px
+	list-style-type: none
+	text-align: center
+	li
+		width: 40%
+		margin: 0 auto
+		margin-bottom: 10px
+		border-bottom: 1px solid #E8EAEA
+
+.open
+	display: block
+
+
+/* ==========================================================================
+   Main styles
+   ========================================================================== */
+header
+	background: url(../img/bg2.jpg) no-repeat center center / cover
+	width: 100%
+	padding: 20px 10px 60px 10px
+	height: 100vh
+	overflow: hidden
+	position: relative
+	.logo
+		font-size: 20px
+
+.header-info
+	position: absolute
+	bottom: 0
+	width: 100%
+	left: 0
+	right: 0
+	margin-bottom: 18%
+	text-align: center
+	.btn-group
+		a
+			margin-right: 20px
+	h1
+		color: #fff
+		font-size: 50px
+	p
+		font-size: 21px
+		line-height: 26px
+		padding-bottom: 20px		
+
+.signin
+	padding-top: 10px
+	color: #fff
+	text-align: right
+	a
+		margin-right: 5px
+
+
+#we-are-first
+	padding: 200px 0
+	background-color: #6d3f96
+	min-height: 300px
+	position: relative
+	z-index: 1
+	h2
+		font-size: 50px
+		color: #fff
+	p
+		font-size: 21px
+		line-height: 26px
+		padding-bottom: 20px
+		color: #fff
+
+.phone
+	position: relative
+	height: 200px
+
+.phone img
+	margin: 0 auto
+	width: 100%
+	max-width: 240px
+	position: absolute
+	left: 0
+	right: 0
+
+.bg-txt
+	position: absolute
+	top: calc(50% - 200px)
+	left: calc(50% - 400px)
+	opacity: .2
+	z-index: -1
+	span
+		color: #Fff
+		letter-spacing: 40px
+		text-transform: uppercase
+		font-weight: bold
+		font-size: 290px
+
+#travel
+	//padding: 200px 0
+	h3
+		padding-top: 50px
+		padding-left: 50px
+	p
+		padding-right: 50px
+		padding-left: 50px	
+	.spotlight
+		display: flex
+		flex-wrap: wrap
+		height: 100%
+		padding-left: 0
+		background-color: #d9d9d9
+	.spotlight.color
+		color: #fff
+		background-color: #6d3f96
+		.image
+			order: 1
+	.travel-text
+		flex: 1	
+	.image
+		flex: 1		
+
+
+
+#main-info
+	padding: 150px 0px
+	h3
+		font-size: 20px
+		text-align: center
+		border-bottom: 2px solid #fdc05d
+	p
+		font-size: 17px	
+
+#card
+	background: #70cbce
+	padding: 150px 0px
+	h2
+		color: #fff
+		font-size: 50px
+	p
+		color: #fff
+		margin-bottom: 40px	
+	.card-box
+		padding-right: 0
+		padding-left: 0
+	.card-box-table
+		background-color: transparent
+		margin-bottom: 50px
+		margin-top: 0
+		list-style-type: none
+		text-align: center
+		transition: all 0.25s ease-in-out
+		&:hover
+			transform: scale(1.02)
+		li
+			padding-left: 20px
+			padding-right: 20px
+		.headline
+			background-color: #000
+			color: #fff
+			padding: 10px
+			border-top-left-radius: 10px
+			border-top-right-radius: 10px
+		.price
+			background: none repeat scroll 0 0 #231f20
+			color: #fff
+			font-size: 32px
+			font-weight: bold
+			padding-bottom: 20px
+			padding-top: 20px	
+		.info
+			padding-top: 20px
+			padding-bottom: 20px
+			font-weight: 300
+			font-size: 13px
+			color: #929496
+			background: #fff
+		.txt.first
+			border-top: 1px solid #E8EAEA
+		.txt
+			color: #000
+			font-weight: bold
+			padding-top: 15px
+			padding-bottom: 15px
+			border-bottom: 1px solid #E8EAEA
+			background-color: #fff	
+			a 
+				color: #70cbce	
+				font-size: 14px
+
+
+#invite
+	padding: 150px 0px
+	background-color: #d9d9d9
+	h2
+		font-size: 50px
+	p,h2,span
+		text-align: center
+
+
+#press
+	padding: 150px 0px
+	.press-box
+		display: flex
+		font-size: 17px
+		border-bottom: 1px solid #E8EAEA
+		padding-top: 10px
+		padding-bottom: 10px
+		transition: all 0.35s ease-in-out
+		&:hover
+			background-color: #E8EAEA
+			cursor: pointer
+		i
+			font-size: 30px
+			margin-right: 10px
+
+
+
+footer
+	background: #ffffff
+  	padding: 40px 0px
+	ul
+		list-style-type: none
+		display: flex
+		li
+			margin-right: 5px
+
+
+
+
+/* ==========================================================================
+   Form styles
+   ========================================================================== */
+.form-control 
+    background-color: #FFFFFF
+    background-image: none
+    border: 0px solid transparent
+    border-radius: 4px
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset
+    color: #929496
+    display: block
+    font-size: 15px
+    width: 100%
+    height: 60px
+    line-height: 1.42857
+    padding: 6px 12px
+    margin-bottom: 10px
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s
+
+
+
+
+
+
+
+
+
+
+
+@import "media" // Always at the end

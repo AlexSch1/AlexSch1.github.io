@@ -1,0 +1,452 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: #60606e
+	padding: 0
+	margin: 0 auto
+	
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+
+::selection
+	background-color: $accent
+	color: #fff
+
+
+
+h1
+	font-family: Montserrat
+	text-transform: uppercase
+	font-size: 36px
+	position: relative
+	margin: 0
+	padding: 0
+
+ul
+	margin: 0
+	padding: 0
+	li
+		list-style: none
+		text-transform: uppercase
+
+a
+	text-decoration: none
+	color: #60606e
+	&:hover
+		color: #7beec7
+
+.b_line
+	display: inline-block
+	&::after
+		content: ''
+		display: inline-block
+		position: absolute
+		bottom: 4px
+		left: 0
+		height: 5px
+		width: 68px
+		background-color: #7beec7	
+
+.container
+	max-width: 1170px
+	
+#header
+	width: 1300px
+	.top-line
+	padding-top: 44px
+	height: 100px
+	background-color: #dbdbdb
+	width: 100%
+	height: 500px
+	.logo
+		font-family: Montserrat
+		font-size: 18px
+		text-transform: uppercase
+		p
+			margin: 0
+	.hamburger
+			width: 23px
+			height: 16px
+	.center-line
+		padding-top: 168px
+		text-align: center
+		p
+			padding: 0
+			margin: 0
+			font-family: Montserrat
+			font-size: 14px
+			text-transform: uppercase
+
+#about
+	.about_pading
+		padding-top: 150px
+		margin-bottom: 166px
+		h1
+			font-size: 30px
+		p
+			margin: 0
+			font-size: 14px	
+		p:first-of-type
+			font-size: 14px
+			font-family: Open_Sans
+			text-transform: uppercase
+			padding-bottom: 33px
+			padding-top: 20px
+			margin: 0	
+		.b_line1 + p + p
+			font-family: Open_Sans_Regular
+		.b_line2 + p + p
+			font-family: Montserrat_regular	
+
+#benefits
+	.b_line
+		&::after
+			left: 0px
+			width: 68px
+	.bennefits_header
+		margin-bottom: 100px
+		width: 100%
+		text-align: center
+		h1
+			font-size: 30px
+			font-family: Montserrat
+		p
+			font-size: 14px
+			font-family: Open_Sans_Regular
+			padding-left: 213px
+			padding-right: 212px
+	.services
+		margin-bottom: 150px
+		h1
+			font-size: 18px
+			position: relative
+			padding-left: 19px
+			height: 60px
+			padding-top: 5px
+		p
+			font-size: 14px
+			margin: 0
+		.row:first-child
+		 margin-bottom: 69px
+		.benefits_icon
+			width: 40px
+			height: 40px
+			order: -1
+		.benefits_icon1
+			background: url(../img/Shape15.png)
+		.benefits_icon2
+			background: url(../img/Shape14.png) 
+		.benefits_icon3
+			background: url(../img/Shape13.png) 
+		.benefits_icon4
+			background: url(../img/Shape16.png) 
+		.benefits_icon5
+			background: url(../img/Shape17.png)
+		.benefits_icon6
+			background: url(../img/Shape18.png) 
+		.benefits_title
+			display: flex
+
+
+
+
+
+
+
+
+
+
+#team
+	overflow: hidden
+	.team_header
+		margin-bottom: 100px
+		width: 100%
+		text-align: center
+		p
+			font-size: 14px
+			font-family: Open_Sans_Regular
+			padding-left: 213px
+			padding-right: 212px
+	.team_icon
+		width: 263px
+		height: 335px
+	.team_icon1
+		background: url(../img/Layer12.png)	no-repeat left top
+		margin-bottom: 30px
+	.team_icon2
+		background: url(../img/Layer12.png)	no-repeat -293px top	
+	.team_icon3
+		background: url(../img/Layer12.png)	no-repeat -585px top	
+	.team_icon4
+		background: url(../img/Layer12.png)	no-repeat -878px top	
+	.team_icon5
+		background: url(../img/Layer12.png)	no-repeat left -365px	
+	.team_icon6
+		background: url(../img/Layer12.png)	no-repeat -293px -365px	
+	.team_icon7
+		background: url(../img/Layer12.png)	no-repeat -585px -365px
+	.team_icon8
+		background: url(../img/Layer12.png)	no-repeat -878px -365px	
+		margin-bottom: 29px	
+
+
+
+.bar_wrap
+	height: 150px
+	width: 100%
+	background-color: #efeff0
+	p
+		font-size: 18px
+		padding: 65px 30px 65px 40px 
+		margin: 0
+	.bar_btn
+		text-align: right
+		padding-top: 50px
+		padding-right: 30px
+		a
+			background-color: #7beec7
+			font-size: 14px
+			white-space: nowrap
+			display: inline-block
+			color: #fff
+			text-transform: uppercase
+			text-decoration: none
+			transition: all .3s ease
+			padding: 21px 40px 18px 40px 
+			&:hover
+			 	background-color: #75dfbb
+
+#clients
+	padding-top: 150px
+	padding-bottom: 186px
+	.clients_item
+		text-align: center
+		p
+			font-family: Open_Sans_Regular
+			font-size: 14px
+		a
+			background-color: #7beec7
+			margin-top: 12px
+			font-size: 14px
+			font-family: Montserrat
+			white-space: nowrap
+			display: inline-block
+			color: #fff
+			text-transform: uppercase
+			text-decoration: none
+			transition: all .3s ease
+			padding: 6px 12px 6px 12px 
+			&:hover
+			 	background-color: #75dfbb
+	.clients_box
+		display: flex
+		justify-content: center
+		margin-left: 15px		 	
+		.clients_icon
+			width: 165px
+			height: 100px
+		.clients_icon1
+			background: url(../img/clients.png) no-repeat left top
+		.clients_icon2
+			background: url(../img/clients.png) no-repeat -180px top
+		.clients_icon3
+			background: url(../img/clients.png) no-repeat -360px top
+		.clients_icon4
+			background: url(../img/clients.png) no-repeat left -110px
+		.clients_icon5
+			background: url(../img/clients.png) no-repeat -180px -110px
+		.clients_icon6
+			background: url(../img/clients.png) no-repeat -360px -110px							
+
+
+#newsletter
+	background-color: #7beec7
+	.newsletter_left_title
+		h1
+			color: #fff
+			font-size: 30px
+			font-family: Montserrat
+			padding-top: 50px
+		a
+			background-color: #fff
+			font-size: 14px
+			font-family: Montserrat
+			white-space: nowrap
+			display: inline-block
+			color: #7beec7
+			text-transform: uppercase
+			text-decoration: none
+			transition: all .3s ease
+			padding: 15px 32px 15px 32px 
+			margin-top: 30px
+			line-height: auto
+			&:hover
+			 	background-color: #75dfbb
+	.newsletter_right_wrap
+		background-color: #fff
+		margin-top: 50px
+		margin-bottom: 50px
+		padding: 14px 25px 20px 20px
+		.newsletter_right_title
+			h1
+				font-size: 24px
+				font-family: Montserrat	
+				padding-right: 65px	 
+			p
+				font-family: Open_Sans_Regular
+				font-size: 16px	
+				color: #999
+				margin: 0
+		form
+			margin: 0
+			padding: 0
+			input[type='text']
+				width: 375px
+				height: 50px
+				opacity: .4
+				font-size: 16px
+				font-family: Open_Sans_Regular
+				padding-left: 20px
+				margin: 0
+				&:hover
+					opacity: 1
+			input[type='submit']
+				background-color: #7beec7
+				border: none
+				margin: 0
+				font-size: 14px
+				font-family: Montserrat
+				white-space: nowrap
+				display: inline-block
+				color: #fff
+				text-transform: uppercase
+				text-decoration: none
+				transition: all .3s ease
+				padding: 17px 40px 15px 40px 
+				margin-top: 30px
+				margin-left: -4px
+				line-height: auto
+				&:hover
+				 	background-color: #75dfbb
+									
+
+#footer
+	padding-top: 50px
+	ul.nav
+		display: flex
+		li
+			a
+				color: #9a9a9a
+				&:hover
+					color: #75dfbb
+			font-family: Open_Sans_Regular
+			font-size: 14px
+			margin-right: 41px
+			position: relative
+			color: #9a9a9a
+			&:after
+				content: ''
+				display: block
+				background-color: #9a9a9a
+				width: 4px
+				height: 2px	
+				position: absolute
+				right: -20px
+				top: 11px
+		li:last-child
+			&:after
+				display: none
+	p
+		color: #9a9a9a
+		font-size: 14px
+		text-transform: uppercase
+		margin: 0
+		text-align: right
+
+#footer					
+	ul.social
+		margin-top: 30px
+		display: flex
+        list-style: none
+        width: 100%
+
+.sotial_box
+    display: flex  
+    justify-content: flex-end
+    a
+    	font-size: 18px
+    	c#9a9a9a
+    	margin-right: 18px
+    li:last-child a
+    	margin-right: 0	        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import "media" // Всегда в конце

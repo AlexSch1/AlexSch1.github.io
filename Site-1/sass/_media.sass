@@ -1,0 +1,54 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+
+// ≥992px
++media-breakpoint-down(md)
+	#travel
+		.spotlight
+			flex-direction: column
+		.spotlight.color
+			.image
+				order: 0	
+
+	.bg-txt
+		display: none	
+					
+// ≥768px
++media-breakpoint-down(sm)
+
+// ≥576px
++media-breakpoint-down(xs)
+	.nav-m
+		display: block
+
+	.nav
+		li
+			display: none
+
+	.icon-menu
+		display: block	
+
+	footer
+		text-align: center
+		ul
+			display: block			
+
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)
