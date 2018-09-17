@@ -1,0 +1,118 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+    .velcome
+        h2
+          padding-top: 14px 
+          font-size: 30px 
+        p
+            padding: 0px 14px 37px 14px
+		     
+
+// ≥992px
++media-breakpoint-down(md)
+    header
+	    .title
+            h1
+                font-size: 35px
+                line-height: 30px           
+    .velcome
+        background-size: cover
+        border-radius: 10px
+        p
+            padding: 0px 4px 50px 4px
+    #products
+        article
+            margin-right: 50px               
+// ≥768px
++media-breakpoint-down(sm)
+    header
+       .elips, .shadow, .logo-img
+           display: none
+
+    .logo-small
+        display: block
+
+    #products
+        article
+            margin-bottom: 27px
+            &:nth-of-type(3)
+                margin-right: 50px
+
+    .prod-absolute
+        position: relative
+        top: 40px
+        flex-wrap: wrap
+        article
+            width: 40%
+            margin: 0
+
+    .prod-main
+        flex-wrap: wrap
+        padding-top: 27px           
+
+    footer
+        ul
+            font-size: 16px
+    
+// ≥576px
++media-breakpoint-down(xs)
+    header
+        .header-nav
+            ul
+                display: none
+
+    .mobail-nav
+        top: 0 
+
+    .prod-absolute
+        article
+            width: 100%           
+
+    #products
+        article
+            margin: 0
+            margin-bottom: 20px
+            &:nth-of-type(3)
+                margin-right: 0
+
+    .prod-main
+        margin-top: 20px
+        article
+            width: 100%
+            margin-bottom: 20px  
+
+    #community
+        text-align: center
+        a
+            margin: 0 auto
+        p
+            width: 100%    
+
+    footer
+        ul
+            flex-direction: column
+            li
+                margin: 0
+        nav
+            height: 150px 
+        .copy-and-by-desinger
+            p
+                font-size: 11px                      
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)

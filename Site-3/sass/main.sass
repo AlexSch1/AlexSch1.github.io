@@ -1,0 +1,378 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	margin: 0 auto
+	position: relative
+	line-height: 1.65
+	font-family: "nimbstb"
+	overflow-x: hidden
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+a
+	color: #000
+	text-transform: uppercase
+	&:hover
+		color: #ffffff
+		text-decoration: none
+
+ul
+	padding: 0
+	margin: 0
+	list-style-type: none	
+
+h1,h2,h3
+	margin: 0
+	padding: 0
+
+
+
+/*================================================
+	HEADER
+	=============================================*/	
+header
+	background: url(../img/header-bg.jpg) no-repeat center center / cover
+	width: 100%
+	height: 100vh
+	text-align: center
+	border-bottom: 4px solid #e46107
+	.header-nav
+		padding-top: 201px
+		position: relative
+		width: 100%
+		z-index: 2000
+		ul
+			display: flex	
+			justify-content: center			
+			li
+				margin-right: 1px
+				padding-top: 23px
+				box-sizing: border-box
+				display: block
+				position: relative
+				z-index: 15
+				&:hover
+					transition: all .2s ease
+					background-position: bottom center
+				a
+					margin: 0px
+					display: block
+					padding-bottom: 10px
+					padding-right: 18px
+					padding-left: 18px
+					box-sizing: border-box
+					color: #ffffff
+					font-family: "nimbstb"
+					font-size: 19px
+					line-height: 40px
+					
+header
+	.header-nav
+		li
+			&:nth-of-type(1)
+				background: url(../img/button/tab1.png) no-repeat 0 -100px / 100%
+			&:nth-of-type(2)
+				background: url(../img/button/tab2.png) no-repeat 0 -100px / 100%
+			&:nth-of-type(3)
+				background: url(../img/button/tab3.png) no-repeat 0 -100px / 100%
+			&:nth-of-type(4)
+				background: url(../img/button/tab4.png) no-repeat 0 -100px / 100%
+			&:nth-of-type(5)
+				background: url(../img/button/tab5.png) no-repeat 0 -100px / 100%				
+
+.elips
+	position: absolute
+	top: 193px
+	left: 0
+	right: 0
+	margin: 0 auto
+	max-width: 100%
+	z-index: 20
+	img
+		max-width: 100%
+
+.logo
+	position: absolute
+	top: 18px
+	left: 0
+	right: 0
+
+.logo-img
+	position: relative
+	z-index: 2
+
+.shadow
+	position: absolute
+	top: 175px
+	left: 0
+	right: 0
+	margin: 0 auto
+	max-width: 100%
+	z-index: 1
+
+.logo-small
+	nax-width: 100%
+	display: none
+	margin: 0 auto
+	padding-top: 50px
+
+
+header
+	padding-bottom: 122px
+	.title
+		margin-top: 68px
+		position: relative
+		z-index: 200000
+		width: 100%
+		text-align: center
+		margin-bottom: 25px
+		h1
+			font-family: "HelveticaNeueCyrBlack"
+			font-size: 68px
+			color: #ffffff
+			line-height: 60px
+			
+
+.velcome
+	background-color: pink
+	max-width: 960px
+	margin: 0 auto
+	color: #ffffff
+	background: url(../img/bg-header-title.png) no-repeat top / 100%
+	h2
+		font-family: "HelveticaNeueCyrLight"
+		font-weight: normal
+		font-size: 34px
+		line-height: 40px
+		padding-top: 30px
+		padding-bottom: 10px
+	p
+		font-family: "Arial"	
+		font-size: 14px
+		line-height: 25px
+		padding: 0px 44px 37px 44px
+
+
+.mobail-nav
+	position: fixed
+	top: -150px
+	left: 0
+	width: 100%
+	background: #70cbce
+	min-height: 60px
+	z-index: 20000
+	transition: top 0.7s ease 0s
+	.toogle-btn
+		position: absolute
+		display: block
+		right: 5%
+		top: 50%
+		margin-top: -20px
+		font-size: 20px
+		cursor: pointer
+		z-index: 300000
+		&:hover
+			cursor: pointer
+
+.open-menu
+	display: none
+	
+/*================================================
+	PRODUCTS
+ =============================================*/	
+#products
+	background: #26311c
+	position: relative
+	article
+		text-align: center
+		max-width: 220px
+		margin-right: 110px
+		margin-bottom: 27px
+		&:nth-of-type(3)
+			margin-right: 0
+		h2
+			margin-top: 32px
+			color: #ffffff
+			font-family: "HelveticaNeueCyrLight"
+			font-weight: normal
+			font-size: 34px
+			line-height: 40px
+			margin-bottom: 20px
+		.btn-more
+			padding-left: 25px
+			a
+				width: 170px
+				height: 60px
+				display: block
+				background: url(../img/button/btn-basic.png) no-repeat left center
+				&:hover
+					background-position: -190px 0
+
+.prod-absolute, .prod-main
+	display: flex
+	justify-content: center
+	width: 100%
+
+.prod-absolute
+	position: absolute
+	top: -118px	
+	left: 0
+	right: 0
+	margin: 0 auto
+
+.prod-main
+	padding-top: 270px
+	padding-bottom: 23px
+	article
+		margin-top: 28px
+		&:nth-of-type(2)
+			margin-right: 0 !important
+
+
+/*================================================
+	COMMUNITY
+ =============================================*/	
+#community
+	width: 100%
+	background: url(../img/community-bg.jpg) no-repeat center top / cover
+	padding-bottom: 94px
+	border-bottom: 2px solid #7da83c
+	.content
+		max-width: 960px
+		margin: 0 auto
+		position: relative
+	h3
+		padding-top: 80px
+		margin-bottom: -7px
+		font-size: 34px
+		line-height: 53px
+		font-family: "HelveticaNeueCyrLight"
+		font-weight: normal
+		color: #000
+	h2
+		font-family: "HelveticaNeueCyrBold"
+		font-size: 54px
+		line-height: 53px
+		color: #48890a
+	p
+		font-family: "Arial"
+		color: #000
+		font-size: 14px
+		line-height: 25px
+		width: 430px
+		margin-top: 26px
+		padding-left: 5px
+		padding-bottom: 15px
+		margin-bottom: 0px
+	a
+		display: block
+		width: 175px
+		height: 70px
+		background: url(../img/button/btn-white.png) no-repeat left center
+		background-position: 0 0
+		&:hover
+			background-position: -175px 0
+
+
+/*================================================
+	FOOTER
+ =============================================*/
+footer
+	position: relative
+	nav
+		height: 83px
+		background-color: #fff
+		width: 100%
+	background-color: #e4e4e4
+	ul
+		display: flex
+		justify-content: center
+		align-items: center
+		font-family: "nimbstb"
+		font-size: 19px
+		text-transform: uppercase
+		color: #7b7b7b
+		height: 100%
+		li
+			margin-right: 48px
+			cursor: pointer
+			&:hover
+				color: #8dc705
+
+	p
+		color: #919191
+		font-family: "Arial"
+		font-size: 12px
+		padding: 0
+		margin: 0
+	.copy-and-by-desinger
+		max-width: 960px
+		margin: 0 auto
+		height: 65px
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import "media" // Always at the end
