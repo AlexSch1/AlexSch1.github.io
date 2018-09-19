@@ -73,21 +73,27 @@ header
 		z-index: 2000
 		ul
 			display: flex	
-			justify-content: center			
+			justify-content: center		
+			margin-top: 2px	
+			
 			li
 				margin-right: 1px
-				padding-top: 23px
+				padding-top: 22px
 				box-sizing: border-box
 				display: block
 				position: relative
 				z-index: 15
+				background-color: red
 				&:hover
 					transition: all .2s ease
-					background-position: bottom center
+					background-position: bottom 
 				a
+					
 					margin: 0px
 					display: block
+					
 					padding-bottom: 10px
+					margin-top: -4px
 					padding-right: 18px
 					padding-left: 18px
 					box-sizing: border-box
@@ -95,6 +101,7 @@ header
 					font-family: "nimbstb"
 					font-size: 19px
 					line-height: 40px
+						
 					
 header
 	.header-nav
@@ -123,13 +130,13 @@ header
 
 .logo
 	position: absolute
-	top: 18px
+	top: 20px
 	left: 0
 	right: 0
 
 .logo-img
 	position: relative
-	z-index: 2
+	z-index: 2001
 
 .shadow
 	position: absolute
@@ -144,7 +151,9 @@ header
 	nax-width: 100%
 	display: none
 	margin: 0 auto
-	padding-top: 50px
+	position: relative
+	z-index: 10000
+	padding-top: 0px
 
 
 header
@@ -159,8 +168,9 @@ header
 		h1
 			font-family: "HelveticaNeueCyrBlack"
 			font-size: 68px
-			color: #ffffff
+			color: #f1f2f5
 			line-height: 60px
+			text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.70)
 			
 
 .velcome
@@ -185,22 +195,34 @@ header
 
 .mobail-nav
 	position: fixed
-	top: -150px
+	top: -950px
 	left: 0
 	width: 100%
-	background: #70cbce
-	min-height: 60px
+	background-color: rgba(141, 199, 5, .5)
+	min-height: 50px
 	z-index: 500000
 	transition: top 0.7s ease 0s
+	ul
+		li
+			margin-top: 10px
+			height: 50px
+			font-size: 25px
+			
+			a
+				color: #ffffff
+				&:hover
+					border-bottom: 5px solid orange
+
 	.toogle-btn
 		position: absolute
 		display: block
 		right: 5%
-		top: 50%
+		top: 30px
 		margin-top: -20px
 		font-size: 20px
 		cursor: pointer
 		z-index: 300000
+		color: #ffffff
 		&:hover
 			cursor: pointer
 
@@ -258,7 +280,9 @@ header
 		&:nth-of-type(2)
 			margin-right: 0 !important
 
-
+#products
+	.full-screen
+		display: none				
 /*================================================
 	COMMUNITY
  =============================================*/	
@@ -301,7 +325,7 @@ header
 		background: url(../img/button/btn-white.png) no-repeat left center
 		background-position: 0 0
 		&:hover
-			background-position: -175px 0
+			background-position: -174px 2px
 
 
 /*================================================
