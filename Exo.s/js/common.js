@@ -1,10 +1,11 @@
 $(function() {
 
     
-    $(window).on('load', function() {
-        $('.wrapp-load').hide()
-    })
-
+    
+//
 	
 	
 });
+$(window).on('load', function() {
+    $('.wrapp-load').hide()
+})
