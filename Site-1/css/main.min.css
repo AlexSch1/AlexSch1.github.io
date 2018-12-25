@@ -3492,23 +3492,3 @@ footer ul li {
         display: block
     }
 }
-
-#list {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	overflow: auto;
-}
-
-#list p {
-	display: inline-block;
-	flex: 1;
-	font-weight: bold;
-	font-size: 17px;
-	border-bottom: 2px solid;
-	margin-right: 10px;
-	/*width: 120px;*/
-	padding: 10px;
-}
