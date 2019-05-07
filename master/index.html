@@ -3124,7 +3124,7 @@
         <div class="inner_bgf"></div>
         <audio src="K-POP.mp3" id="audio" ></audio>
 
-        <input id="hides" type="button" value="Play122555" onclick="myMovie.play()">
+        <input id="hides" type="button" value="ЗДФН ФЫ" onclick="myMovie.play()">
     </div>
 
 
@@ -3136,10 +3136,6 @@
             var myMovie = new Audio('K-POP.mp3');
 
 
-        // function myMovie() {
-
-        //     loopAudio()
-        // }
         
 
 
@@ -3168,6 +3164,7 @@
             preStart();
             counterClick = 0;
             result(0);
+            myMovie.play();
 
         });
         var clickGame = false;
@@ -3487,11 +3484,10 @@
 
 
         function startGame() {
-            myMovie.play();
+            
             counterClick = 0;
             timer();
             startSpin();
-            // myMovie.play();
             if (gameTobe) {
                 parent.postMessage('banner.event.5', '*');
             }
