@@ -3124,7 +3124,7 @@
         <div class="inner_bgf"></div>
         <audio src="K-POP.mp3" id="audio" ></audio>
 
-        <input id="hides" type="button" value="Play122" onclick="myMovie.play()">
+        <input id="hides" type="button" value="Play122555" onclick="myMovie.play()">
     </div>
 
 
@@ -3158,7 +3158,7 @@
         gameBtn.addEventListener('click', function (e) {
             e.preventDefault();
             bannerWR.classList.add('state1');
-            myMovie.play()
+            
         });
 
 
@@ -3204,10 +3204,6 @@
         });
 
 
-
-
-
-
         function timer() {
 
             var timerA = document.getElementById('timer_A');
@@ -3242,13 +3238,7 @@
                 }
 
             }, 1000);
-
-
         }
-
-
-
-
 
         function statrPreFinalState() {
             bannerWR.classList.add('state3');
@@ -3362,8 +3352,6 @@
             }, 750);
 
         }
-
-
 
         var counterClick = 1;
 
@@ -3498,9 +3486,8 @@
 
 
 
-
-
         function startGame() {
+            myMovie.play();
             counterClick = 0;
             timer();
             startSpin();
