@@ -1,0 +1,3545 @@
+<!DOCTYPE html>
+<!--[if IE 7 ]><html lang="en" class="no-js ie ie7 lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8 ]><html lang="en" class="no-js ie ie8 lt-ie9"><![endif]-->
+<!--[if IE 9 ]><html lang="en" class="no-js ie ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="ru">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>banner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="ad.size" content="width=100%,height=100%">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+
+        }
+    </style>
+    <style>
+        #banner {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            /* align-items: flex-start */
+        }
+
+        * {
+            user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        a,
+        a:active,
+        a:focus {
+            outline: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        .inner {
+            max-width: 444px;
+            flex-basis: 444px;
+            height: 704px;
+            height: 100%;
+            /* background: url(images/BG.png) no-repeat center center / cover; */
+            background-position: 50% center;
+            position: relative;
+            background-size: 350%;
+            overflow: hidden;
+        }
+
+        /* #banner {
+    background-size: 330%;
+} */
+        @media screen and (max-width: 450px) {
+            /* #banner {
+        background-size: cover;
+    } */
+        }
+
+
+        #banner {
+            background: url(images/BG.png) no-repeat center center / cover;
+            background-size: 330%;
+            background-position-y: 52%;
+            background-position-x: 50%;
+
+        }
+
+        #banner.state3 {
+            z-index: 1;
+        }
+
+        #banner.state3::after {
+            opacity: 0;
+            transition: all .5s ease;
+            /* animation: fadeIn 2.5s ease both; */
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: url(images/BG.png) no-repeat left center / cover;
+            background-size: 300%;
+            z-index: 2;
+            /* background-position-y: 102%; */
+            /* background-position-x: 100%; */
+
+        }
+
+        #banner.state3 .inner {
+            z-index: 3;
+        }
+
+        #banner.banner_alarm {
+            background-position-x: 97.8%;
+        }
+
+        @media (max-width:375px) {
+            #banner.banner_alarm {
+                background-position-x: 100%;
+            }
+        }
+
+
+        .inner_bgf {
+            background: url(images/BG.png) no-repeat center center / cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-position: 50% center;
+            height: 100%;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        @media (max-width:375px) {
+            #banner {
+                background-size: 300%;
+
+            }
+
+        }
+
+        .inner_bgf {
+            background-position: 0 0;
+            background-size: 304%;
+        }
+
+        #banner.state4 .inner_bgf {
+            background-position: 0 center;
+            background-size: 372%;
+        }
+
+        .inner.inner_alarm {
+            /* background-position: 99.8% center; */
+        }
+
+        .controll .control {
+            width: 52px;
+            height: 56px;
+            background-image: url(images/control.png);
+            background-size: 872%;
+            background-repeat: no-repeat;
+        }
+
+        .controll {
+            width: 182px;
+            height: 182px;
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            justify-content: center;
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .control_side {
+            width: 100%;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+
+        .top {
+            background-position: -285px 0;
+        }
+
+        .controll .control.bott {
+            background-position: -234px 0;
+        }
+
+        .controll .control.right {
+            width: 57px;
+            height: 52px;
+            background-position: -376px 0;
+        }
+
+        .controll .control.left {
+            width: 57px;
+            height: 52px;
+            background-position: -441px 0;
+        }
+
+        .line {
+            height: 70px;
+            width: 100%;
+            background: url(images/arrows_panel.png) no-repeat top left / cover;
+        }
+
+        .panelPre {
+            height: 107px;
+            width: 100%;
+            z-index: 2;
+            position: absolute;
+            bottom: 36%;
+            left: 0;
+            opacity: 0;
+            z-index: ;
+            background: url(images/arrows_panel.png) no-repeat bottom left / cover;
+        }
+
+        .panel {
+            position: relative;
+        }
+
+        .arow_wr {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            width: 100%;
+            /* position: relative; */
+            height: 74px;
+            justify-content: flex-end;
+
+        }
+
+        .box_alarm {
+            position: absolute;
+            height: 100%;
+            width: 90px;
+            top: 0;
+            left: 38%;
+            /* transform: translateX(-50%); */
+        }
+
+        .ar {
+            width: 54px;
+            top: 4px;
+            height: 60px;
+            /* margin-right: 20px; */
+            background-image: url(images/control.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: absolute;
+        }
+
+        .ar_right {
+            background-position: 0px 0;
+        }
+
+        .ar_left {
+            background-position: 0px 0;
+            transform: scaleX(-1);
+        }
+
+        .ar_top {
+            background-position: 0px 0;
+            transform: rotate(-90deg);
+        }
+
+        .ar_bt {
+            background-position: 0px 0;
+            transform: rotate(90deg);
+        }
+
+        .l {
+            background-position: -115px 0;
+            transform: rotate(-90deg);
+        }
+
+        .r {
+            background-position: -115px 0;
+            transform: rotate(90deg);
+        }
+
+        .t {
+            background-position: -115px 0;
+            transform: rotate(0deg);
+        }
+
+        .b {
+            background-position: -115px 0;
+            transform: rotate(-180deg);
+        }
+
+        .girl {
+            width: 137px;
+            height: 266px;
+            position: absolute;
+            bottom: 37%;
+            left: 35%;
+            background-image: url(images/girl.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: -803px 0;
+
+        }
+
+        .girl.girl_base {
+            background-position: 10px 0;
+        }
+
+
+        .girl.girl_l {
+            background-position: -127px 0;
+        }
+
+        .girl.girl_r {
+            background-position: -277px 0;
+        }
+
+
+        .girl.girl_t {
+            background-position: -545px 0;
+        }
+
+        .girl.girl_b {
+            background-position: -668px 0;
+        }
+
+        .panel {
+            position: absolute;
+            width: 100%;
+            bottom: 32%;
+            opacity: 0;
+            z-index: -1;
+        }
+
+
+
+
+
+
+
+
+
+        .logo {
+            width: auto;
+            height: auto;
+            padding: 0px 0 0 13px;
+
+        }
+
+        .girl_bg {
+            background: url(images/girl.png) no-repeat center center / cover;
+            background-position: -1350px 0;
+            width: 180px;
+            height: 386px;
+            position: absolute;
+            bottom: 24%;
+            left: 24%;
+        }
+
+        .girl_bg_2 {
+            width: 116px;
+            height: 266px;
+            position: absolute;
+            bottom: 37%;
+            left: 35%;
+            background-image: url(images/girl.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: -803px 0;
+            opacity: 0;
+            z-index: -1;
+            left: 48%;
+            transform: translateX(-50%);
+        }
+
+        .popdance {
+            background: url(images/title.png) no-repeat center center / cover;
+            width: 343px;
+            height: 250px;
+            position: absolute;
+            bottom: 32%;
+            left: 3%;
+        }
+
+        .btn_play {
+            background: url(images/btn.png) no-repeat center center / cover;
+            background-position: 0 -90px;
+            width: 303px;
+            height: 130px;
+            position: absolute;
+            bottom: 12%;
+            cursor: pointer;
+            z-index: 222;
+            background-size: 113%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .txt_age {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 58px;
+            height: 32px;
+            background: url(images/footnote_1.png) no-repeat;
+            background-size: cover;
+            background-position: 0 0px;
+            z-index: 2;
+        }
+
+        .txt_machine {
+            background: url(images/footnote_2.png) no-repeat center center / cover;
+            background-position: 0 0;
+            width: 200px;
+            height: 15px;
+            position: absolute;
+            bottom: 1%;
+            right: 4%;
+        }
+
+        .txt_machine2 {
+            width: 188px;
+            height: 13px;
+            position: absolute;
+            bottom: 8px;
+            right: 14px;
+        }
+
+        .txt_machine3 {
+            width: 100%;
+            height: 100%;
+        }
+
+        .txt_machine4 {
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            top: 3px;
+            left: -12px;
+        }
+
+        .btn_start {
+            background: url(images/btn.png) no-repeat center center / cover;
+            background-position: 0 0px;
+            width: 280px;
+            height: 79px;
+            background-size: 119%;
+            position: absolute;
+            bottom: 12%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+            opacity: 0;
+            cursor: pointer;
+            display: none;
+        }
+
+        .txt_regulat {
+            /* background: url(images/description.png) no-repeat center center / cover; */
+            width: 350px;
+            height: 105px;
+            position: absolute;
+            bottom: 51%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            cursor: pointer;
+            opacity: 0;
+        }
+
+        .timer_game {
+            opacity: 0;
+            z-index: -1;
+        }
+
+        .timer_game {
+            width: 80px;
+            height: 50px;
+            display: flex;
+            opacity: 1;
+            z-index: 11;
+            position: absolute;
+            top: 6%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            z-index: -1;
+        }
+
+        #timer {
+            position: absolute;
+            top: 4%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            z-index: -1;
+        }
+
+        #timer_reverse {
+            position: absolute;
+            top: 4%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 50px;
+        }
+
+        #timer_reverse svg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0;
+        }
+
+        .timer_gameA,
+        .timer_gameB {
+            width: 50%;
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+            /* background: url(images/num.png) no-repeat left top / cover; */
+        }
+
+        .timer_gameBB {
+            position: absolute;
+            right: -325px;
+            top: 0;
+
+        }
+
+        .timer_gameAA {
+            position: absolute;
+            left: -110px;
+            top: 0;
+        }
+
+        .state_game {
+            display: none;
+        }
+
+        .state_game,
+        .final {
+            opacity: 0;
+            z-index: -1;
+        }
+
+        .final {
+            position: relative;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        .btn_master {
+            background: url(images/btn.png) no-repeat center center / cover;
+            background-position: 0 -224px;
+            width: 325px;
+            height: 79px;
+            position: absolute;
+            bottom: 31%;
+            left: 7%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        .btn_again {
+            background: url(images/btn.png) no-repeat center center / cover;
+            background-position: 0 -324px;
+            width: 325px;
+            height: 79px;
+            position: absolute;
+            bottom: 12%;
+            left: 7%;
+            z-index: 2;
+            cursor: pointer;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .txt_final {
+            /* background: url(images/text.png) no-repeat center center / cover; */
+            background-position: 0 -122px;
+            width: 325px;
+            height: 96px;
+            position: absolute;
+            bottom: 57%;
+            left: 7%;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        #timer {
+            display: flex;
+        }
+
+        #timer_A,
+        #timer_B {
+            width: 34px;
+            height: 50px;
+            position: relative;
+        }
+
+        #resultA,
+        #resultB {
+            width: 40px;
+            height: 58px;
+            position: relative;
+            display: none;
+        }
+
+        #resultA.sh,
+        #resultB.sh {
+            display: block;
+        }
+
+        #timer svg,
+        #result_wr svg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0;
+        }
+
+        #timer_reverse.rev3 svg:nth-child(3) {
+            opacity: 1;
+        }
+
+        #timer_reverse.rev2 svg:nth-child(2) {
+            opacity: 1;
+        }
+
+        #timer_reverse.rev1 svg:nth-child(1) {
+            opacity: 1;
+        }
+
+        #resultA svg:nth-child(1),
+        #resultB svg:nth-child(1) {
+            /* 0 */
+            opacity: 0;
+        }
+
+        #timer_A.d0 svg:nth-child(1),
+        #resultA.d0 svg:nth-child(1),
+        #resultB.d0 svg:nth-child(1) {
+            /* 0 */
+            opacity: 1;
+        }
+
+        #timer_A.d1 svg:nth-child(2),
+        #resultA.d1 svg:nth-child(2),
+        #resultB.d1 svg:nth-child(2) {
+            /* 1 */
+            opacity: 1;
+        }
+
+        #timer_A.d2 svg:nth-child(3),
+        #resultA.d2 svg:nth-child(3),
+        #resultB.d2 svg:nth-child(3) {
+            /* 2 */
+            opacity: 1;
+        }
+
+        #timer_A.d3 svg:nth-child(4),
+        #resultA.d3 svg:nth-child(4),
+        #resultB.d3 svg:nth-child(4) {
+            /* 3 */
+            opacity: 1;
+        }
+
+        #timer_A.d4 svg:nth-child(5),
+        #resultA.d4 svg:nth-child(5),
+        #resultB.d4 svg:nth-child(5) {
+            /* 4 */
+            opacity: 1;
+        }
+
+        #timer_A.d5 svg:nth-child(6),
+        #resultA.d5 svg:nth-child(6),
+        #resultB.d5 svg:nth-child(6) {
+            /* 5 */
+            opacity: 1;
+        }
+
+        #timer_A.d6 svg:nth-child(7),
+        #resultA.d6 svg:nth-child(7),
+        #resultB.d6 svg:nth-child(7) {
+            /* 6 */
+            opacity: 1;
+        }
+
+        #timer_A.d7 svg:nth-child(8),
+        #resultA.d7 svg:nth-child(8),
+        #resultB.d7 svg:nth-child(8) {
+            /* 7 */
+            opacity: 1;
+        }
+
+        #timer_A.d8 svg:nth-child(9),
+        #resultA.d8 svg:nth-child(9),
+        #resultB.d8 svg:nth-child(9) {
+            /* 8 */
+            opacity: 1;
+        }
+
+        #timer_A.d9 svg:nth-child(10),
+        #resultA.d9 svg:nth-child(10),
+        #resultB.d9 svg:nth-child(10) {
+            /* 9 */
+            opacity: 1;
+        }
+
+
+        #timer_B.c0 svg:nth-child(1) {
+            /* 1 */
+            opacity: 1;
+        }
+
+        #timer_B.c1 svg:nth-child(2) {
+            /* 1 */
+            opacity: 1;
+        }
+
+        #timer_B.c2 svg:nth-child(3) {
+            /* 2 */
+            opacity: 1;
+        }
+
+        #timer_B.c00 svg:nth-child(4) {
+            /* 2 */
+            opacity: 1;
+        }
+
+        #result_wr {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .txt_final1 {
+            opacity: 0;
+            position: absolute;
+            top: 24%;
+
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .txt_final2 {
+            opacity: 0;
+            position: absolute;
+            top: 24%;
+
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .count1 .txt_final1 {
+            opacity: 1;
+        }
+
+        .count2 .txt_final2 {
+            opacity: 1;
+        }
+
+        .txt_age2 {
+            position: absolute;
+            bottom: 8px;
+            left: 14px;
+        }
+
+        .girl_bg_3 {
+            display: none;
+            opacity: 0;
+            z-index: -1;
+        }
+
+
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+                z-index: 1;
+            }
+
+            90% {
+                z-index: 1;
+            }
+
+            100% {
+                opacity: 0;
+                z-index: -100;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                z-index: -1;
+            }
+
+            100% {
+                opacity: 1;
+                z-index: 1;
+            }
+        }
+
+        #banner.state1 .popdance,
+        #banner.state1 .girl_bg,
+        #banner.state1 .btn_play,
+        #banner.state1 .txt_machine2 {
+            transition: all .5s ease;
+            animation: fadeOut .5s ease both;
+        }
+
+        #banner.state1 .btn_start {
+            display: block;
+        }
+
+        #banner.state1 .panel,
+        #banner.state1 .girl_bg_2,
+        #banner.state1 .btn_start,
+        #banner.state1 .txt_regulat {
+            transition: all .5s ease;
+            animation: fadeIn .5s ease both;
+        }
+
+        #banner.state2 .btn_start {
+            display: none;
+        }
+
+        #banner.state2 .girl_bg_2,
+        #banner.state2 .btn_start,
+        #banner.state2 .txt_regulat {
+            transition: all .5s ease;
+            animation: fadeOut .5s ease both;
+        }
+
+
+
+        #banner.state2 .state_game {
+            display: block;
+        }
+
+        #banner.state2 .state_game,
+        #banner.state2 .panel {
+            transition: all .5s ease;
+            animation: fadeIn .5s ease both;
+        }
+
+        #banner.state2-1 #timer {
+            animation: fadeIn .5s ease both;
+        }
+
+        #timer_reverse {
+            display: none;
+        }
+
+        #banner.state2 #timer_reverse {
+            display: block;
+        }
+
+        #banner.state2-1 #timer_reverse {
+            display: none;
+        }
+
+        #banner.state3 .state_game {
+            display: none;
+        }
+
+        #banner.state3 #timer,
+        #banner.state3 .panel,
+        #banner.state3 .state_game {
+            transition: all .5s ease;
+            animation: fadeOut 2.5s ease both;
+        }
+
+        #banner.state3 .girl_bg_3 {
+            display: block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #banner.state3 .inner_bgf,
+        #banner.state3 .girl_bg_3,
+        #banner.state3 .panelPre {
+            transition: all .5s ease;
+            animation: fadeIn 2.5s ease both;
+        }
+
+        #banner.state3 .logo {
+            z-index: 2;
+            position: relative;
+        }
+
+        #banner.state4 .panelPre {
+            animation: fadeOut .5s ease both;
+        }
+
+        #banner.state4 .final {
+            display: block;
+            animation: fadeIn .5s ease both .5s;
+        }
+
+
+        /* girl */
+        @media screen and (max-height: 558px) {
+            .girl.girl_l {
+                background-position: -101px 0;
+            }
+
+            .girl.girl_r {
+                background-position: -226px 0;
+            }
+
+            .girl.girl_t {
+                background-position: -436px 0;
+            }
+
+            .girl.girl_b {
+                background-position: -533px 0;
+            }
+        }
+
+
+
+
+        @media (max-height: 703px) {
+
+            .girl_bg {
+                bottom: 17%;
+            }
+
+            .inner.inner_alarm {
+                background-position: 100% center;
+            }
+        }
+
+        @media screen and (max-height: 558px) {
+            .btn_play {
+                width: 282px;
+                height: 112px;
+                bottom: 8%;
+            }
+
+            .popdance {
+                width: 275px;
+                background-size: 108%;
+                bottom: 26%;
+                left: 15%;
+            }
+
+            .girl_bg {
+                background-position: -1141px 0;
+                width: 180px;
+                height: 328px;
+                bottom: 17%;
+            }
+
+
+        }
+
+        @media (max-width:374px) {
+            .popdance {
+                width: 275px;
+                background-size: 108%;
+                bottom: 26%;
+                left: 8%;
+            }
+
+            .girl_bg {
+                bottom: 13%;
+            }
+
+            .btn_play {
+                width: 282px;
+                height: 112px;
+                bottom: 8%;
+            }
+
+            .ar {
+                width: 50px;
+                top: 4px;
+                height: 50px;
+                background-size: 826%;
+            }
+
+            .t,
+            .l,
+            .r,
+            .b {
+                background-position: -106px 0;
+            }
+
+            .girl.girl_l {
+                background-position: -104px 0;
+            }
+
+            .girl.girl_r {
+                background-position: -438px 0;
+            }
+
+            .girl.girl_t {
+                background-position: -433px 0;
+            }
+
+            .girl.girl_b {
+                background-position: -537px 0;
+            }
+
+        }
+
+        /* STATE 2 */
+
+        @media (max-width:374px) {
+            .btn_start {
+                width: 240px;
+                background-size: 119%;
+                height: 72px;
+                bottom: 8%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .panel {
+                bottom: 29%;
+            }
+
+            .arow_wr {
+                height: 60px;
+            }
+
+            .box_alarm {
+                height: 81%;
+                width: 74px;
+                left: 38%;
+            }
+
+            .txt_regulat {
+                width: 288px;
+                height: 105px;
+                bottom: 46%;
+                left: 50%;
+                background-size: contain;
+                transform: translateX(-50%);
+            }
+
+            .girl_bg_2 {
+                width: 93px;
+                height: 201px;
+                bottom: 36%;
+                background-position: -607px 0;
+            }
+        }
+
+
+
+
+
+        /* STATE 3 */
+
+        @media (max-height: 703px) {
+            .timer_game {
+                top: 4%;
+            }
+
+            .controll {
+                width: 158px;
+                height: 146px;
+                bottom: 29px;
+            }
+
+            .girl {
+                bottom: 37%;
+            }
+        }
+
+        @media screen and (max-height: 558px) {}
+
+        @media screen and (max-height: 558px),
+        screen and (max-width:374px) {
+            .controll .control {
+                width: 44px;
+                height: 48px;
+            }
+
+            .controll .control.right {
+                width: 48px;
+                height: 44px;
+                background-position: -319px 0;
+            }
+
+            .controll .control.left {
+                width: 48px;
+                height: 44px;
+                background-position: -371px 0;
+            }
+
+            .controll .control.bott {
+                background-position: -198px 0;
+                position: relative;
+                top: -4px;
+            }
+
+            .top {
+                background-position: -241px 0;
+                position: relative;
+                bottom: -4px;
+            }
+
+            .controll {
+                width: 133px;
+                height: 133px;
+                bottom: 9px;
+            }
+
+            #banner {
+                overflow: hidden;
+            }
+
+            .girl {
+                bottom: 38%;
+                width: 100px;
+                height: 211px;
+            }
+
+            .timer_game {
+                width: 72px;
+                height: 43px;
+                top: 2%;
+                left: 51%;
+            }
+        }
+
+
+        /* STATE 4 */
+
+        @media (max-height: 703px) {
+            .inner_bgf {
+                background-position: 0 0;
+                background-size: 304%;
+            }
+
+            .panelPre {
+                bottom: 41%;
+            }
+
+            .girl_bg_2 {
+                bottom: 32%;
+            }
+        }
+
+
+
+        @media screen and (max-height: 558px),
+        screen and (max-width:374px) {
+            .panelPre {
+                height: 90px;
+            }
+
+            .girl_bg_2 {
+                bottom: 37%;
+            }
+
+            #resultA,
+            #resultB {
+                width: 34px;
+                height: 48px;
+            }
+
+        }
+
+        @media screen and (max-height: 558px) {
+            .panelPre {
+                height: 90px;
+            }
+
+            .girl_bg_2 {
+                bottom: 37%;
+            }
+
+            #resultA,
+            #resultB {
+                width: 34px;
+                height: 48px;
+            }
+
+            #banner.state4 .girl_bg_2 {
+                width: 93px;
+                height: 201px;
+                bottom: 36%;
+                /* left: 35%; */
+                background-position: -607px 0;
+            }
+        }
+
+
+
+
+
+
+
+        /* .txt_final1 {
+    left: 50%;
+
+} */
+        /* final 2 */
+
+        @media (max-height: 703px) {
+
+            .txt_final1,
+            .txt_final2 {
+                top: 21%;
+            }
+        }
+
+        @media screen and (max-height: 558px),
+        screen and (max-width:374px) {
+            .btn_master {
+                background-position: 0 -204px;
+                width: 290px;
+                height: 69px;
+                bottom: 28%;
+                left: 5%;
+
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .btn_again {
+                background-position: 0 -295px;
+                width: 290px;
+                height: 69px;
+                bottom: 8%;
+                left: 5%;
+
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .txt_final1,
+            .txt_final2 {
+                width: 88%;
+            }
+
+        }
+
+        @media screen and (max-height: 558px) {
+
+            .txt_final1,
+            .txt_final2 {
+                top: 16%;
+                width: 88%;
+            }
+        }
+
+        @media screen and (min-height: 750px) {
+            #banner {
+                background-size: cover;
+            }
+
+            .inner_bgf {
+                background-position: 0 0;
+                background-size: 374%;
+            }
+        }
+
+        @media screen and (min-width: 450px) {
+            #banner {
+                background-size: 370%;
+            }
+
+            .inner {
+                max-width: 768px;
+                flex-basis: 768px;
+            }
+
+            .popdance,
+            .girl_bg,
+            .girl {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .txt_regulat {
+                width: 380px;
+            }
+
+            .box_alarm {
+                width: 24%;
+            }
+
+            .girl_bg {
+                bottom: 28%;
+            }
+
+            .girl_bg_2 {
+                width: 166px;
+                height: 303px;
+                bottom: 42%;
+                background-size: 754%;
+                background-position: -937px 0;
+            }
+
+            .girl {
+                background-size: 750%;
+                bottom: 38%;
+                width: 199px;
+                height: 366px;
+            }
+
+            .line,
+            .arow_wr {
+                height: 90px;
+            }
+
+            .ar {
+                height: 76px;
+                top: 10px;
+                width: 69px;
+            }
+
+            .controll {
+                width: 214px;
+                height: 194px;
+            }
+
+
+            .girl.girl_l {
+                background-position: -183px 0;
+            }
+
+            .girl.girl_r {
+                background-position: -390px 0;
+            }
+
+            .girl.girl_t {
+                background-position: -765px 0;
+            }
+
+            .girl.girl_b {
+                background-position: -946px 0;
+            }
+
+            .l {
+                background-position: -142px 0;
+                transform: rotate(-90deg);
+            }
+
+            .r {
+                background-position: -142px 0;
+                transform: rotate(90deg);
+            }
+
+            .t {
+                background-position: -142px 0;
+                transform: rotate(0deg);
+            }
+
+            .b {
+                background-position: -142px 0;
+                transform: rotate(-180deg);
+            }
+
+            .logo {
+                width: 23%;
+            }
+
+            .girl.girl_base {
+                background-position: 28px 0;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="banner" class=" ">
+        <div class="inner">
+
+            <a target="_blank"
+                href="http://ad.adriver.ru/cgi-bin/click.cgi?sid=1&bt=2&ad=679603&pid=2888711&bid=6103993&bn=6103993&rnd=1675977427">
+                <img src="images/logos.png" class="logo">
+            </a>
+
+            <!-- state1 -->
+            <div class="girl_bg"></div>
+            <div class="popdance"></div>
+
+            <a target="_blank"
+                href="http://ad.adriver.ru/cgi-bin/click.cgi?sid=1&bt=21&ad=679603&pid=2888711&bid=6103987&bn=6103987&rnd=1877293981">
+                <div class="btn_play"></div>
+            </a>
+
+            <!-- <div class="txt_age"></div> -->
+            <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In  -->
+            <svg class="txt_age2" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="26.94px" height="20.85px"
+                viewBox="0 0 26.94 20.85" style="enable-background:new 0 0 26.94 20.85;" xml:space="preserve">
+                <style type="text/css">
+                    .st01 {
+                        fill: #FFFFFF;
+                    }
+                </style>
+                <defs>
+                </defs>
+                <g>
+                    <path class="st01" d="M0,20.85V0h11.54v20.85H0z M7.7,16.68V4.17H3.85v12.51H7.7z" />
+                    <path class="st01"
+                        d="M19.24,16.68v-4.17h-3.85V8.34h3.85V4.17h3.85v4.17h3.85v4.17h-3.85v4.17H19.24z" />
+                </g>
+            </svg>
+
+
+            <div class="txt_machine2">
+
+                <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In  -->
+                <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In  -->
+                <svg class="txt_machine3" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="188.36px" height="12px"
+                    viewBox="0 0 188.36 12" style="enable-background:new 0 0 188.36 12;" xml:space="preserve">
+                    <style type="text/css">
+                        .st022 {
+                            fill: #FFFFFF;
+                        }
+                    </style>
+                    <defs>
+                    </defs>
+                    <g>
+                        <path class="st022" d="M2.4,12V2.4H0V0h7.2v2.4H4.8V12H2.4z" />
+                        <path class="st022" d="M9.6,12V2.4H12v2.4h2.4V2.4H12V0h4.8v12h-2.4V7.2H12V12H9.6z" />
+                        <path class="st022" d="M19.2,12V0h2.4v4.8h2.4V0h2.4v12h-2.4V7.2h-2.4V12H19.2z" />
+                        <path class="st022" d="M28.79,12V0h2.4v9.6h2.4V0h2.4v9.6h2.4V12H28.79z" />
+                        <path class="st022" d="M40.79,12V0h7.2v2.4h-4.8v2.4h2.4v2.4h-2.4v2.4h4.8V12H40.79z" />
+                        <path class="st022"
+                            d="M50.39,12V0h4.8v2.4h-2.4v2.4h2.4v2.4h-2.4v2.4h2.4V7.2h2.4V12H50.39z M55.19,4.8V2.4h2.4v2.4H55.19z" />
+                        <path class="st022" d="M59.99,12V2.4h2.4v2.4h2.4V2.4h-2.4V0h4.8v12h-2.4V7.2h-2.4V12H59.99z" />
+                        <path class="st022" d="M69.59,12V2.4h2.4V12H69.59z M74.38,12V2.4h-2.4V0h4.8v12H74.38z" />
+                        <path class="st022" d="M79.18,12V0h2.4v4.8h2.4v2.4h-2.4v2.4h2.4V7.2h2.4V12H79.18z" />
+                        <path class="st022" d="M88.78,12V0h2.4v4.8h2.4V0h2.4v12h-2.4V7.2h-2.4V12H88.78z" />
+                        <path class="st022" d="M98.38,12V2.4h2.4v2.4h2.4V2.4h-2.4V0h4.8v12h-2.4V7.2h-2.4V12H98.38z" />
+                        <path class="st022"
+                            d="M112.78,12V7.2h-2.4V4.8h2.4V2.4h-2.4v2.4h-2.4V0h7.2v12H112.78z M107.98,12V7.2h2.4V12H107.98z" />
+                        <path class="st022" d="M121.17,12V0h2.4v2.4h2.4v2.4h-2.4V12H121.17z M125.97,7.2V4.8h2.4v2.4H125.97z M130.77,12V4.8h-2.4V2.4h2.4V0h2.4v12
+   H130.77z" />
+                        <path class="st022" d="M135.57,12V2.4h2.4v2.4h2.4V2.4h-2.4V0h4.8v12h-2.4V7.2h-2.4V12H135.57z" />
+                        <path class="st022" d="M145.17,12V0h2.4v9.6h2.4V4.8h2.4v4.8h2.4V0h2.4v12H145.17z" />
+                        <path class="st022"
+                            d="M159.57,12V0h2.4v7.2h2.4v2.4h-2.4V12H159.57z M166.77,12V7.2h-2.4V4.8h2.4V0h2.4v12H166.77z" />
+                        <path class="st022" d="M171.57,12V0h2.4v4.8h2.4V0h2.4v12h-2.4V7.2h-2.4V12H171.57z" />
+                        <path class="st022" d="M181.17,12V2.4h2.4v2.4h2.4V2.4h-2.4V0h4.8v12h-2.4V7.2h-2.4V12H181.17z" />
+                    </g>
+                </svg>
+
+
+                <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In  -->
+                <svg class="txt_machine4" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="5.94px" height="5.91px"
+                    viewBox="0 0 5.94 5.91" style="enable-background:new 0 0 5.94 5.91;" xml:space="preserve">
+                    <style type="text/css">
+                        .st0q {
+                            fill: #FFFFFF;
+                        }
+                    </style>
+                    <defs>
+                    </defs>
+                    <g>
+                        <path class="st0q" d="M0,2.37V0h1.98v2.37H0z M0,5.91V3.55h1.98v2.37H0z M1.98,3.55V2.37h1.98v1.18H1.98z M3.96,2.37V0h1.98v2.37
+   H3.96z M3.96,5.91V3.55h1.98v2.37H3.96z" />
+                    </g>
+                </svg>
+
+
+
+            </div>
+
+            <!-- state2 -->
+            <a target="_blank"
+                href="http://ad.adriver.ru/cgi-bin/click.cgi?sid=1&bt=21&ad=679603&pid=2888711&bid=6103988&bn=6103988&rnd=425250036">
+                <div class="btn_start"></div>
+            </a>
+            <div class="girl_bg_2"></div>
+            <!-- <div class="txt_regulat"></div> -->
+
+            <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In  -->
+            <svg class="txt_regulat" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="343.83px" height="99.81px"
+                viewBox="0 0 343.83 99.81" style="enable-background:new 0 0 343.83 99.81;" xml:space="preserve">
+                <style type="text/css">
+                    .st0P {
+                        fill: #6F6150;
+                    }
+
+                    .st1P {
+                        fill: #FFFFFF;
+                    }
+                </style>
+                <defs>
+                </defs>
+                <g>
+                    <g>
+                        <path class="st0P"
+                            d="M28.69,31.52v-5.25h-9.48V10.5h4.74v10.51h4.74V10.5h4.74v21.01H28.69z M19.21,36.77v-5.25h9.48v5.25H19.21z" />
+                        <path class="st0P"
+                            d="M38.17,31.52V15.76h4.74v15.76H38.17z M42.9,15.76V10.5h9.48v5.26H42.9z M42.9,36.77v-5.25h9.48v5.25H42.9z" />
+                        <path class="st0P" d="M57.12,36.77V10.5h14.22v26.27H66.6V15.76h-4.74v21.01H57.12z" />
+                        <path class="st0P"
+                            d="M76.08,36.77V10.5h14.22v5.26h-9.48v5.25h4.74v5.25h-4.74v5.25h9.48v5.25H76.08z" />
+                        <path class="st0P" d="M95.03,36.77V10.5h9.48v5.26h-4.74v5.25h4.74v5.25h-4.74v5.25h4.74v-5.25h4.74v10.5H95.03z M104.51,21.01
+			v-5.25h4.74v5.25H104.51z" />
+                        <path class="st0P"
+                            d="M113.99,36.77V15.76h4.74v5.25h4.74v-5.25h-4.74V10.5h9.48v26.27h-4.74v-10.5h-4.74v10.5H113.99z" />
+                        <path class="st0P" d="M132.94,36.77V10.5h4.74v15.76h4.74v5.25h-4.74v5.25H132.94z M137.68,5.25V0h9.48v5.25H137.68z M147.16,36.77
+			v-10.5h-4.74v-5.25h4.74V10.5h4.74v26.27H147.16z" />
+                        <path class="st0P"
+                            d="M163.75,36.77V10.5h4.74v10.51h4.74V10.5h4.74v26.27h-4.74v-10.5h-4.74v10.5H163.75z" />
+                        <path class="st0P"
+                            d="M182.7,36.77V15.76h4.74v5.25h4.74v-5.25h-4.74V10.5h9.48v26.27h-4.74v-10.5h-4.74v10.5H182.7z" />
+                        <path class="st0P" d="M201.65,21.01V10.5h4.74v10.51H201.65z M201.65,36.77v-10.5h4.74v10.5H201.65z M211.13,36.77v-10.5h-4.74
+			v-5.25h4.74V10.5h4.74v10.51h4.74v5.25h-4.74v10.5H211.13z M220.61,21.01V10.5h4.74v10.51H220.61z M220.61,36.77v-10.5h4.74v10.5
+			H220.61z" />
+                        <path class="st0P" d="M230.09,36.77V10.5h4.74v15.76h4.74v5.25h-4.74v5.25H230.09z M244.31,36.77v-10.5h-4.74v-5.25h4.74V10.5h4.74
+			v26.27H244.31z" />
+                        <path class="st0P" d="M253.79,36.77V10.5h4.74v5.26h4.74v5.25h-4.74v15.76H253.79z M263.27,26.27v-5.25h4.74v5.25H263.27z
+			 M272.75,36.77V21.01h-4.74v-5.25h4.74V10.5h4.74v26.27H272.75z" />
+                        <path class="st0P"
+                            d="M282.23,36.77V15.76h4.74v5.25h4.74v-5.25h-4.74V10.5h9.48v26.27h-4.74v-10.5h-4.74v10.5H282.23z" />
+                        <path class="st0P" d="M305.92,36.77V15.76h-4.74V10.5h14.22v5.26h-4.74v21.01H305.92z" />
+                        <path class="st0P"
+                            d="M320.14,36.77V10.5h4.74v10.51h4.74v5.25h-4.74v5.25h4.74v-5.25h4.74v10.5H320.14z" />
+                        <path class="st0P"
+                            d="M5,68.29V42.02h4.74v10.51h4.74V42.02h4.74v26.27h-4.74v-10.5H9.74v10.5H5z" />
+                        <path class="st0P"
+                            d="M23.96,68.29V47.28h4.74v5.25h4.74v-5.25h-4.74v-5.26h9.48v26.27h-4.74v-10.5h-4.74v10.5H23.96z" />
+                        <path class="st0P" d="M50.02,63.04V47.28h4.74v15.76H50.02z M54.75,47.28v-5.26h9.48v5.26H54.75z M54.75,68.29v-5.25h9.48v5.25
+			H54.75z" />
+                        <path class="st0P" d="M73.71,68.29V47.28h-4.74v-5.26h14.22v5.26h-4.74v21.01H73.71z" />
+                        <path class="st0P"
+                            d="M87.93,68.29V42.02h9.48v5.26h-4.74v5.25h4.74v-5.25h4.74v10.5h-9.48v10.5H87.93z" />
+                        <path class="st0P"
+                            d="M106.88,68.29V42.02h14.22v5.26h-9.48v5.25h4.74v5.25h-4.74v5.25h9.48v5.25H106.88z" />
+                        <path class="st0P"
+                            d="M125.84,68.29V47.28h4.74v21.01H125.84z M135.31,68.29V47.28h-4.74v-5.26h9.48v26.27H135.31z" />
+                        <path class="st0P" d="M144.79,68.29V42.02h4.74v10.51h4.74v5.25h-4.74v10.5H144.79z M154.27,52.53V42.02h4.74v10.51H154.27z
+			 M154.27,68.29v-10.5h4.74v10.5H154.27z" />
+                        <path class="st0P" d="M163.75,68.29V42.02h4.74v15.76h4.74v5.25h-4.74v5.25H163.75z M177.96,68.29v-10.5h-4.74v-5.25h4.74V42.02
+			h4.74v26.27H177.96z" />
+                        <path class="st0P" d="M194.55,68.29V42.02h4.74v15.76h4.74v5.25h-4.74v5.25H194.55z M208.77,68.29v-10.5h-4.74v-5.25h4.74V42.02
+			h4.74v26.27H208.77z" />
+                        <path class="st0P" d="M225.35,68.29V42.02h14.22v26.27h-4.74V47.28h-4.74v21.01H225.35z" />
+                        <path class="st0P" d="M244.31,63.04V47.28h4.74v15.76H244.31z M249.05,47.28v-5.26h9.48v5.26H249.05z M249.05,68.29v-5.25h9.48
+			v5.25H249.05z M258.53,63.04V47.28h4.74v15.76H258.53z" />
+                        <path class="st0P" d="M268.01,68.29V42.02h14.22v26.27h-4.74V47.28h-4.74v21.01H268.01z" />
+                        <path class="st0P"
+                            d="M286.96,68.29V47.28h4.74v5.25h4.74v-5.25h-4.74v-5.26h9.48v26.27h-4.74v-10.5h-4.74v10.5H286.96z" />
+                        <path class="st0P"
+                            d="M305.92,68.29V42.02h9.48v5.26h-4.74v15.76h4.74v5.25H305.92z M315.4,63.04V47.28h4.74v15.76H315.4z" />
+                        <path class="st0P" d="M324.87,68.29V42.02h4.74v15.76h4.74v5.25h-4.74v5.25H324.87z M339.09,68.29v-10.5h-4.74v-5.25h4.74V42.02
+			h4.74v26.27H339.09z" />
+                        <path class="st0P" d="M68.95,99.81V73.54h9.48v5.26h-4.74v5.25h4.74v5.25h-4.74v5.25h4.74V89.3h4.74v10.5H68.95z M78.42,84.05V78.8
+			h4.74v5.25H78.42z" />
+                        <path class="st0P" d="M99.75,99.81V78.8h-4.74v-5.26h14.22v5.26h-4.74v21.01H99.75z" />
+                        <path class="st0P"
+                            d="M113.96,99.81V78.8h4.74v5.25h4.74V78.8h-4.74v-5.26h9.48v26.27h-4.74V89.3h-4.74v10.5H113.96z" />
+                        <path class="st0P" d="M132.92,99.81V73.54h4.74v10.51h4.74v5.25h-4.74v10.5H132.92z M142.4,84.05V73.54h4.74v10.51H142.4z
+			 M142.4,99.81V89.3h4.74v10.5H142.4z" />
+                        <path class="st0P" d="M156.61,99.81V78.8h-4.74v-5.26h14.22v5.26h-4.74v21.01H156.61z" />
+                        <path class="st0P" d="M177.93,99.81V73.54h14.22v26.27h-4.74V78.8h-4.74v21.01H177.93z" />
+                        <path class="st0P"
+                            d="M196.89,99.81V73.54h14.22v5.26h-9.48v5.25h4.74v5.25h-4.74v5.25h9.48v5.25H196.89z" />
+                        <path class="st0P" d="M215.84,94.55V78.8h4.74v15.76H215.84z M220.58,78.8v-5.26h9.48v5.26H220.58z M220.58,99.81v-5.25h9.48v5.25
+			H220.58z" />
+                        <path class="st0P"
+                            d="M234.8,99.81V73.54h4.74v10.51h4.74V73.54h4.74v26.27h-4.74V89.3h-4.74v10.5H234.8z" />
+                        <path class="st0P" d="M253.75,99.81V73.54h4.74V89.3h4.74v5.25h-4.74v5.25H253.75z M267.97,99.81V89.3h-4.74v-5.25h4.74V73.54h4.74
+			v26.27H267.97z" />
+                    </g>
+                    <g>
+                        <g>
+                            <path class="st1P" d="M23.69,31.52v-5.25h-9.48V10.5h4.74v10.51h4.74V10.5h4.74v21.01H23.69z M14.21,36.77v-5.25h9.48v5.25H14.21z
+				" />
+                            <path class="st1P"
+                                d="M33.17,31.52V15.76h4.74v15.76H33.17z M37.9,15.76V10.5h9.48v5.26H37.9z M37.9,36.77v-5.25h9.48v5.25H37.9z" />
+                            <path class="st1P" d="M52.12,36.77V10.5h14.22v26.27H61.6V15.76h-4.74v21.01H52.12z" />
+                            <path class="st1P"
+                                d="M71.08,36.77V10.5h14.22v5.26h-9.48v5.25h4.74v5.25h-4.74v5.25h9.48v5.25H71.08z" />
+                            <path class="st1P" d="M90.03,36.77V10.5h9.48v5.26h-4.74v5.25h4.74v5.25h-4.74v5.25h4.74v-5.25h4.74v10.5H90.03z M99.51,21.01
+				v-5.25h4.74v5.25H99.51z" />
+                            <path class="st1P"
+                                d="M108.99,36.77V15.76h4.74v5.25h4.74v-5.25h-4.74V10.5h9.48v26.27h-4.74v-10.5h-4.74v10.5H108.99z" />
+                            <path class="st1P" d="M127.94,36.77V10.5h4.74v15.76h4.74v5.25h-4.74v5.25H127.94z M132.68,5.25V0h9.48v5.25H132.68z
+				 M142.16,36.77v-10.5h-4.74v-5.25h4.74V10.5h4.74v26.27H142.16z" />
+                            <path class="st1P"
+                                d="M158.75,36.77V10.5h4.74v10.51h4.74V10.5h4.74v26.27h-4.74v-10.5h-4.74v10.5H158.75z" />
+                            <path class="st1P"
+                                d="M177.7,36.77V15.76h4.74v5.25h4.74v-5.25h-4.74V10.5h9.48v26.27h-4.74v-10.5h-4.74v10.5H177.7z" />
+                            <path class="st1P" d="M196.65,21.01V10.5h4.74v10.51H196.65z M196.65,36.77v-10.5h4.74v10.5H196.65z M206.13,36.77v-10.5h-4.74
+				v-5.25h4.74V10.5h4.74v10.51h4.74v5.25h-4.74v10.5H206.13z M215.61,21.01V10.5h4.74v10.51H215.61z M215.61,36.77v-10.5h4.74v10.5
+				H215.61z" />
+                            <path class="st1P" d="M225.09,36.77V10.5h4.74v15.76h4.74v5.25h-4.74v5.25H225.09z M239.31,36.77v-10.5h-4.74v-5.25h4.74V10.5
+				h4.74v26.27H239.31z" />
+                            <path class="st1P" d="M248.79,36.77V10.5h4.74v5.26h4.74v5.25h-4.74v15.76H248.79z M258.27,26.27v-5.25h4.74v5.25H258.27z
+				 M267.75,36.77V21.01h-4.74v-5.25h4.74V10.5h4.74v26.27H267.75z" />
+                            <path class="st1P"
+                                d="M277.23,36.77V15.76h4.74v5.25h4.74v-5.25h-4.74V10.5h9.48v26.27h-4.74v-10.5h-4.74v10.5H277.23z" />
+                            <path class="st1P" d="M300.92,36.77V15.76h-4.74V10.5h14.22v5.26h-4.74v21.01H300.92z" />
+                            <path class="st1P"
+                                d="M315.14,36.77V10.5h4.74v10.51h4.74v5.25h-4.74v5.25h4.74v-5.25h4.74v10.5H315.14z" />
+                            <path class="st1P"
+                                d="M0,68.29V42.02h4.74v10.51h4.74V42.02h4.74v26.27H9.48v-10.5H4.74v10.5H0z" />
+                            <path class="st1P"
+                                d="M18.96,68.29V47.28h4.74v5.25h4.74v-5.25h-4.74v-5.26h9.48v26.27h-4.74v-10.5h-4.74v10.5H18.96z" />
+                            <path class="st1P" d="M45.02,63.04V47.28h4.74v15.76H45.02z M49.75,47.28v-5.26h9.48v5.26H49.75z M49.75,68.29v-5.25h9.48v5.25
+				H49.75z" />
+                            <path class="st1P" d="M68.71,68.29V47.28h-4.74v-5.26h14.22v5.26h-4.74v21.01H68.71z" />
+                            <path class="st1P"
+                                d="M82.93,68.29V42.02h9.48v5.26h-4.74v5.25h4.74v-5.25h4.74v10.5h-9.48v10.5H82.93z" />
+                            <path class="st1P"
+                                d="M101.88,68.29V42.02h14.22v5.26h-9.48v5.25h4.74v5.25h-4.74v5.25h9.48v5.25H101.88z" />
+                            <path class="st1P"
+                                d="M120.84,68.29V47.28h4.74v21.01H120.84z M130.31,68.29V47.28h-4.74v-5.26h9.48v26.27H130.31z" />
+                            <path class="st1P" d="M139.79,68.29V42.02h4.74v10.51h4.74v5.25h-4.74v10.5H139.79z M149.27,52.53V42.02h4.74v10.51H149.27z
+				 M149.27,68.29v-10.5h4.74v10.5H149.27z" />
+                            <path class="st1P" d="M158.75,68.29V42.02h4.74v15.76h4.74v5.25h-4.74v5.25H158.75z M172.96,68.29v-10.5h-4.74v-5.25h4.74V42.02
+				h4.74v26.27H172.96z" />
+                            <path class="st1P" d="M189.55,68.29V42.02h4.74v15.76h4.74v5.25h-4.74v5.25H189.55z M203.77,68.29v-10.5h-4.74v-5.25h4.74V42.02
+				h4.74v26.27H203.77z" />
+                            <path class="st1P" d="M220.35,68.29V42.02h14.22v26.27h-4.74V47.28h-4.74v21.01H220.35z" />
+                            <path class="st1P" d="M239.31,63.04V47.28h4.74v15.76H239.31z M244.05,47.28v-5.26h9.48v5.26H244.05z M244.05,68.29v-5.25h9.48
+				v5.25H244.05z M253.53,63.04V47.28h4.74v15.76H253.53z" />
+                            <path class="st1P" d="M263.01,68.29V42.02h14.22v26.27h-4.74V47.28h-4.74v21.01H263.01z" />
+                            <path class="st1P"
+                                d="M281.96,68.29V47.28h4.74v5.25h4.74v-5.25h-4.74v-5.26h9.48v26.27h-4.74v-10.5h-4.74v10.5H281.96z" />
+                            <path class="st1P"
+                                d="M300.92,68.29V42.02h9.48v5.26h-4.74v15.76h4.74v5.25H300.92z M310.4,63.04V47.28h4.74v15.76H310.4z" />
+                            <path class="st1P" d="M319.87,68.29V42.02h4.74v15.76h4.74v5.25h-4.74v5.25H319.87z M334.09,68.29v-10.5h-4.74v-5.25h4.74V42.02
+				h4.74v26.27H334.09z" />
+                            <path class="st1P" d="M63.95,99.81V73.54h9.48v5.26h-4.74v5.25h4.74v5.25h-4.74v5.25h4.74V89.3h4.74v10.5H63.95z M73.42,84.05
+				V78.8h4.74v5.25H73.42z" />
+                            <path class="st1P" d="M94.75,99.81V78.8h-4.74v-5.26h14.22v5.26h-4.74v21.01H94.75z" />
+                            <path class="st1P"
+                                d="M108.96,99.81V78.8h4.74v5.25h4.74V78.8h-4.74v-5.26h9.48v26.27h-4.74V89.3h-4.74v10.5H108.96z" />
+                            <path class="st1P" d="M127.92,99.81V73.54h4.74v10.51h4.74v5.25h-4.74v10.5H127.92z M137.4,84.05V73.54h4.74v10.51H137.4z
+				 M137.4,99.81V89.3h4.74v10.5H137.4z" />
+                            <path class="st1P" d="M151.61,99.81V78.8h-4.74v-5.26h14.22v5.26h-4.74v21.01H151.61z" />
+                            <path class="st1P" d="M172.93,99.81V73.54h14.22v26.27h-4.74V78.8h-4.74v21.01H172.93z" />
+                            <path class="st1P"
+                                d="M191.89,99.81V73.54h14.22v5.26h-9.48v5.25h4.74v5.25h-4.74v5.25h9.48v5.25H191.89z" />
+                            <path class="st1P" d="M210.84,94.55V78.8h4.74v15.76H210.84z M215.58,78.8v-5.26h9.48v5.26H215.58z M215.58,99.81v-5.25h9.48v5.25
+				H215.58z" />
+                            <path class="st1P"
+                                d="M229.8,99.81V73.54h4.74v10.51h4.74V73.54h4.74v26.27h-4.74V89.3h-4.74v10.5H229.8z" />
+                            <path class="st1P" d="M248.75,99.81V73.54h4.74V89.3h4.74v5.25h-4.74v5.25H248.75z M262.97,99.81V89.3h-4.74v-5.25h4.74V73.54
+				h4.74v26.27H262.97z" />
+                        </g>
+                    </g>
+                </g>
+            </svg>
+
+
+            <!-- state3 -->
+
+            <div id="timer_reverse" class="rev3">
+                <svg data-num="1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
+                    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+                    xmlns="http://www.w3.org/2000/svg" width="38" height="65" viewBox="0 0 10.054166 17.197917"
+                    version="1.1" id="svg8">
+                    <defs id="defs2" />
+                    <metadata id="metadata5">
+                        <rdf:RDF>
+                            <cc:Work rdf:about="">
+                                <dc:format>image/svg+xml</dc:format>
+                                <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                <dc:title></dc:title>
+                            </cc:Work>
+                        </rdf:RDF>
+                    </metadata>
+                    <g transform="translate(0,-279.80206)" id="layer1">
+                        <g id="g1002" transform="translate(-22.937393,204.34416)">
+                            <path id="path904"
+                                d="M 29.155101,92.655842 H 26.64156 V 92.126676 91.597509 H 26.112393 25.583226 V 87.231884 82.866259 H 24.921768 24.26031 v -0.661458 -0.661459 h -0.661459 -0.661458 v -2.513541 -2.513542 h 0.661458 0.661459 v -0.529167 -0.529166 h 3.704166 3.704167 v 0.529166 0.529167 h 0.661458 0.661459 v 7.540625 7.540625 h -0.661459 -0.661458 v 0.529167 0.529166 z"
+                                style="fill:#feb03f;stroke-width:1" />
+                            <path id="path906"
+                                d="M 29.155101,92.655842 H 26.64156 V 92.126676 91.597509 H 26.112393 25.583226 V 87.231884 82.866259 H 24.921768 24.26031 v -0.661458 -0.661459 h -0.661459 -0.661458 v -2.513541 -2.513542 h 0.661458 0.661459 v -0.529167 -0.529166 h 3.704166 3.704167 v 0.529166 0.529167 h 0.661458 0.661459 v 7.540625 7.540625 h -0.661459 -0.661458 v 0.529167 0.529166 z m 0.132292,-2.38125 h 1.322917 v -6.217708 -6.217708 h -2.513542 -2.513542 v 1.190625 1.190625 h 1.190625 1.190625 v 5.027083 5.027083 z"
+                                style="fill:#ffffff;stroke-width:1" />
+                            <path id="path908"
+                                d="M 29.155101,92.655842 H 26.64156 V 92.126676 91.597509 H 26.112393 25.583226 V 87.231884 82.866259 H 24.921768 24.26031 v -0.661458 -0.661459 h -0.661459 -0.661458 v -2.513541 -2.513542 h 0.661458 0.661459 v -0.529167 -0.529166 h 3.704166 3.704167 v 0.529166 0.529167 h 0.661458 0.661459 v 7.540625 7.540625 h -0.661459 -0.661458 v 0.529167 0.529166 z m 0,-1.058333 h 2.513542 V 84.056884 76.516259 H 27.964476 24.26031 v 2.513542 2.513541 h 1.190625 1.190625 v 5.027084 5.027083 z"
+                                style="fill:#860046;stroke-width:1" />
+                        </g>
+                    </g>
+                </svg>
+
+                <svg data-num="2" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
+                    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+                    xmlns="http://www.w3.org/2000/svg" width="47" height="65" viewBox="0 0 12.435416 17.197917"
+                    version="1.1" id="svg8">
+                    <defs id="defs2" />
+                    <metadata id="metadata5">
+                        <rdf:RDF>
+                            <cc:Work rdf:about="">
+                                <dc:format>image/svg+xml</dc:format>
+                                <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                <dc:title></dc:title>
+                            </cc:Work>
+                        </rdf:RDF>
+                    </metadata>
+                    <g transform="translate(0,-279.80206)" id="layer1">
+                        <g id="g1007" transform="translate(-35.37281,179.58672)">
+                            <path style="fill:#feb03f;stroke-width:1"
+                                d="m 41.72281,117.41328 h -5.027083 v -0.52917 -0.52916 H 36.034268 35.37281 v -4.36563 -4.36562 h 0.661458 0.661459 v -1.32292 -1.32291 H 36.034268 35.37281 v -1.85209 -1.85208 h 0.661458 0.661459 v -0.52917 -0.52916 h 5.027083 5.027083 v 0.52916 0.52917 h 0.529167 0.529167 v 4.36562 4.36563 H 47.27906 46.749893 v 1.32291 1.32292 h 0.529167 0.529167 v 1.85208 1.85209 H 47.27906 46.749893 v 0.52916 0.52917 z"
+                                id="path910" />
+                            <path style="fill:#ffffff;stroke-width:1"
+                                d="m 41.72281,117.41328 h -5.027083 v -0.52917 -0.52916 H 36.034268 35.37281 v -4.36563 -4.36562 h 0.661458 0.661459 v -1.32292 -1.32291 H 36.034268 35.37281 v -1.85209 -1.85208 h 0.661458 0.661459 v -0.52917 -0.52916 h 5.027083 5.027083 v 0.52916 0.52917 h 0.529167 0.529167 v 4.36562 4.36563 H 47.27906 46.749893 v 1.32291 1.32292 h 0.529167 0.529167 v 1.85208 1.85209 H 47.27906 46.749893 v 0.52916 0.52917 z m 0,-2.38125 h 3.704167 v -1.19063 -1.19062 h -2.513542 -2.513542 v -1.32292 -1.32291 h 2.513542 2.513542 v -3.70417 -3.70416 H 41.72281 38.018643 v 1.19062 1.19063 h 2.38125 2.38125 v 1.32291 1.32292 h -2.38125 -2.38125 v 3.70416 3.70417 z"
+                                id="path912" />
+                            <path style="fill:#860046;stroke-width:1"
+                                d="m 41.72281,117.41328 h -5.027083 v -0.52917 -0.52916 H 36.034268 35.37281 v -4.36563 -4.36562 h 0.661458 0.661459 v -1.32292 -1.32291 H 36.034268 35.37281 v -1.85209 -1.85208 h 0.661458 0.661459 v -0.52917 -0.52916 h 5.027083 5.027083 v 0.52916 0.52917 h 0.529167 0.529167 v 4.36562 4.36563 H 47.27906 46.749893 v 1.32291 1.32292 h 0.529167 0.529167 v 1.85208 1.85209 H 47.27906 46.749893 v 0.52916 0.52917 z m 0,-1.05833 h 5.027083 v -1.85209 -1.85208 h -0.661458 -0.661458 v -1.32292 -1.32291 h 0.661458 0.661458 v -4.36563 -4.36562 H 41.72281 36.695727 v 1.85208 1.85209 h 0.661458 0.661458 v 1.32291 1.32292 h -0.661458 -0.661458 v 4.36562 4.36563 z"
+                                id="path914" />
+                        </g>
+                    </g>
+                </svg>
+
+                <svg data-num="3" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
+                    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+                    xmlns="http://www.w3.org/2000/svg" width="47" height="65" viewBox="0 0 12.435416 17.197917"
+                    version="1.1" id="svg8">
+                    <defs id="defs2" />
+                    <metadata id="metadata5">
+                        <rdf:RDF>
+                            <cc:Work rdf:about="">
+                                <dc:format>image/svg+xml</dc:format>
+                                <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                <dc:title></dc:title>
+                            </cc:Work>
+                        </rdf:RDF>
+                    </metadata>
+                    <g transform="translate(0,-279.80206)" id="layer1">
+                        <g id="g1012" transform="translate(-50.45406,152.56143)">
+                            <path id="path916"
+                                d="m 56.539477,144.43857 h -5.027083 v -0.52917 -0.52916 H 50.983227 50.45406 v -2.51355 -2.51354 h 0.529167 0.529167 v -0.66146 -0.66145 h 0.661458 0.661458 v -1.19063 -1.19062 h -0.661458 -0.661458 v -0.66146 -0.66146 H 50.983227 50.45406 v -2.51354 -2.51354 h 0.529167 0.529167 v -0.52917 -0.52916 h 5.027083 5.027083 v 0.52916 0.52917 h 0.661459 0.661458 v 3.175 3.175 H 62.228019 61.56656 v 1.19062 1.19063 h 0.661459 0.661458 v 3.17499 3.175 H 62.228019 61.56656 v 0.52917 0.52917 z"
+                                style="fill:#feb03f;stroke-width:1" />
+                            <path id="path918"
+                                d="m 56.539477,144.43857 h -5.027083 v -0.52917 -0.52916 H 50.983227 50.45406 v -2.51355 -2.51354 h 0.529167 0.529167 v -0.66146 -0.66145 h 0.661458 0.661458 v -1.19063 -1.19062 h -0.661458 -0.661458 v -0.66146 -0.66146 H 50.983227 50.45406 v -2.51354 -2.51354 h 0.529167 0.529167 v -0.52917 -0.52916 h 5.027083 5.027083 v 0.52916 0.52917 h 0.661459 0.661458 v 3.175 3.175 H 62.228019 61.56656 v 1.19062 1.19063 h 0.661459 0.661458 v 3.17499 3.175 H 62.228019 61.56656 v 0.52917 0.52917 z m 0,-2.38125 h 3.704167 v -2.51354 -2.51354 h -1.190625 -1.190625 v -1.19063 -1.19062 h 1.190625 1.190625 v -2.51354 -2.51354 H 56.539477 52.83531 v 1.19062 1.19063 h 2.513542 2.513542 v 1.32291 1.32292 H 56.539477 55.21656 v 1.19062 1.19063 h 1.322917 1.322917 v 1.32291 1.32292 H 55.348852 52.83531 v 1.19062 1.19063 z"
+                                style="fill:#ffffff;stroke-width:1" />
+                            <path id="path920"
+                                d="m 56.539477,144.43857 h -5.027083 v -0.52917 -0.52916 H 50.983227 50.45406 v -2.51355 -2.51354 h 0.529167 0.529167 v -0.66146 -0.66145 h 0.661458 0.661458 v -1.19063 -1.19062 h -0.661458 -0.661458 v -0.66146 -0.66146 H 50.983227 50.45406 v -2.51354 -2.51354 h 0.529167 0.529167 v -0.52917 -0.52916 h 5.027083 5.027083 v 0.52916 0.52917 h 0.661459 0.661458 v 3.175 3.175 H 62.228019 61.56656 v 1.19062 1.19063 h 0.661459 0.661458 v 3.17499 3.175 H 62.228019 61.56656 v 0.52917 0.52917 z m 0,-1.05833 h 5.027083 v -3.175 -3.175 h -0.661458 -0.661458 v -1.19063 -1.19062 h 0.661458 0.661458 v -3.175 -3.175 h -5.027083 -5.027083 v 2.51354 2.51354 h 1.322916 1.322917 v 2.51354 2.51354 H 52.83531 51.512394 v 2.51354 2.51355 z"
+                                style="fill:#860046;stroke-width:1" />
+                        </g>
+                    </g>
+                </svg>
+            </div>
+
+            <div id="timer">
+
+                <div id="timer_B" class="c2">
+                    <svg data-num="1" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+                        xmlns="http://www.w3.org/2000/svg" width="38" height="65" viewBox="0 0 10.054166 17.197917"
+                        version="1.1" id="svg8">
+                        <defs id="defs2" />
+                        <metadata id="metadata5">
+                            <rdf:RDF>
+                                <cc:Work rdf:about="">
+                                    <dc:format>image/svg+xml</dc:format>
+                                    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                    <dc:title></dc:title>
+                                </cc:Work>
+                            </rdf:RDF>
+                        </metadata>
+                        <g transform="translate(0,-279.80206)" id="layer1">
+                            <g id="g1002" transform="translate(-22.937393,204.34416)">
+                                <path id="path904"
+                                    d="M 29.155101,92.655842 H 26.64156 V 92.126676 91.597509 H 26.112393 25.583226 V 87.231884 82.866259 H 24.921768 24.26031 v -0.661458 -0.661459 h -0.661459 -0.661458 v -2.513541 -2.513542 h 0.661458 0.661459 v -0.529167 -0.529166 h 3.704166 3.704167 v 0.529166 0.529167 h 0.661458 0.661459 v 7.540625 7.540625 h -0.661459 -0.661458 v 0.529167 0.529166 z"
+                                    style="fill:#feb03f;stroke-width:1" />
+                                <path id="path906"
+                                    d="M 29.155101,92.655842 H 26.64156 V 92.126676 91.597509 H 26.112393 25.583226 V 87.231884 82.866259 H 24.921768 24.26031 v -0.661458 -0.661459 h -0.661459 -0.661458 v -2.513541 -2.513542 h 0.661458 0.661459 v -0.529167 -0.529166 h 3.704166 3.704167 v 0.529166 0.529167 h 0.661458 0.661459 v 7.540625 7.540625 h -0.661459 -0.661458 v 0.529167 0.529166 z m 0.132292,-2.38125 h 1.322917 v -6.217708 -6.217708 h -2.513542 -2.513542 v 1.190625 1.190625 h 1.190625 1.190625 v 5.027083 5.027083 z"
+                                    style="fill:#ffffff;stroke-width:1" />
+                                <path id="path908"
+                                    d="M 29.155101,92.655842 H 26.64156 V 92.126676 91.597509 H 26.112393 25.583226 V 87.231884 82.866259 H 24.921768 24.26031 v -0.661458 -0.661459 h -0.661459 -0.661458 v -2.513541 -2.513542 h 0.661458 0.661459 v -0.529167 -0.529166 h 3.704166 3.704167 v 0.529166 0.529167 h 0.661458 0.661459 v 7.540625 7.540625 h -0.661459 -0.661458 v 0.529167 0.529166 z m 0,-1.058333 h 2.513542 V 84.056884 76.516259 H 27.964476 24.26031 v 2.513542 2.513541 h 1.190625 1.190625 v 5.027084 5.027083 z"
+                                    style="fill:#860046;stroke-width:1" />
+                            </g>
+                        </g>
+                    </svg>
+
+                    <svg data-num="2" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+                        xmlns="http://www.w3.org/2000/svg" width="47" height="65" viewBox="0 0 12.435416 17.197917"
+                        version="1.1" id="svg8">
+                        <defs id="defs2" />
+                        <metadata id="metadata5">
+                            <rdf:RDF>
+                                <cc:Work rdf:about="">
+                                    <dc:format>image/svg+xml</dc:format>
+                                    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                    <dc:title></dc:title>
+                                </cc:Work>
+                            </rdf:RDF>
+                        </metadata>
+                        <g transform="translate(0,-279.80206)" id="layer1">
+                            <g id="g1007" transform="translate(-35.37281,179.58672)">
+                                <path style="fill:#feb03f;stroke-width:1"
+                                    d="m 41.72281,117.41328 h -5.027083 v -0.52917 -0.52916 H 36.034268 35.37281 v -4.36563 -4.36562 h 0.661458 0.661459 v -1.32292 -1.32291 H 36.034268 35.37281 v -1.85209 -1.85208 h 0.661458 0.661459 v -0.52917 -0.52916 h 5.027083 5.027083 v 0.52916 0.52917 h 0.529167 0.529167 v 4.36562 4.36563 H 47.27906 46.749893 v 1.32291 1.32292 h 0.529167 0.529167 v 1.85208 1.85209 H 47.27906 46.749893 v 0.52916 0.52917 z"
+                                    id="path910" />
+                                <path style="fill:#ffffff;stroke-width:1"
+                                    d="m 41.72281,117.41328 h -5.027083 v -0.52917 -0.52916 H 36.034268 35.37281 v -4.36563 -4.36562 h 0.661458 0.661459 v -1.32292 -1.32291 H 36.034268 35.37281 v -1.85209 -1.85208 h 0.661458 0.661459 v -0.52917 -0.52916 h 5.027083 5.027083 v 0.52916 0.52917 h 0.529167 0.529167 v 4.36562 4.36563 H 47.27906 46.749893 v 1.32291 1.32292 h 0.529167 0.529167 v 1.85208 1.85209 H 47.27906 46.749893 v 0.52916 0.52917 z m 0,-2.38125 h 3.704167 v -1.19063 -1.19062 h -2.513542 -2.513542 v -1.32292 -1.32291 h 2.513542 2.513542 v -3.70417 -3.70416 H 41.72281 38.018643 v 1.19062 1.19063 h 2.38125 2.38125 v 1.32291 1.32292 h -2.38125 -2.38125 v 3.70416 3.70417 z"
+                                    id="path912" />
+                                <path style="fill:#860046;stroke-width:1"
+                                    d="m 41.72281,117.41328 h -5.027083 v -0.52917 -0.52916 H 36.034268 35.37281 v -4.36563 -4.36562 h 0.661458 0.661459 v -1.32292 -1.32291 H 36.034268 35.37281 v -1.85209 -1.85208 h 0.661458 0.661459 v -0.52917 -0.52916 h 5.027083 5.027083 v 0.52916 0.52917 h 0.529167 0.529167 v 4.36562 4.36563 H 47.27906 46.749893 v 1.32291 1.32292 h 0.529167 0.529167 v 1.85208 1.85209 H 47.27906 46.749893 v 0.52916 0.52917 z m 0,-1.05833 h 5.027083 v -1.85209 -1.85208 h -0.661458 -0.661458 v -1.32292 -1.32291 h 0.661458 0.661458 v -4.36563 -4.36562 H 41.72281 36.695727 v 1.85208 1.85209 h 0.661458 0.661458 v 1.32291 1.32292 h -0.661458 -0.661458 v 4.36562 4.36563 z"
+                                    id="path914" />
+                            </g>
+                        </g>
+                    </svg>
+
+                    <svg data-num="3" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+                        xmlns="http://www.w3.org/2000/svg" width="47" height="65" viewBox="0 0 12.435416 17.197917"
+                        version="1.1" id="svg8">
+                        <defs id="defs2" />
+                        <metadata id="metadata5">
+                            <rdf:RDF>
+                                <cc:Work rdf:about="">
+                                    <dc:format>image/svg+xml</dc:format>
+                                    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                    <dc:title></dc:title>
+                                </cc:Work>
+                            </rdf:RDF>
+                        </metadata>
+                        <g transform="translate(0,-279.80206)" id="layer1">
+                            <g id="g1012" transform="translate(-50.45406,152.56143)">
+                                <path id="path916"
+                                    d="m 56.539477,144.43857 h -5.027083 v -0.52917 -0.52916 H 50.983227 50.45406 v -2.51355 -2.51354 h 0.529167 0.529167 v -0.66146 -0.66145 h 0.661458 0.661458 v -1.19063 -1.19062 h -0.661458 -0.661458 v -0.66146 -0.66146 H 50.983227 50.45406 v -2.51354 -2.51354 h 0.529167 0.529167 v -0.52917 -0.52916 h 5.027083 5.027083 v 0.52916 0.52917 h 0.661459 0.661458 v 3.175 3.175 H 62.228019 61.56656 v 1.19062 1.19063 h 0.661459 0.661458 v 3.17499 3.175 H 62.228019 61.56656 v 0.52917 0.52917 z"
+                                    style="fill:#feb03f;stroke-width:1" />
+                                <path id="path918"
+                                    d="m 56.539477,144.43857 h -5.027083 v -0.52917 -0.52916 H 50.983227 50.45406 v -2.51355 -2.51354 h 0.529167 0.529167 v -0.66146 -0.66145 h 0.661458 0.661458 v -1.19063 -1.19062 h -0.661458 -0.661458 v -0.66146 -0.66146 H 50.983227 50.45406 v -2.51354 -2.51354 h 0.529167 0.529167 v -0.52917 -0.52916 h 5.027083 5.027083 v 0.52916 0.52917 h 0.661459 0.661458 v 3.175 3.175 H 62.228019 61.56656 v 1.19062 1.19063 h 0.661459 0.661458 v 3.17499 3.175 H 62.228019 61.56656 v 0.52917 0.52917 z m 0,-2.38125 h 3.704167 v -2.51354 -2.51354 h -1.190625 -1.190625 v -1.19063 -1.19062 h 1.190625 1.190625 v -2.51354 -2.51354 H 56.539477 52.83531 v 1.19062 1.19063 h 2.513542 2.513542 v 1.32291 1.32292 H 56.539477 55.21656 v 1.19062 1.19063 h 1.322917 1.322917 v 1.32291 1.32292 H 55.348852 52.83531 v 1.19062 1.19063 z"
+                                    style="fill:#ffffff;stroke-width:1" />
+                                <path id="path920"
+                                    d="m 56.539477,144.43857 h -5.027083 v -0.52917 -0.52916 H 50.983227 50.45406 v -2.51355 -2.51354 h 0.529167 0.529167 v -0.66146 -0.66145 h 0.661458 0.661458 v -1.19063 -1.19062 h -0.661458 -0.661458 v -0.66146 -0.66146 H 50.983227 50.45406 v -2.51354 -2.51354 h 0.529167 0.529167 v -0.52917 -0.52916 h 5.027083 5.027083 v 0.52916 0.52917 h 0.661459 0.661458 v 3.175 3.175 H 62.228019 61.56656 v 1.19062 1.19063 h 0.661459 0.661458 v 3.17499 3.175 H 62.228019 61.56656 v 0.52917 0.52917 z m 0,-1.05833 h 5.027083 v -3.175 -3.175 h -0.661458 -0.661458 v -1.19063 -1.19062 h 0.661458 0.661458 v -3.175 -3.175 h -5.027083 -5.027083 v 2.51354 2.51354 h 1.322916 1.322917 v 2.51354 2.51354 H 52.83531 51.512394 v 2.51354 2.51355 z"
+                                    style="fill:#860046;stroke-width:1" />
+                            </g>
+                        </g>
+                    </svg>
+
+                    <svg data-num="0" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+                        xmlns="http://www.w3.org/2000/svg" width="47" height="65" viewBox="0 0 12.435416 17.197917"
+                        version="1.1" id="svg8">
+                        <defs id="defs2" />
+                        <metadata id="metadata5">
+                            <rdf:RDF>
+                                <cc:Work rdf:about="">
+                                    <dc:format>image/svg+xml</dc:format>
+                                    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                    <dc:title></dc:title>
+                                </cc:Work>
+                            </rdf:RDF>
+                        </metadata>
+                        <g transform="translate(0,-279.80206)" id="layer1">
+                            <g id="g997" transform="translate(-5.7394757,230.04654)">
+                                <path style="fill:#feb03f;stroke-width:1"
+                                    d="M 11.824893,66.953461 H 6.7978091 V 66.424295 65.895128 H 6.2686424 5.7394757 v -7.540625 -7.540625 h 0.5291667 0.5291667 v -0.529167 -0.529166 h 5.0270839 5.027083 v 0.529166 0.529167 h 0.661458 0.661459 v 7.540625 7.540625 h -0.661459 -0.661458 v 0.529167 0.529166 z"
+                                    id="path873" />
+                                <path style="fill:#ffffff;stroke-width:1"
+                                    d="M 11.824893,66.953461 H 6.7978091 V 66.424295 65.895128 H 6.2686424 5.7394757 v -7.540625 -7.540625 h 0.5291667 0.5291667 v -0.529167 -0.529166 h 5.0270839 5.027083 v 0.529166 0.529167 h 0.661458 0.661459 v 7.540625 7.540625 h -0.661459 -0.661458 v 0.529167 0.529166 z m 0,-2.38125 h 3.704166 V 58.354503 52.136795 H 11.824893 8.1207257 v 6.217708 6.217708 z m 0,-2.38125 h -1.322917 v -3.836458 -3.836458 h 1.322917 1.322916 v 3.836458 3.836458 z"
+                                    id="path871" />
+                                <path style="fill:#860046;stroke-width:1"
+                                    d="M 11.824893,66.953461 H 6.7978091 V 66.424295 65.895128 H 6.2686424 5.7394757 v -7.540625 -7.540625 h 0.5291667 0.5291667 v -0.529167 -0.529166 h 5.0270839 5.027083 v 0.529166 0.529167 h 0.661458 0.661459 v 7.540625 7.540625 h -0.661459 -0.661458 v 0.529167 0.529166 z m 0,-1.058333 h 5.027083 V 58.354503 50.813878 H 11.824893 6.7978091 v 7.540625 7.540625 z"
+                                    id="path869" />
+                            </g>
+                        </g>
+                    </svg>
+
+                </div>
+
+                <div id="timer_A" class="d0">
+                    <svg data-num="0" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+                        xmlns="http://www.w3.org/2000/svg" width="47" height="65" viewBox="0 0 12.435416 17.197917"
+                        version="1.1" id="svg8">
+                        <defs id="defs2" />
+                        <metadata id="metadata5">
+                            <rdf:RDF>
+                                <cc:Work rdf:about="">
+                                    <dc:format>image/svg+xml</dc:format>
+                                    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                    <dc:title></dc:title>
+                                </cc:Work>
+                            </rdf:RDF>
+                        </metadata>
+                        <g transform="translate(0,-279.80206)" id="layer1">
+                            <g id="g997" transform="translate(-5.7394757,230.04654)">
+                                <path style="fill:#feb03f;stroke-width:1"
+                                    d="M 11.824893,66.953461 H 6.7978091 V 66.424295 65.895128 H 6.2686424 5.7394757 v -7.540625 -7.540625 h 0.5291667 0.5291667 v -0.529167 -0.529166 h 5.0270839 5.027083 v 0.529166 0.529167 h 0.661458 0.661459 v 7.540625 7.540625 h -0.661459 -0.661458 v 0.529167 0.529166 z"
+                                    id="path873" />
+                                <path style="fill:#ffffff;stroke-width:1"
+                                    d="M 11.824893,66.953461 H 6.7978091 V 66.424295 65.895128 H 6.2686424 5.7394757 v -7.540625 -7.540625 h 0.5291667 0.5291667 v -0.529167 -0.529166 h 5.0270839 5.027083 v 0.529166 0.529167 h 0.661458 0.661459 v 7.540625 7.540625 h -0.661459 -0.661458 v 0.529167 0.529166 z m 0,-2.38125 h 3.704166 V 58.354503 52.136795 H 11.824893 8.1207257 v 6.217708 6.217708 z m 0,-2.38125 h -1.322917 v -3.836458 -3.836458 h 1.322917 1.322916 v 3.836458 3.836458 z"
+                                    id="path871" />
+                                <path style="fill:#860046;stroke-width:1"
+                                    d="M 11.824893,66.953461 H 6.7978091 V 66.424295 65.895128 H 6.2686424 5.7394757 v -7.540625 -7.540625 h 0.5291667 0.5291667 v -0.529167 -0.529166 h 5.0270839 5.027083 v 0.529166 0.529167 h 0.661458 0.661459 v 7.540625 7.540625 h -0.661459 -0.661458 v 0.529167 0.529166 z m 0,-1.058333 h 5.027083 V 58.354503 50.813878 H 11.824893 6.7978091 v 7.540625 7.540625 z"
+                                    id="path869" />
+                            </g>
+                        </g>
+                    </svg>
+
+                    <svg data-num="1" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+                        xmlns="http://www.w3.org/2000/svg" width="38" height="65" viewBox="0 0 10.054166 17.197917"
+                        version="1.1" id="svg8">
+                        <defs id="defs2" />
+                        <metadata id="metadata5">
+                            <rdf:RDF>
+                                <cc:Work rdf:about="">
+                                    <dc:format>image/svg+xml</dc:format>
+                                    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                    <dc:title></dc:title>
+                                </cc:Work>
+                            </rdf:RDF>
+                        </metadata>
+                        <g transform="translate(0,-279.80206)" id="layer1">
+                            <g id="g1002" transform="translate(-22.937393,204.34416)">
+                                <path id="path904"
+                                    d="M 29.155101,92.655842 H 26.64156 V 92.126676 91.597509 H 26.112393 25.583226 V 87.231884 82.866259 H 24.921768 24.26031 v -0.661458 -0.661459 h -0.661459 -0.661458 v -2.513541 -2.513542 h 0.661458 0.661459 v -0.529167 -0.529166 h 3.704166 3.704167 v 0.529166 0.529167 h 0.661458 0.661459 v 7.540625 7.540625 h -0.661459 -0.661458 v 0.529167 0.529166 z"
+                                    style="fill:#feb03f;stroke-width:1" />
+                                <path id="path906"
+                                    d="M 29.155101,92.655842 H 26.64156 V 92.126676 91.597509 H 26.112393 25.583226 V 87.231884 82.866259 H 24.921768 24.26031 v -0.661458 -0.661459 h -0.661459 -0.661458 v -2.513541 -2.513542 h 0.661458 0.661459 v -0.529167 -0.529166 h 3.704166 3.704167 v 0.529166 0.529167 h 0.661458 0.661459 v 7.540625 7.540625 h -0.661459 -0.661458 v 0.529167 0.529166 z m 0.132292,-2.38125 h 1.322917 v -6.217708 -6.217708 h -2.513542 -2.513542 v 1.190625 1.190625 h 1.190625 1.190625 v 5.027083 5.027083 z"
+                                    style="fill:#ffffff;stroke-width:1" />
+                                <path id="path908"
+                                    d="M 29.155101,92.655842 H 26.64156 V 92.126676 91.597509 H 26.112393 25.583226 V 87.231884 82.866259 H 24.921768 24.26031 v -0.661458 -0.661459 h -0.661459 -0.661458 v -2.513541 -2.513542 h 0.661458 0.661459 v -0.529167 -0.529166 h 3.704166 3.704167 v 0.529166 0.529167 h 0.661458 0.661459 v 7.540625 7.540625 h -0.661459 -0.661458 v 0.529167 0.529166 z m 0,-1.058333 h 2.513542 V 84.056884 76.516259 H 27.964476 24.26031 v 2.513542 2.513541 h 1.190625 1.190625 v 5.027084 5.027083 z"
+                                    style="fill:#860046;stroke-width:1" />
+                            </g>
+                        </g>
+                    </svg>
+
+                    <svg data-num="2" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+                        xmlns="http://www.w3.org/2000/svg" width="47" height="65" viewBox="0 0 12.435416 17.197917"
+                        version="1.1" id="svg8">
+                        <defs id="defs2" />
+                        <metadata id="metadata5">
+                            <rdf:RDF>
+                                <cc:Work rdf:about="">
+                                    <dc:format>image/svg+xml</dc:format>
+                                    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                    <dc:title></dc:title>
+                                </cc:Work>
+                            </rdf:RDF>
+                        </metadata>
+                        <g transform="translate(0,-279.80206)" id="layer1">
+                            <g id="g1007" transform="translate(-35.37281,179.58672)">
+                                <path style="fill:#feb03f;stroke-width:1"
+                                    d="m 41.72281,117.41328 h -5.027083 v -0.52917 -0.52916 H 36.034268 35.37281 v -4.36563 -4.36562 h 0.661458 0.661459 v -1.32292 -1.32291 H 36.034268 35.37281 v -1.85209 -1.85208 h 0.661458 0.661459 v -0.52917 -0.52916 h 5.027083 5.027083 v 0.52916 0.52917 h 0.529167 0.529167 v 4.36562 4.36563 H 47.27906 46.749893 v 1.32291 1.32292 h 0.529167 0.529167 v 1.85208 1.85209 H 47.27906 46.749893 v 0.52916 0.52917 z"
+                                    id="path910" />
+                                <path style="fill:#ffffff;stroke-width:1"
+                                    d="m 41.72281,117.41328 h -5.027083 v -0.52917 -0.52916 H 36.034268 35.37281 v -4.36563 -4.36562 h 0.661458 0.661459 v -1.32292 -1.32291 H 36.034268 35.37281 v -1.85209 -1.85208 h 0.661458 0.661459 v -0.52917 -0.52916 h 5.027083 5.027083 v 0.52916 0.52917 h 0.529167 0.529167 v 4.36562 4.36563 H 47.27906 46.749893 v 1.32291 1.32292 h 0.529167 0.529167 v 1.85208 1.85209 H 47.27906 46.749893 v 0.52916 0.52917 z m 0,-2.38125 h 3.704167 v -1.19063 -1.19062 h -2.513542 -2.513542 v -1.32292 -1.32291 h 2.513542 2.513542 v -3.70417 -3.70416 H 41.72281 38.018643 v 1.19062 1.19063 h 2.38125 2.38125 v 1.32291 1.32292 h -2.38125 -2.38125 v 3.70416 3.70417 z"
+                                    id="path912" />
+                                <path style="fill:#860046;stroke-width:1"
+                                    d="m 41.72281,117.41328 h -5.027083 v -0.52917 -0.52916 H 36.034268 35.37281 v -4.36563 -4.36562 h 0.661458 0.661459 v -1.32292 -1.32291 H 36.034268 35.37281 v -1.85209 -1.85208 h 0.661458 0.661459 v -0.52917 -0.52916 h 5.027083 5.027083 v 0.52916 0.52917 h 0.529167 0.529167 v 4.36562 4.36563 H 47.27906 46.749893 v 1.32291 1.32292 h 0.529167 0.529167 v 1.85208 1.85209 H 47.27906 46.749893 v 0.52916 0.52917 z m 0,-1.05833 h 5.027083 v -1.85209 -1.85208 h -0.661458 -0.661458 v -1.32292 -1.32291 h 0.661458 0.661458 v -4.36563 -4.36562 H 41.72281 36.695727 v 1.85208 1.85209 h 0.661458 0.661458 v 1.32291 1.32292 h -0.661458 -0.661458 v 4.36562 4.36563 z"
+                                    id="path914" />
+                            </g>
+                        </g>
+                    </svg>
+
+                    <svg data-num="3" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+                        xmlns="http://www.w3.org/2000/svg" width="47" height="65" viewBox="0 0 12.435416 17.197917"
+                        version="1.1" id="svg8">
+                        <defs id="defs2" />
+                        <metadata id="metadata5">
+                            <rdf:RDF>
+                                <cc:Work rdf:about="">
+                                    <dc:format>image/svg+xml</dc:format>
+                                    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                    <dc:title></dc:title>
+                                </cc:Work>
+                            </rdf:RDF>
+                        </metadata>
+                        <g transform="translate(0,-279.80206)" id="layer1">
+                            <g id="g1012" transform="translate(-50.45406,152.56143)">
+                                <path id="path916"
+                                    d="m 56.539477,144.43857 h -5.027083 v -0.52917 -0.52916 H 50.983227 50.45406 v -2.51355 -2.51354 h 0.529167 0.529167 v -0.66146 -0.66145 h 0.661458 0.661458 v -1.19063 -1.19062 h -0.661458 -0.661458 v -0.66146 -0.66146 H 50.983227 50.45406 v -2.51354 -2.51354 h 0.529167 0.529167 v -0.52917 -0.52916 h 5.027083 5.027083 v 0.52916 0.52917 h 0.661459 0.661458 v 3.175 3.175 H 62.228019 61.56656 v 1.19062 1.19063 h 0.661459 0.661458 v 3.17499 3.175 H 62.228019 61.56656 v 0.52917 0.52917 z"
+                                    style="fill:#feb03f;stroke-width:1" />
+                                <path id="path918"
+                                    d="m 56.539477,144.43857 h -5.027083 v -0.52917 -0.52916 H 50.983227 50.45406 v -2.51355 -2.51354 h 0.529167 0.529167 v -0.66146 -0.66145 h 0.661458 0.661458 v -1.19063 -1.19062 h -0.661458 -0.661458 v -0.66146 -0.66146 H 50.983227 50.45406 v -2.51354 -2.51354 h 0.529167 0.529167 v -0.52917 -0.52916 h 5.027083 5.027083 v 0.52916 0.52917 h 0.661459 0.661458 v 3.175 3.175 H 62.228019 61.56656 v 1.19062 1.19063 h 0.661459 0.661458 v 3.17499 3.175 H 62.228019 61.56656 v 0.52917 0.52917 z m 0,-2.38125 h 3.704167 v -2.51354 -2.51354 h -1.190625 -1.190625 v -1.19063 -1.19062 h 1.190625 1.190625 v -2.51354 -2.51354 H 56.539477 52.83531 v 1.19062 1.19063 h 2.513542 2.513542 v 1.32291 1.32292 H 56.539477 55.21656 v 1.19062 1.19063 h 1.322917 1.322917 v 1.32291 1.32292 H 55.348852 52.83531 v 1.19062 1.19063 z"
+                                    style="fill:#ffffff;stroke-width:1" />
+                                <path id="path920"
+                                    d="m 56.539477,144.43857 h -5.027083 v -0.52917 -0.52916 H 50.983227 50.45406 v -2.51355 -2.51354 h 0.529167 0.529167 v -0.66146 -0.66145 h 0.661458 0.661458 v -1.19063 -1.19062 h -0.661458 -0.661458 v -0.66146 -0.66146 H 50.983227 50.45406 v -2.51354 -2.51354 h 0.529167 0.529167 v -0.52917 -0.52916 h 5.027083 5.027083 v 0.52916 0.52917 h 0.661459 0.661458 v 3.175 3.175 H 62.228019 61.56656 v 1.19062 1.19063 h 0.661459 0.661458 v 3.17499 3.175 H 62.228019 61.56656 v 0.52917 0.52917 z m 0,-1.05833 h 5.027083 v -3.175 -3.175 h -0.661458 -0.661458 v -1.19063 -1.19062 h 0.661458 0.661458 v -3.175 -3.175 h -5.027083 -5.027083 v 2.51354 2.51354 h 1.322916 1.322917 v 2.51354 2.51354 H 52.83531 51.512394 v 2.51354 2.51355 z"
+                                    style="fill:#860046;stroke-width:1" />
+                            </g>
+                        </g>
+                    </svg>
+
+                    <svg data-num="4" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+                        xmlns="http://www.w3.org/2000/svg" width="47" height="65" viewBox="0 0 12.435416 17.197917"
+                        version="1.1" id="svg8">
+                        <defs id="defs2" />
+                        <metadata id="metadata5">
+                            <rdf:RDF>
+                                <cc:Work rdf:about="">
+                                    <dc:format>image/svg+xml</dc:format>
+                                    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                    <dc:title></dc:title>
+                                </cc:Work>
+                            </rdf:RDF>
+                        </metadata>
+                        <g transform="translate(0,-279.80206)" id="layer1">
+                            <g id="g1017" transform="translate(-65.370727,119.29952)">
+                                <path style="fill:#feb03f;stroke-width:1"
+                                    d="m 73.869686,177.70048 h -2.513542 v -0.52917 -0.52916 h -0.529167 -0.529166 v -1.85209 -1.85208 h -1.852084 -1.852083 v -0.66146 -0.66146 h -0.661458 -0.661459 v -5.02708 -5.02708 h 0.661459 0.661458 v -0.52917 -0.52916 h 1.852083 1.852084 v 0.52916 0.52917 h 1.190625 1.190625 v -0.52917 -0.52916 h 1.852083 1.852083 v 0.52916 0.52917 h 0.661459 0.661458 v 7.54062 7.54063 h -0.661458 -0.661459 v 0.52916 0.52917 z"
+                                    id="path922" />
+                                <path style="fill:#ffffff;stroke-width:1"
+                                    d="m 73.869686,177.70048 h -2.513542 v -0.52917 -0.52916 h -0.529167 -0.529166 v -1.85209 -1.85208 h -1.852084 -1.852083 v -0.66146 -0.66146 h -0.661458 -0.661459 v -5.02708 -5.02708 h 0.661459 0.661458 v -0.52917 -0.52916 h 1.852083 1.852084 v 0.52916 0.52917 h 1.190625 1.190625 v -0.52917 -0.52916 h 1.852083 1.852083 v 0.52916 0.52917 h 0.661459 0.661458 v 7.54062 7.54063 h -0.661458 -0.661459 v 0.52916 0.52917 z m 0,-2.38125 h 1.190625 v -6.21771 -6.2177 h -1.190625 -1.190625 v 2.51354 2.51354 h -1.190625 -1.190625 v -2.51354 -2.51354 h -1.322917 -1.322917 v 3.70416 3.70417 h 2.513542 2.513542 v 2.51354 2.51354 z"
+                                    id="path924" />
+                                <path style="fill:#860046;stroke-width:1"
+                                    d="m 73.869686,177.70048 h -2.513542 v -0.52917 -0.52916 h -0.529167 -0.529166 v -1.85209 -1.85208 h -1.852084 -1.852083 v -0.66146 -0.66146 h -0.661458 -0.661459 v -5.02708 -5.02708 h 0.661459 0.661458 v -0.52917 -0.52916 h 1.852083 1.852084 v 0.52916 0.52917 h 1.190625 1.190625 v -0.52917 -0.52916 h 1.852083 1.852083 v 0.52916 0.52917 h 0.661459 0.661458 v 7.54062 7.54063 h -0.661458 -0.661459 v 0.52916 0.52917 z m 0,-1.05833 h 2.513541 v -7.54063 -7.54062 h -1.852083 -1.852083 v 0.66146 0.66146 h -1.190625 -1.190625 v -0.66146 -0.66146 h -1.852084 -1.852083 v 5.02708 5.02708 h 2.38125 2.38125 v 2.51354 2.51355 z"
+                                    id="path926" />
+                            </g>
+                        </g>
+                    </svg>
+
+                    <svg data-num="5" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+                        xmlns="http://www.w3.org/2000/svg" width="47" height="65" viewBox="0 0 12.435416 17.197917"
+                        version="1.1" id="svg8">
+                        <defs id="defs2" />
+                        <metadata id="metadata5">
+                            <rdf:RDF>
+                                <cc:Work rdf:about="">
+                                    <dc:format>image/svg+xml</dc:format>
+                                    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                    <dc:title></dc:title>
+                                </cc:Work>
+                            </rdf:RDF>
+                        </metadata>
+                        <g transform="translate(0,-279.80206)" id="layer1">
+                            <g id="g1022" transform="translate(-80.087394,94.35309)">
+                                <path id="path928"
+                                    d="m 86.305103,202.64691 h -4.894792 v -0.52917 -0.52916 h -0.661458 -0.661459 v -1.85209 -1.85208 h 0.661459 0.661458 v -1.32292 -1.32291 h -0.661458 -0.661459 v -4.36563 -4.36562 h 0.661459 0.661458 v -0.52917 -0.52916 h 4.894792 4.894791 v 0.52916 0.52917 h 0.661459 0.661458 v 1.85208 1.85209 h -0.661458 -0.661459 v 1.32291 1.32292 h 0.661459 0.661458 v 4.36562 4.36563 h -0.661458 -0.661459 v 0.52916 0.52917 z"
+                                    style="fill:#feb03f;stroke-width:1" />
+                                <path id="path930"
+                                    d="m 86.305103,202.64691 h -4.894792 v -0.52917 -0.52916 h -0.661458 -0.661459 v -1.85209 -1.85208 h 0.661459 0.661458 v -1.32292 -1.32291 h -0.661458 -0.661459 v -4.36563 -4.36562 h 0.661459 0.661458 v -0.52917 -0.52916 h 4.894792 4.894791 v 0.52916 0.52917 h 0.661459 0.661458 v 1.85208 1.85209 h -0.661458 -0.661459 v 1.32291 1.32292 h 0.661459 0.661458 v 4.36562 4.36563 h -0.661458 -0.661459 v 0.52916 0.52917 z m 0.132291,-2.38125 h 3.704167 v -3.70417 -3.70416 h -2.513542 -2.513541 v -1.32292 -1.32291 h 2.513541 2.513542 v -1.19063 -1.19062 h -3.704167 -3.704166 v 3.70416 3.70417 h 2.38125 2.38125 v 1.32291 1.32292 h -2.38125 -2.38125 v 1.19062 1.19063 z"
+                                    style="fill:#ffffff;stroke-width:1" />
+                                <path id="path932"
+                                    d="m 86.305103,202.64691 h -4.894792 v -0.52917 -0.52916 h -0.661458 -0.661459 v -1.85209 -1.85208 h 0.661459 0.661458 v -1.32292 -1.32291 h -0.661458 -0.661459 v -4.36563 -4.36562 h 0.661459 0.661458 v -0.52917 -0.52916 h 4.894792 4.894791 v 0.52916 0.52917 h 0.661459 0.661458 v 1.85208 1.85209 h -0.661458 -0.661459 v 1.32291 1.32292 h 0.661459 0.661458 v 4.36562 4.36563 h -0.661458 -0.661459 v 0.52916 0.52917 z m 0,-1.05833 h 4.894791 v -4.36563 -4.36562 h -0.529166 -0.529167 v -1.32292 -1.32291 h 0.529167 0.529166 v -1.85209 -1.85208 h -4.894791 -4.894792 v 4.36562 4.36563 h 0.661458 0.661459 v 1.32291 1.32292 h -0.661459 -0.661458 v 1.85208 1.85209 z"
+                                    style="fill:#860046;stroke-width:1" />
+                            </g>
+                        </g>
+                    </svg>
+
+                    <svg data-num="6" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+                        xmlns="http://www.w3.org/2000/svg" width="47" height="65" viewBox="0 0 12.435416 17.197917"
+                        version="1.1" id="svg8">
+                        <defs id="defs2" />
+                        <metadata id="metadata5">
+                            <rdf:RDF>
+                                <cc:Work rdf:about="">
+                                    <dc:format>image/svg+xml</dc:format>
+                                    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                    <dc:title></dc:title>
+                                </cc:Work>
+                            </rdf:RDF>
+                        </metadata>
+                        <g transform="translate(0,-279.80206)" id="layer1">
+                            <g id="g1027" transform="translate(-94.904061,67.70578)">
+                                <path style="fill:#feb03f;stroke-width:1"
+                                    d="m 101.25406,229.29422 h -5.027082 v -0.52917 -0.52916 H 95.56552 94.904061 v -7.54063 -7.54062 h 0.661459 0.661458 v -0.52917 -0.52916 h 5.027082 5.02708 v 0.52916 0.52917 h 0.52917 0.52916 v 1.85208 1.85209 h -0.52916 -0.52917 v 1.32291 1.32292 h 0.52917 0.52916 v 4.36562 4.36563 h -0.52916 -0.52917 v 0.52916 0.52917 z"
+                                    id="path934" />
+                                <path style="fill:#ffffff;stroke-width:1"
+                                    d="m 101.25406,229.29422 h -5.027082 v -0.52917 -0.52916 H 95.56552 94.904061 v -7.54063 -7.54062 h 0.661459 0.661458 v -0.52917 -0.52916 h 5.027082 5.02708 v 0.52916 0.52917 h 0.52917 0.52916 v 1.85208 1.85209 h -0.52916 -0.52917 v 1.32291 1.32292 h 0.52917 0.52916 v 4.36562 4.36563 h -0.52916 -0.52917 v 0.52916 0.52917 z m 0,-2.38125 h 3.70416 v -3.70417 -3.70416 h -2.51354 -2.513536 v -1.32292 -1.32291 h 2.513536 2.51354 v -1.19063 -1.19062 h -3.70416 -3.704165 v 6.2177 6.21771 z m 0,-2.38125 h -1.322916 v -1.32292 -1.32291 h 1.322916 1.32291 v 1.32291 1.32292 z"
+                                    id="path936" />
+                                <path style="fill:#860046;stroke-width:1"
+                                    d="m 101.25406,229.29422 h -5.027082 v -0.52917 -0.52916 H 95.56552 94.904061 v -7.54063 -7.54062 h 0.661459 0.661458 v -0.52917 -0.52916 h 5.027082 5.02708 v 0.52916 0.52917 h 0.52917 0.52916 v 1.85208 1.85209 h -0.52916 -0.52917 v 1.32291 1.32292 h 0.52917 0.52916 v 4.36562 4.36563 h -0.52916 -0.52917 v 0.52916 0.52917 z m 0,-1.05833 h 5.02708 v -4.36563 -4.36562 h -0.66146 -0.66146 v -1.32292 -1.32291 h 0.66146 0.66146 v -1.85209 -1.85208 h -5.02708 -5.027082 v 7.54062 7.54063 z"
+                                    id="path938" />
+                            </g>
+                        </g>
+                    </svg>
+
+                    <svg data-num="7" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+                        xmlns="http://www.w3.org/2000/svg" width="47" height="65" viewBox="0 0 12.435416 17.197917"
+                        version="1.1" id="svg8">
+                        <defs id="defs2" />
+                        <metadata id="metadata5">
+                            <rdf:RDF>
+                                <cc:Work rdf:about="">
+                                    <dc:format>image/svg+xml</dc:format>
+                                    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                    <dc:title></dc:title>
+                                </cc:Work>
+                            </rdf:RDF>
+                        </metadata>
+                        <g transform="translate(0,-279.80206)" id="layer1">
+                            <g id="g1032" transform="translate(-109.98531,41.24745)">
+                                <path id="path940"
+                                    d="m 118.58427,255.75255 h -2.51355 v -0.52917 -0.52916 h -0.52916 -0.52917 v -4.36563 -4.36562 h -1.98437 -1.98438 v -0.66146 -0.66146 h -0.52917 -0.52916 v -2.51354 -2.51354 h 0.52916 0.52917 v -0.52917 -0.52916 h 5.02708 5.02709 v 0.52916 0.52917 h 0.66146 0.66145 v 7.54062 7.54063 h -0.66145 -0.66146 v 0.52916 0.52917 z"
+                                    style="fill:#feb03f;stroke-width:1" />
+                                <path id="path942"
+                                    d="m 118.58427,255.75255 h -2.51355 v -0.52917 -0.52916 h -0.52916 -0.52917 v -4.36563 -4.36562 h -1.98437 -1.98438 v -0.66146 -0.66146 h -0.52917 -0.52916 v -2.51354 -2.51354 h 0.52916 0.52917 v -0.52917 -0.52916 h 5.02708 5.02709 v 0.52916 0.52917 h 0.66146 0.66145 v 7.54062 7.54063 h -0.66145 -0.66146 v 0.52916 0.52917 z m 0,-2.38125 h 1.19062 v -6.21771 -6.2177 h -3.70417 -3.70416 v 1.19062 1.19063 h 2.51354 2.51354 v 5.02708 5.02708 z"
+                                    style="fill:#ffffff;stroke-width:1" />
+                                <path id="path944"
+                                    d="m 118.58427,255.75255 h -2.51355 v -0.52917 -0.52916 h -0.52916 -0.52917 v -4.36563 -4.36562 h -1.98437 -1.98438 v -0.66146 -0.66146 h -0.52917 -0.52916 v -2.51354 -2.51354 h 0.52916 0.52917 v -0.52917 -0.52916 h 5.02708 5.02709 v 0.52916 0.52917 h 0.66146 0.66145 v 7.54062 7.54063 h -0.66145 -0.66146 v 0.52916 0.52917 z m 0,-1.05833 h 2.51354 v -7.54063 -7.54062 h -5.02709 -5.02708 v 2.51354 2.51354 h 2.51354 2.51354 v 5.02708 5.02709 z"
+                                    style="fill:#860046;stroke-width:1" />
+                            </g>
+                        </g>
+                    </svg>
+
+                    <svg data-num="8" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+                        xmlns="http://www.w3.org/2000/svg" width="47" height="65" viewBox="0 0 12.435416 17.197917"
+                        version="1.1" id="svg8">
+                        <defs id="defs2" />
+                        <metadata id="metadata5">
+                            <rdf:RDF>
+                                <cc:Work rdf:about="">
+                                    <dc:format>image/svg+xml</dc:format>
+                                    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                    <dc:title></dc:title>
+                                </cc:Work>
+                            </rdf:RDF>
+                        </metadata>
+                        <g transform="translate(0,-279.80206)" id="layer1">
+                            <g id="g1037" transform="translate(-124.80197,16.30102)">
+                                <path style="fill:#feb03f;stroke-width:1"
+                                    d="m 131.01968,280.69898 h -4.89479 v -0.52917 -0.52916 h -0.66146 -0.66146 v -7.54063 -7.54062 h 0.66146 0.66146 v -0.52917 -0.52916 h 4.89479 4.89479 v 0.52916 0.52917 h 0.66146 0.66146 v 7.54062 7.54063 h -0.66146 -0.66146 v 0.52916 0.52917 z"
+                                    id="path946" />
+                                <path style="fill:#ffffff;stroke-width:1"
+                                    d="m 131.01968,280.69898 h -4.89479 v -0.52917 -0.52916 h -0.66146 -0.66146 v -7.54063 -7.54062 h 0.66146 0.66146 v -0.52917 -0.52916 h 4.89479 4.89479 v 0.52916 0.52917 h 0.66146 0.66146 v 7.54062 7.54063 h -0.66146 -0.66146 v 0.52916 0.52917 z m 0,-2.38125 h 3.83646 v -6.21771 -6.2177 h -3.83646 -3.83646 v 6.2177 6.21771 z m 0,-2.38125 h -1.19062 v -1.32292 -1.32291 h 1.19062 1.19063 v 1.32291 1.32292 z m 0,-5.02708 h -1.19062 v -1.32292 -1.32291 h 1.19062 1.19063 v 1.32291 1.32292 z"
+                                    id="path948" />
+                                <path style="fill:#860046;stroke-width:1"
+                                    d="m 131.01968,280.69898 h -4.89479 v -0.52917 -0.52916 h -0.66146 -0.66146 v -7.54063 -7.54062 h 0.66146 0.66146 v -0.52917 -0.52916 h 4.89479 4.89479 v 0.52916 0.52917 h 0.66146 0.66146 v 7.54062 7.54063 h -0.66146 -0.66146 v 0.52916 0.52917 z m 0,-1.05833 h 4.89479 v -7.54063 -7.54062 h -4.89479 -4.89479 v 7.54062 7.54063 z"
+                                    id="path950" />
+                            </g>
+                        </g>
+                    </svg>
+
+                    <svg data-num="9" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+                        xmlns="http://www.w3.org/2000/svg" width="47" height="65" viewBox="0 0 12.435416 17.197917"
+                        version="1.1" id="svg8">
+                        <defs id="defs2" />
+                        <metadata id="metadata5">
+                            <rdf:RDF>
+                                <cc:Work rdf:about="">
+                                    <dc:format>image/svg+xml</dc:format>
+                                    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                    <dc:title></dc:title>
+                                </cc:Work>
+                            </rdf:RDF>
+                        </metadata>
+                        <g transform="translate(0,-279.80206)" id="layer1">
+                            <g id="g1042" transform="translate(-139.61864,-9.77934)">
+                                <path id="path952"
+                                    d="m 145.96864,306.77934 h -5.02708 v -0.52917 -0.52916 h -0.66146 -0.66146 v -1.85209 -1.85208 h 0.66146 0.66146 v -1.32292 -1.32291 h -0.66146 -0.66146 v -4.36563 -4.36562 h 0.66146 0.66146 v -0.52917 -0.52916 h 5.02708 5.02709 v 0.52916 0.52917 h 0.52916 0.52917 v 7.54062 7.54063 h -0.52917 -0.52916 v 0.52916 0.52917 z"
+                                    style="fill:#feb03f;stroke-width:1" />
+                                <path id="path954"
+                                    d="m 145.96864,306.77934 h -5.02708 v -0.52917 -0.52916 h -0.66146 -0.66146 v -1.85209 -1.85208 h 0.66146 0.66146 v -1.32292 -1.32291 h -0.66146 -0.66146 v -4.36563 -4.36562 h 0.66146 0.66146 v -0.52917 -0.52916 h 5.02708 5.02709 v 0.52916 0.52917 h 0.52916 0.52917 v 7.54062 7.54063 h -0.52917 -0.52916 v 0.52916 0.52917 z m 0,-2.38125 h 3.70417 v -6.21771 -6.2177 h -3.70417 -3.70417 v 3.70416 3.70417 h 2.51355 2.51354 v 1.32291 1.32292 h -2.51354 -2.51355 v 1.19062 1.19063 z m 0,-7.40833 h -1.32291 v -1.32292 -1.32291 h 1.32291 1.32292 v 1.32291 1.32292 z"
+                                    style="fill:#ffffff;stroke-width:1" />
+                                <path id="path956"
+                                    d="m 145.96864,306.77934 h -5.02708 v -0.52917 -0.52916 h -0.66146 -0.66146 v -1.85209 -1.85208 h 0.66146 0.66146 v -1.32292 -1.32291 h -0.66146 -0.66146 v -4.36563 -4.36562 h 0.66146 0.66146 v -0.52917 -0.52916 h 5.02708 5.02709 v 0.52916 0.52917 h 0.52916 0.52917 v 7.54062 7.54063 h -0.52917 -0.52916 v 0.52916 0.52917 z m 0,-1.05833 h 5.02709 v -7.54063 -7.54062 h -5.02709 -5.02708 v 4.36562 4.36563 h 0.66146 0.66145 v 1.32291 1.32292 h -0.66145 -0.66146 v 1.85208 1.85209 z"
+                                    style="fill:#860046;stroke-width:1" />
+                            </g>
+                        </g>
+                    </svg>
+
+
+                </div>
+
+
+
+
+            </div>
+
+            <div class="panel">
+                <div class="line"></div>
+                <div class="box_alarm"></div>
+                <div class="arow_wr "></div>
+            </div>
+
+            <!-- state game -->
+            <div class="state_game">
+
+                <div class="girl_wr">
+                    <div class="girl girl_base"></div>
+                </div>
+
+                <div class="controll">
+                    <div class="top control" data-controll="t"></div>
+                    <div class="control_side">
+                        <div class="right control" data-controll="r"></div>
+                        <div class="left control" data-controll="l"></div>
+                    </div>
+                    <div class="bott control" data-controll="b"></div>
+
+                </div>
+
+            </div>
+
+            <!-- state pre finsl -->
+            <div class="panelPre">
+                <div id="result_wr">
+                    <div id="resultA" class="d0 sh">
+                        <svg data-reuslt="" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                            xmlns:cc="http://creativecommons.org/ns#"
+                            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                            xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="37"
+                            height="56" viewBox="0 0 9.7895831 14.816667" version="1.1" id="svg8">
+                            <defs id="defs2" />
+                            <metadata id="metadata5">
+                                <rdf:RDF>
+                                    <cc:Work rdf:about="">
+                                        <dc:format>image/svg+xml</dc:format>
+                                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                        <dc:title></dc:title>
+                                    </cc:Work>
+                                </rdf:RDF>
+                            </metadata>
+                            <g transform="translate(0,-282.18332)" id="layer1">
+                                <g id="g1046" transform="translate(-4.1898949,796.47547)">
+                                    <path style="fill:#feb03f;stroke-width:1"
+                                        d="m 9.0846869,-499.47547 h -4.894792 v -7.40833 -7.40834 h 4.894792 4.8947921 v 7.40834 7.40833 z"
+                                        id="path982" />
+                                    <path style="fill:#ffffff;stroke-width:1"
+                                        d="m 9.0846869,-499.47547 h -4.894792 v -7.40833 -7.40834 h 4.894792 4.8947921 v 7.40834 7.40833 z m 0,-1.05833 h 3.8364581 v -6.35 -6.35 H 9.0846869 5.2482279 v 6.35 6.35 z m 0,-2.64583 h -1.190625 v -3.70417 -3.70417 h 1.190625 1.1906251 v 3.70417 3.70417 z"
+                                        id="path984" />
+                                </g>
+                            </g>
+                        </svg>
+
+                        <svg data-reuslt="" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                            xmlns:cc="http://creativecommons.org/ns#"
+                            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                            xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="28"
+                            height="56" viewBox="0 0 7.4083332 14.816667" version="1.1" id="svg8">
+                            <defs id="defs2" />
+                            <metadata id="metadata5">
+                                <rdf:RDF>
+                                    <cc:Work rdf:about="">
+                                        <dc:format>image/svg+xml</dc:format>
+                                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                        <dc:title></dc:title>
+                                    </cc:Work>
+                                </rdf:RDF>
+                            </metadata>
+                            <g transform="translate(0,-282.18332)" id="layer1">
+                                <g id="g1050" transform="translate(-19.006563,775.62845)">
+                                    <path id="path978"
+                                        d="m 24.033646,-478.62845 h -2.38125 v -4.89479 -4.89479 h -1.322917 -1.322916 v -2.51354 -2.51355 h 3.704167 3.704167 v 7.40834 7.40833 z"
+                                        style="fill:#feb03f;stroke-width:1" />
+                                    <path id="path980"
+                                        d="m 24.033646,-478.62845 h -2.38125 v -4.89479 -4.89479 h -1.322917 -1.322916 v -2.51354 -2.51355 h 3.704167 3.704167 v 7.40834 7.40833 z m 0,-1.05833 h 1.322917 v -6.35 -6.35 h -2.513542 -2.513542 v 1.32292 1.32291 h 1.190625 1.190626 v 5.02709 5.02708 z"
+                                        style="fill:#ffffff;stroke-width:1" />
+                                </g>
+                            </g>
+                        </svg>
+
+                        <svg data-reuslt="" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                            xmlns:cc="http://creativecommons.org/ns#"
+                            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                            xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="38"
+                            height="56" viewBox="0 0 10.054166 14.816667" version="1.1" id="svg8">
+                            <defs id="defs2" />
+                            <metadata id="metadata5">
+                                <rdf:RDF>
+                                    <cc:Work rdf:about="">
+                                        <dc:format>image/svg+xml</dc:format>
+                                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                        <dc:title></dc:title>
+                                    </cc:Work>
+                                </rdf:RDF>
+                            </metadata>
+                            <g transform="translate(0,-282.18331)" id="layer1">
+                                <g id="g1054" transform="translate(-29.06073,754.39731)">
+                                    <path style="fill:#feb03f;stroke-width:1"
+                                        d="M 34.087814,-457.39731 H 29.06073 v -7.40833 -7.40834 h 5.027084 5.027084 v 7.40834 7.40833 z"
+                                        id="path974" />
+                                    <path style="fill:#ffffff;stroke-width:1"
+                                        d="M 34.087814,-457.39731 H 29.06073 v -7.40833 -7.40834 h 5.027084 5.027084 v 7.40834 7.40833 z m 0,-1.05833 h 3.704167 v -1.32292 -1.32291 h -2.513542 -2.513542 v -1.19063 -1.19062 h 2.513542 2.513542 v -3.83646 -3.83646 h -3.704167 -3.704167 v 1.32292 1.32291 h 2.38125 2.38125 v 1.19063 1.19062 h -2.38125 -2.38125 v 3.83646 3.83646 z"
+                                        id="path976" />
+                                </g>
+                            </g>
+                        </svg>
+
+                        <svg data-reuslt="" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                            xmlns:cc="http://creativecommons.org/ns#"
+                            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                            xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="38"
+                            height="56" viewBox="0 0 10.054166 14.816667" version="1.1" id="svg8">
+                            <defs id="defs2" />
+                            <metadata id="metadata5">
+                                <rdf:RDF>
+                                    <cc:Work rdf:about="">
+                                        <dc:format>image/svg+xml</dc:format>
+                                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                        <dc:title></dc:title>
+                                    </cc:Work>
+                                </rdf:RDF>
+                            </metadata>
+                            <g transform="translate(0,-282.18331)" id="layer1">
+                                <g id="g1058" transform="translate(-41.496148,731.56255)">
+                                    <path id="path900"
+                                        d="m 46.523232,-434.56255 h -5.027084 v -2.51354 -2.51354 h 1.190625 1.190625 v -2.38125 -2.38125 h -1.190625 -1.190625 v -2.51354 -2.51355 h 5.027084 5.027083 v 7.40834 7.40833 z"
+                                        style="fill:#feb03f;stroke-width:1" />
+                                    <path id="path902"
+                                        d="m 46.523232,-434.56255 h -5.027084 v -2.51354 -2.51354 h 1.190625 1.190625 v -2.38125 -2.38125 h -1.190625 -1.190625 v -2.51354 -2.51355 h 5.027084 5.027083 v 7.40834 7.40833 z m 0,-1.05833 h 3.704166 v -6.35 -6.35 h -3.704166 -3.704167 v 1.32292 1.32291 h 2.513541 2.513542 v 1.19063 1.19062 h -1.322916 -1.322917 v 1.32292 1.32292 h 1.322917 1.322916 v 1.19062 1.19063 h -2.513542 -2.513541 v 1.32291 1.32292 z"
+                                        style="fill:#ffffff;stroke-width:1" />
+                                </g>
+                            </g>
+                        </svg>
+
+                        <svg data-reuslt="" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                            xmlns:cc="http://creativecommons.org/ns#"
+                            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                            xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="38"
+                            height="56" viewBox="0 0 10.054166 14.816667" version="1.1" id="svg8">
+                            <defs id="defs2" />
+                            <metadata id="metadata5">
+                                <rdf:RDF>
+                                    <cc:Work rdf:about="">
+                                        <dc:format>image/svg+xml</dc:format>
+                                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                        <dc:title></dc:title>
+                                    </cc:Work>
+                                </rdf:RDF>
+                            </metadata>
+                            <g transform="translate(0,-282.18331)" id="layer1">
+                                <g id="g1062" transform="translate(-53.931565,709.64645)">
+                                    <path style="fill:#feb03f;stroke-width:1"
+                                        d="m 61.472191,-412.64645 h -2.513542 v -2.51354 -2.51354 h -2.513542 -2.513542 v -4.89479 -4.8948 h 5.027084 5.027084 v 7.40834 7.40833 z"
+                                        id="path958" />
+                                    <path style="fill:#ffffff;stroke-width:1"
+                                        d="m 61.472191,-412.64645 h -2.513542 v -2.51354 -2.51354 h -2.513542 -2.513542 v -4.89479 -4.8948 h 5.027084 5.027084 v 7.40834 7.40833 z m 0,-1.05833 h 1.190625 v -6.35 -6.35 h -1.190625 -1.190625 v 2.51354 2.51354 h -1.322917 -1.322917 v -2.51354 -2.51354 h -1.190625 -1.190625 v 3.83646 3.83646 h 2.513542 2.513542 v 2.51354 2.51354 z"
+                                        id="path960" />
+                                </g>
+                            </g>
+                        </svg>
+
+                        <svg data-reuslt="" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                            xmlns:cc="http://creativecommons.org/ns#"
+                            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                            xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="38"
+                            height="56" viewBox="0 0 10.054166 14.816667" version="1.1" id="svg8">
+                            <defs id="defs2" />
+                            <metadata id="metadata5">
+                                <rdf:RDF>
+                                    <cc:Work rdf:about="">
+                                        <dc:format>image/svg+xml</dc:format>
+                                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                        <dc:title></dc:title>
+                                    </cc:Work>
+                                </rdf:RDF>
+                            </metadata>
+                            <g transform="translate(0,-282.18331)" id="layer1">
+                                <g id="g1066" transform="translate(-66.366983,687.46308)">
+                                    <path id="path962"
+                                        d="m 71.394071,-390.46308 h -5.027088 v -7.40833 -7.40834 h 5.027088 5.02708 v 7.40834 7.40833 z"
+                                        style="fill:#feb03f;stroke-width:1" />
+                                    <path id="path964"
+                                        d="m 71.394071,-390.46308 h -5.027088 v -7.40833 -7.40834 h 5.027088 5.02708 v 7.40834 7.40833 z m 0,-1.05833 h 3.70416 v -3.83646 -3.83646 h -2.51354 -2.513541 v -1.19062 -1.19063 h 2.513541 2.51354 v -1.32291 -1.32292 H 71.394071 67.6899 v 3.83646 3.83646 h 2.513542 2.513539 v 1.19062 1.19063 H 70.203442 67.6899 v 1.32291 1.32292 z"
+                                        style="fill:#ffffff;stroke-width:1" />
+                                </g>
+                            </g>
+                        </svg>
+
+                        <svg data-reuslt="" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                            xmlns:cc="http://creativecommons.org/ns#"
+                            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                            xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="38"
+                            height="56" viewBox="0 0 10.054166 14.816667" version="1.1" id="svg8">
+                            <defs id="defs2" />
+                            <metadata id="metadata5">
+                                <rdf:RDF>
+                                    <cc:Work rdf:about="">
+                                        <dc:format>image/svg+xml</dc:format>
+                                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                        <dc:title></dc:title>
+                                    </cc:Work>
+                                </rdf:RDF>
+                            </metadata>
+                            <g transform="translate(0,-282.18331)" id="layer1">
+                                <g id="g1070" transform="translate(-78.802401,665.54698)">
+                                    <path style="fill:#feb03f;stroke-width:1"
+                                        d="m 83.829481,-368.54698 h -5.02708 v -7.40833 -7.40834 h 5.02708 5.02709 v 7.40834 7.40833 z"
+                                        id="path966" />
+                                    <path style="fill:#ffffff;stroke-width:1"
+                                        d="m 83.829481,-368.54698 h -5.02708 v -7.40833 -7.40834 h 5.02708 5.02709 v 7.40834 7.40833 z m 0,-1.05833 h 3.70417 v -3.83646 -3.83646 h -2.51354 -2.51354 v -1.19062 -1.19063 h 2.51354 2.51354 v -1.32291 -1.32292 h -3.70417 -3.70416 v 6.35 6.35 z m 0,-2.64583 h -1.32291 v -1.19063 -1.19062 h 1.32291 1.32292 v 1.19062 1.19063 z"
+                                        id="path968" />
+                                </g>
+                            </g>
+                        </svg>
+
+                        <svg data-reuslt="" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                            xmlns:cc="http://creativecommons.org/ns#"
+                            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                            xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="38"
+                            height="56" viewBox="0 0 10.054166 14.816667" version="1.1" id="svg8">
+                            <defs id="defs2" />
+                            <metadata id="metadata5">
+                                <rdf:RDF>
+                                    <cc:Work rdf:about="">
+                                        <dc:format>image/svg+xml</dc:format>
+                                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                        <dc:title></dc:title>
+                                    </cc:Work>
+                                </rdf:RDF>
+                            </metadata>
+                            <g transform="translate(0,-282.18331)" id="layer1">
+                                <g id="g1078" transform="translate(-91.237819,644.69996)">
+                                    <path id="path970"
+                                        d="m 98.778439,-347.69996 h -2.51354 v -4.89479 -4.89479 h -2.51354 -2.51354 v -2.51354 -2.51355 h 5.02708 5.027081 v 7.40834 7.40833 z"
+                                        style="fill:#feb03f;stroke-width:1" />
+                                    <path id="path972"
+                                        d="m 98.778439,-347.69996 h -2.51354 v -4.89479 -4.89479 h -2.51354 -2.51354 v -2.51354 -2.51355 h 5.02708 5.027081 v 7.40834 7.40833 z m 0,-1.05833 h 1.19063 v -6.35 -6.35 h -3.70417 -3.70417 v 1.32292 1.32291 h 2.51355 2.51354 v 5.02709 5.02708 z"
+                                        style="fill:#ffffff;stroke-width:1" />
+                                </g>
+                            </g>
+                        </svg>
+
+                        <svg data-reuslt="" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                            xmlns:cc="http://creativecommons.org/ns#"
+                            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                            xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="37"
+                            height="56" viewBox="0 0 9.7895831 14.816667" version="1.1" id="svg8">
+                            <defs id="defs2" />
+                            <metadata id="metadata5">
+                                <rdf:RDF>
+                                    <cc:Work rdf:about="">
+                                        <dc:format>image/svg+xml</dc:format>
+                                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                        <dc:title></dc:title>
+                                    </cc:Work>
+                                </rdf:RDF>
+                            </metadata>
+                            <g transform="translate(0,-282.18332)" id="layer1">
+                                <g id="g1082" transform="translate(-103.93782,623.81936)">
+                                    <path id="path986"
+                                        d="m 108.83261,-326.81936 h -4.89479 v -7.40833 -7.40834 h 4.89479 4.89479 v 7.40834 7.40833 z"
+                                        style="fill:#feb03f;stroke-width:1" />
+                                    <path id="path988"
+                                        d="m 108.83261,-326.81936 h -4.89479 v -7.40833 -7.40834 h 4.89479 4.89479 v 7.40834 7.40833 z m -0.13229,-1.05833 h 3.70417 v -6.35 -6.35 h -3.70417 -3.70417 v 6.35 6.35 z m 0.13229,-2.64583 h -1.19062 v -1.19063 -1.19062 h 1.19062 1.19063 v 1.19062 1.19063 z m 0,-5.02709 h -1.19062 v -1.19062 -1.19063 h 1.19062 1.19063 v 1.19063 1.19062 z"
+                                        style="fill:#ffffff;stroke-width:1" />
+                                </g>
+                            </g>
+                        </svg>
+
+                        <svg data-reuslt="" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                            xmlns:cc="http://creativecommons.org/ns#"
+                            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                            xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="37"
+                            height="56" viewBox="0 0 9.7895827 14.816667" version="1.1" id="svg8">
+                            <defs id="defs2" />
+                            <metadata id="metadata5">
+                                <rdf:RDF>
+                                    <cc:Work rdf:about="">
+                                        <dc:format>image/svg+xml</dc:format>
+                                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                        <dc:title></dc:title>
+                                    </cc:Work>
+                                </rdf:RDF>
+                            </metadata>
+                            <g transform="translate(0,-282.18332)" id="layer1">
+                                <g id="g1074" transform="translate(-116.37324,598.16149)">
+                                    <path style="fill:#feb03f;stroke-width:1"
+                                        d="m 121.26803,-301.16149 h -4.89479 v -7.40833 -7.40834 h 4.89479 4.89479 v 7.40834 7.40833 z"
+                                        id="path990" />
+                                    <path style="fill:#ffffff;stroke-width:1"
+                                        d="m 121.26803,-301.16149 h -4.89479 v -7.40833 -7.40834 h 4.89479 4.89479 v 7.40834 7.40833 z m 0,-1.05833 h 3.83646 v -6.35 -6.35 h -3.83646 -3.83646 v 3.83646 3.83646 h 2.51354 2.51354 v 1.19062 1.19063 h -2.51354 -2.51354 v 1.32291 1.32292 z m 0,-7.67292 h -1.19063 v -1.19062 -1.19063 h 1.19063 1.19062 v 1.19063 1.19062 z"
+                                        id="path992" />
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div id="resultB" class="d0">
+                        <svg data-reuslt="" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                            xmlns:cc="http://creativecommons.org/ns#"
+                            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                            xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="37"
+                            height="56" viewBox="0 0 9.7895831 14.816667" version="1.1" id="svg8">
+                            <defs id="defs2" />
+                            <metadata id="metadata5">
+                                <rdf:RDF>
+                                    <cc:Work rdf:about="">
+                                        <dc:format>image/svg+xml</dc:format>
+                                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                        <dc:title></dc:title>
+                                    </cc:Work>
+                                </rdf:RDF>
+                            </metadata>
+                            <g transform="translate(0,-282.18332)" id="layer1">
+                                <g id="g1046" transform="translate(-4.1898949,796.47547)">
+                                    <path style="fill:#feb03f;stroke-width:1"
+                                        d="m 9.0846869,-499.47547 h -4.894792 v -7.40833 -7.40834 h 4.894792 4.8947921 v 7.40834 7.40833 z"
+                                        id="path982" />
+                                    <path style="fill:#ffffff;stroke-width:1"
+                                        d="m 9.0846869,-499.47547 h -4.894792 v -7.40833 -7.40834 h 4.894792 4.8947921 v 7.40834 7.40833 z m 0,-1.05833 h 3.8364581 v -6.35 -6.35 H 9.0846869 5.2482279 v 6.35 6.35 z m 0,-2.64583 h -1.190625 v -3.70417 -3.70417 h 1.190625 1.1906251 v 3.70417 3.70417 z"
+                                        id="path984" />
+                                </g>
+                            </g>
+                        </svg>
+
+                        <svg data-reuslt="" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                            xmlns:cc="http://creativecommons.org/ns#"
+                            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                            xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="28"
+                            height="56" viewBox="0 0 7.4083332 14.816667" version="1.1" id="svg8">
+                            <defs id="defs2" />
+                            <metadata id="metadata5">
+                                <rdf:RDF>
+                                    <cc:Work rdf:about="">
+                                        <dc:format>image/svg+xml</dc:format>
+                                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                        <dc:title></dc:title>
+                                    </cc:Work>
+                                </rdf:RDF>
+                            </metadata>
+                            <g transform="translate(0,-282.18332)" id="layer1">
+                                <g id="g1050" transform="translate(-19.006563,775.62845)">
+                                    <path id="path978"
+                                        d="m 24.033646,-478.62845 h -2.38125 v -4.89479 -4.89479 h -1.322917 -1.322916 v -2.51354 -2.51355 h 3.704167 3.704167 v 7.40834 7.40833 z"
+                                        style="fill:#feb03f;stroke-width:1" />
+                                    <path id="path980"
+                                        d="m 24.033646,-478.62845 h -2.38125 v -4.89479 -4.89479 h -1.322917 -1.322916 v -2.51354 -2.51355 h 3.704167 3.704167 v 7.40834 7.40833 z m 0,-1.05833 h 1.322917 v -6.35 -6.35 h -2.513542 -2.513542 v 1.32292 1.32291 h 1.190625 1.190626 v 5.02709 5.02708 z"
+                                        style="fill:#ffffff;stroke-width:1" />
+                                </g>
+                            </g>
+                        </svg>
+
+                        <svg data-reuslt="" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                            xmlns:cc="http://creativecommons.org/ns#"
+                            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                            xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="38"
+                            height="56" viewBox="0 0 10.054166 14.816667" version="1.1" id="svg8">
+                            <defs id="defs2" />
+                            <metadata id="metadata5">
+                                <rdf:RDF>
+                                    <cc:Work rdf:about="">
+                                        <dc:format>image/svg+xml</dc:format>
+                                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                        <dc:title></dc:title>
+                                    </cc:Work>
+                                </rdf:RDF>
+                            </metadata>
+                            <g transform="translate(0,-282.18331)" id="layer1">
+                                <g id="g1054" transform="translate(-29.06073,754.39731)">
+                                    <path style="fill:#feb03f;stroke-width:1"
+                                        d="M 34.087814,-457.39731 H 29.06073 v -7.40833 -7.40834 h 5.027084 5.027084 v 7.40834 7.40833 z"
+                                        id="path974" />
+                                    <path style="fill:#ffffff;stroke-width:1"
+                                        d="M 34.087814,-457.39731 H 29.06073 v -7.40833 -7.40834 h 5.027084 5.027084 v 7.40834 7.40833 z m 0,-1.05833 h 3.704167 v -1.32292 -1.32291 h -2.513542 -2.513542 v -1.19063 -1.19062 h 2.513542 2.513542 v -3.83646 -3.83646 h -3.704167 -3.704167 v 1.32292 1.32291 h 2.38125 2.38125 v 1.19063 1.19062 h -2.38125 -2.38125 v 3.83646 3.83646 z"
+                                        id="path976" />
+                                </g>
+                            </g>
+                        </svg>
+
+                        <svg data-reuslt="" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                            xmlns:cc="http://creativecommons.org/ns#"
+                            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                            xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="38"
+                            height="56" viewBox="0 0 10.054166 14.816667" version="1.1" id="svg8">
+                            <defs id="defs2" />
+                            <metadata id="metadata5">
+                                <rdf:RDF>
+                                    <cc:Work rdf:about="">
+                                        <dc:format>image/svg+xml</dc:format>
+                                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                        <dc:title></dc:title>
+                                    </cc:Work>
+                                </rdf:RDF>
+                            </metadata>
+                            <g transform="translate(0,-282.18331)" id="layer1">
+                                <g id="g1058" transform="translate(-41.496148,731.56255)">
+                                    <path id="path900"
+                                        d="m 46.523232,-434.56255 h -5.027084 v -2.51354 -2.51354 h 1.190625 1.190625 v -2.38125 -2.38125 h -1.190625 -1.190625 v -2.51354 -2.51355 h 5.027084 5.027083 v 7.40834 7.40833 z"
+                                        style="fill:#feb03f;stroke-width:1" />
+                                    <path id="path902"
+                                        d="m 46.523232,-434.56255 h -5.027084 v -2.51354 -2.51354 h 1.190625 1.190625 v -2.38125 -2.38125 h -1.190625 -1.190625 v -2.51354 -2.51355 h 5.027084 5.027083 v 7.40834 7.40833 z m 0,-1.05833 h 3.704166 v -6.35 -6.35 h -3.704166 -3.704167 v 1.32292 1.32291 h 2.513541 2.513542 v 1.19063 1.19062 h -1.322916 -1.322917 v 1.32292 1.32292 h 1.322917 1.322916 v 1.19062 1.19063 h -2.513542 -2.513541 v 1.32291 1.32292 z"
+                                        style="fill:#ffffff;stroke-width:1" />
+                                </g>
+                            </g>
+                        </svg>
+
+                        <svg data-reuslt="" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                            xmlns:cc="http://creativecommons.org/ns#"
+                            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                            xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="38"
+                            height="56" viewBox="0 0 10.054166 14.816667" version="1.1" id="svg8">
+                            <defs id="defs2" />
+                            <metadata id="metadata5">
+                                <rdf:RDF>
+                                    <cc:Work rdf:about="">
+                                        <dc:format>image/svg+xml</dc:format>
+                                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                        <dc:title></dc:title>
+                                    </cc:Work>
+                                </rdf:RDF>
+                            </metadata>
+                            <g transform="translate(0,-282.18331)" id="layer1">
+                                <g id="g1062" transform="translate(-53.931565,709.64645)">
+                                    <path style="fill:#feb03f;stroke-width:1"
+                                        d="m 61.472191,-412.64645 h -2.513542 v -2.51354 -2.51354 h -2.513542 -2.513542 v -4.89479 -4.8948 h 5.027084 5.027084 v 7.40834 7.40833 z"
+                                        id="path958" />
+                                    <path style="fill:#ffffff;stroke-width:1"
+                                        d="m 61.472191,-412.64645 h -2.513542 v -2.51354 -2.51354 h -2.513542 -2.513542 v -4.89479 -4.8948 h 5.027084 5.027084 v 7.40834 7.40833 z m 0,-1.05833 h 1.190625 v -6.35 -6.35 h -1.190625 -1.190625 v 2.51354 2.51354 h -1.322917 -1.322917 v -2.51354 -2.51354 h -1.190625 -1.190625 v 3.83646 3.83646 h 2.513542 2.513542 v 2.51354 2.51354 z"
+                                        id="path960" />
+                                </g>
+                            </g>
+                        </svg>
+
+                        <svg data-reuslt="" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                            xmlns:cc="http://creativecommons.org/ns#"
+                            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                            xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="38"
+                            height="56" viewBox="0 0 10.054166 14.816667" version="1.1" id="svg8">
+                            <defs id="defs2" />
+                            <metadata id="metadata5">
+                                <rdf:RDF>
+                                    <cc:Work rdf:about="">
+                                        <dc:format>image/svg+xml</dc:format>
+                                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                        <dc:title></dc:title>
+                                    </cc:Work>
+                                </rdf:RDF>
+                            </metadata>
+                            <g transform="translate(0,-282.18331)" id="layer1">
+                                <g id="g1066" transform="translate(-66.366983,687.46308)">
+                                    <path id="path962"
+                                        d="m 71.394071,-390.46308 h -5.027088 v -7.40833 -7.40834 h 5.027088 5.02708 v 7.40834 7.40833 z"
+                                        style="fill:#feb03f;stroke-width:1" />
+                                    <path id="path964"
+                                        d="m 71.394071,-390.46308 h -5.027088 v -7.40833 -7.40834 h 5.027088 5.02708 v 7.40834 7.40833 z m 0,-1.05833 h 3.70416 v -3.83646 -3.83646 h -2.51354 -2.513541 v -1.19062 -1.19063 h 2.513541 2.51354 v -1.32291 -1.32292 H 71.394071 67.6899 v 3.83646 3.83646 h 2.513542 2.513539 v 1.19062 1.19063 H 70.203442 67.6899 v 1.32291 1.32292 z"
+                                        style="fill:#ffffff;stroke-width:1" />
+                                </g>
+                            </g>
+                        </svg>
+
+                        <svg data-reuslt="" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                            xmlns:cc="http://creativecommons.org/ns#"
+                            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                            xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="38"
+                            height="56" viewBox="0 0 10.054166 14.816667" version="1.1" id="svg8">
+                            <defs id="defs2" />
+                            <metadata id="metadata5">
+                                <rdf:RDF>
+                                    <cc:Work rdf:about="">
+                                        <dc:format>image/svg+xml</dc:format>
+                                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                        <dc:title></dc:title>
+                                    </cc:Work>
+                                </rdf:RDF>
+                            </metadata>
+                            <g transform="translate(0,-282.18331)" id="layer1">
+                                <g id="g1070" transform="translate(-78.802401,665.54698)">
+                                    <path style="fill:#feb03f;stroke-width:1"
+                                        d="m 83.829481,-368.54698 h -5.02708 v -7.40833 -7.40834 h 5.02708 5.02709 v 7.40834 7.40833 z"
+                                        id="path966" />
+                                    <path style="fill:#ffffff;stroke-width:1"
+                                        d="m 83.829481,-368.54698 h -5.02708 v -7.40833 -7.40834 h 5.02708 5.02709 v 7.40834 7.40833 z m 0,-1.05833 h 3.70417 v -3.83646 -3.83646 h -2.51354 -2.51354 v -1.19062 -1.19063 h 2.51354 2.51354 v -1.32291 -1.32292 h -3.70417 -3.70416 v 6.35 6.35 z m 0,-2.64583 h -1.32291 v -1.19063 -1.19062 h 1.32291 1.32292 v 1.19062 1.19063 z"
+                                        id="path968" />
+                                </g>
+                            </g>
+                        </svg>
+
+                        <svg data-reuslt="" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                            xmlns:cc="http://creativecommons.org/ns#"
+                            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                            xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="38"
+                            height="56" viewBox="0 0 10.054166 14.816667" version="1.1" id="svg8">
+                            <defs id="defs2" />
+                            <metadata id="metadata5">
+                                <rdf:RDF>
+                                    <cc:Work rdf:about="">
+                                        <dc:format>image/svg+xml</dc:format>
+                                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                        <dc:title></dc:title>
+                                    </cc:Work>
+                                </rdf:RDF>
+                            </metadata>
+                            <g transform="translate(0,-282.18331)" id="layer1">
+                                <g id="g1078" transform="translate(-91.237819,644.69996)">
+                                    <path id="path970"
+                                        d="m 98.778439,-347.69996 h -2.51354 v -4.89479 -4.89479 h -2.51354 -2.51354 v -2.51354 -2.51355 h 5.02708 5.027081 v 7.40834 7.40833 z"
+                                        style="fill:#feb03f;stroke-width:1" />
+                                    <path id="path972"
+                                        d="m 98.778439,-347.69996 h -2.51354 v -4.89479 -4.89479 h -2.51354 -2.51354 v -2.51354 -2.51355 h 5.02708 5.027081 v 7.40834 7.40833 z m 0,-1.05833 h 1.19063 v -6.35 -6.35 h -3.70417 -3.70417 v 1.32292 1.32291 h 2.51355 2.51354 v 5.02709 5.02708 z"
+                                        style="fill:#ffffff;stroke-width:1" />
+                                </g>
+                            </g>
+                        </svg>
+
+                        <svg data-reuslt="" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                            xmlns:cc="http://creativecommons.org/ns#"
+                            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                            xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="37"
+                            height="56" viewBox="0 0 9.7895831 14.816667" version="1.1" id="svg8">
+                            <defs id="defs2" />
+                            <metadata id="metadata5">
+                                <rdf:RDF>
+                                    <cc:Work rdf:about="">
+                                        <dc:format>image/svg+xml</dc:format>
+                                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                        <dc:title></dc:title>
+                                    </cc:Work>
+                                </rdf:RDF>
+                            </metadata>
+                            <g transform="translate(0,-282.18332)" id="layer1">
+                                <g id="g1082" transform="translate(-103.93782,623.81936)">
+                                    <path id="path986"
+                                        d="m 108.83261,-326.81936 h -4.89479 v -7.40833 -7.40834 h 4.89479 4.89479 v 7.40834 7.40833 z"
+                                        style="fill:#feb03f;stroke-width:1" />
+                                    <path id="path988"
+                                        d="m 108.83261,-326.81936 h -4.89479 v -7.40833 -7.40834 h 4.89479 4.89479 v 7.40834 7.40833 z m -0.13229,-1.05833 h 3.70417 v -6.35 -6.35 h -3.70417 -3.70417 v 6.35 6.35 z m 0.13229,-2.64583 h -1.19062 v -1.19063 -1.19062 h 1.19062 1.19063 v 1.19062 1.19063 z m 0,-5.02709 h -1.19062 v -1.19062 -1.19063 h 1.19062 1.19063 v 1.19063 1.19062 z"
+                                        style="fill:#ffffff;stroke-width:1" />
+                                </g>
+                            </g>
+                        </svg>
+
+                        <svg data-reuslt="" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                            xmlns:cc="http://creativecommons.org/ns#"
+                            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                            xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="37"
+                            height="56" viewBox="0 0 9.7895827 14.816667" version="1.1" id="svg8">
+                            <defs id="defs2" />
+                            <metadata id="metadata5">
+                                <rdf:RDF>
+                                    <cc:Work rdf:about="">
+                                        <dc:format>image/svg+xml</dc:format>
+                                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                        <dc:title></dc:title>
+                                    </cc:Work>
+                                </rdf:RDF>
+                            </metadata>
+                            <g transform="translate(0,-282.18332)" id="layer1">
+                                <g id="g1074" transform="translate(-116.37324,598.16149)">
+                                    <path style="fill:#feb03f;stroke-width:1"
+                                        d="m 121.26803,-301.16149 h -4.89479 v -7.40833 -7.40834 h 4.89479 4.89479 v 7.40834 7.40833 z"
+                                        id="path990" />
+                                    <path style="fill:#ffffff;stroke-width:1"
+                                        d="m 121.26803,-301.16149 h -4.89479 v -7.40833 -7.40834 h 4.89479 4.89479 v 7.40834 7.40833 z m 0,-1.05833 h 3.83646 v -6.35 -6.35 h -3.83646 -3.83646 v 3.83646 3.83646 h 2.51354 2.51354 v 1.19062 1.19063 h -2.51354 -2.51354 v 1.32291 1.32292 z m 0,-7.67292 h -1.19063 v -1.19062 -1.19063 h 1.19063 1.19062 v 1.19063 1.19062 z"
+                                        id="path992" />
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- state final -->
+            <div class="final">
+                <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In  -->
+                <svg class="txt_final1" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="310.67px" height="166px"
+                    viewBox="0 0 310.67 166" style="enable-background:new 0 0 310.67 166;" xml:space="preserve">
+                    <style type="text/css">
+                        .st0 {
+                            fill: #98ED00;
+                        }
+
+                        .st1 {
+                            fill: #E73A95;
+                        }
+                    </style>
+                    <defs>
+                    </defs>
+                    <g>
+                        <path class="st0"
+                            d="M40.3,12.8V3.2h3.2v9.6H40.3z M43.5,3.2V0h6.4v3.2H43.5z M43.5,16v-3.2h6.4V16H43.5z" />
+                        <path class="st0" d="M57.25,16V3.2h-3.2V0h9.6v3.2h-3.2V16H57.25z" />
+                        <path class="st0" d="M67.81,16V3.2h3.2v3.2h3.2V3.2h-3.2V0h6.4v16h-3.2V9.6h-3.2V16H67.81z" />
+                        <path class="st0" d="M81.57,16V0h3.2v6.4h3.2V0h3.2v16h-3.2V9.6h-3.2V16H81.57z" />
+                        <path class="st0" d="M95.33,16V0h3.2v6.4h3.2v3.2h-3.2v3.2h3.2V9.6h3.2V16H95.33z" />
+                        <path class="st0" d="M114.84,3.2V0h6.4v3.2H114.84z M114.84,16v-3.2h6.4V16H114.84z M121.24,12.8V9.6h-3.2V6.4h3.2V3.2h3.2v9.6
+   H121.24z" />
+                        <path class="st0"
+                            d="M128.6,16V0h3.2v6.4h3.2v3.2h-3.2V16H128.6z M135,6.4V0h3.2v6.4H135z M135,16V9.6h3.2V16H135z" />
+                        <path class="st0"
+                            d="M142.35,12.8V3.2h3.2v9.6H142.35z M145.55,3.2V0h6.4v3.2H145.55z M145.55,16v-3.2h6.4V16H145.55z" />
+                        <path class="st0" d="M156.11,16V0h9.6v16h-3.2V3.2h-3.2V16H156.11z" />
+                        <path class="st0" d="M169.87,16V0h9.6v3.2h-6.4v3.2h3.2v3.2h-3.2v3.2h6.4V16H169.87z" />
+                        <path class="st0" d="M183.62,16V0h6.4v3.2h-3.2v3.2h3.2V3.2h3.2v6.4h-6.4V16H183.62z" />
+                        <path class="st0" d="M200.58,16V3.2h-3.2V0h9.6v3.2h-3.2V16H200.58z" />
+                        <path class="st0" d="M211.14,12.8V3.2h3.2v9.6H211.14z M214.34,3.2V0h6.4v3.2H214.34z M214.34,16v-3.2h6.4V16H214.34z M220.74,12.8
+   V3.2h3.2v9.6H220.74z" />
+                        <path class="st0" d="M228.1,16V0h3.2v3.2h3.2v3.2h-3.2V16H228.1z M234.5,9.6V6.4h3.2v3.2H234.5z M240.89,16V6.4h-3.2V3.2h3.2V0h3.2
+   v16H240.89z" />
+                        <path class="st0"
+                            d="M254.01,16V0h6.4v3.2h-3.2v3.2h3.2v3.2h-3.2v3.2h3.2V9.6h3.2V16H254.01z M260.41,6.4V3.2h3.2v3.2H260.41z" />
+                        <path class="st0"
+                            d="M0,41V25h3.2v6.4h3.2v3.2H3.2V41H0z M6.4,31.4V25h3.2v6.4H6.4z M6.4,41v-6.4h3.2V41H6.4z" />
+                        <path class="st0" d="M13.76,37.8v-9.6h3.2v9.6H13.76z M16.96,28.2V25h6.4v3.2H16.96z M16.96,41v-3.2h6.4V41H16.96z M23.35,37.8
+   v-9.6h3.2v9.6H23.35z" />
+                        <path class="st0" d="M30.72,41V25h6.4v3.2h-3.2v3.2h3.2v-3.2h3.2v6.4h-6.4V41H30.72z" />
+                        <path class="st0" d="M44.47,41V25h9.6v3.2h-6.4v3.2h3.2v3.2h-3.2v3.2h6.4V41H44.47z" />
+                        <path class="st0" d="M58.23,41V25h3.2v9.6h3.2v3.2h-3.2V41H58.23z M61.43,21.8v-3.2h6.4v3.2H61.43z M67.83,41v-6.4h-3.2v-3.2h3.2
+   V25h3.2v16H67.83z" />
+                        <path class="st0"
+                            d="M75.19,37.8v-9.6h3.2v9.6H75.19z M78.39,28.2V25h6.4v3.2H78.39z M78.39,41v-3.2h6.4V41H78.39z" />
+                        <path class="st0"
+                            d="M88.95,41V25h3.2v6.4h3.2v3.2h-3.2V41H88.95z M95.35,31.4V25h3.2v6.4H95.35z M95.35,41v-6.4h3.2V41H95.35z" />
+                        <path class="st0" d="M102.7,37.8v-9.6h3.2v9.6H102.7z M105.9,28.2V25h6.4v3.2H105.9z M105.9,41v-3.2h6.4V41H105.9z M112.3,37.8
+   v-9.6h3.2v9.6H112.3z" />
+                        <path class="st0" d="M119.66,41V25h3.2v9.6h3.2v3.2h-3.2V41H119.66z M122.86,21.8v-3.2h6.4v3.2H122.86z M129.26,41v-6.4h-3.2v-3.2
+   h3.2V25h3.2v16H129.26z" />
+                        <path class="st0" d="M142.38,41V25h9.6v16h-3.2V28.2h-3.2V41H142.38z" />
+                        <path class="st0" d="M156.14,37.8v-9.6h3.2v9.6H156.14z M159.34,28.2V25h6.4v3.2H159.34z M159.34,41v-3.2h6.4V41H159.34z
+    M165.74,37.8v-9.6h3.2v9.6H165.74z" />
+                        <path class="st0" d="M173.1,41V25h9.6v16h-3.2V28.2h-3.2V41H173.1z" />
+                        <path class="st0" d="M186.86,34.6v-3.2h6.4v3.2H186.86z" />
+                        <path class="st0" d="M197.41,41V25h3.2v6.4h3.2v3.2h-3.2V41H197.41z M203.81,31.4V25h3.2v6.4H203.81z M203.81,41v-6.4h3.2V41
+   H203.81z" />
+                        <path class="st0"
+                            d="M217.57,37.8v-3.2h-6.4V25h3.2v6.4h3.2V25h3.2v12.8H217.57z M211.17,41v-3.2h6.4V41H211.17z" />
+                        <path class="st0" d="M224.93,41V28.2h3.2V41H224.93z M231.33,41V28.2h-3.2V25h6.4v16H231.33z" />
+                        <path class="st0" d="M238.68,41V25h3.2v6.4h3.2v3.2h-3.2v3.2h3.2v-3.2h3.2V41H238.68z" />
+                        <path class="st0" d="M255.64,41V28.2h-3.2V25h9.6v3.2h-3.2V41H255.64z" />
+                        <path class="st0"
+                            d="M272.6,37.8v-3.2h-6.4V25h3.2v6.4h3.2V25h3.2v12.8H272.6z M266.2,41v-3.2h6.4V41H266.2z" />
+                        <path class="st0" d="M279.95,41V25h6.4v3.2h-3.2v3.2h3.2v-3.2h3.2v6.4h-6.4V41H279.95z" />
+                        <path class="st0" d="M293.71,41V25h9.6v3.2h-6.4v3.2h3.2v3.2h-3.2v3.2h6.4V41H293.71z" />
+                        <path class="st0" d="M307.47,34.6V25h3.2v9.6H307.47z M307.47,41v-3.2h3.2V41H307.47z" />
+                        <path class="st0"
+                            d="M12.16,87.8v-3.2h-6.4V75h3.2v6.4h3.2V75h3.2v12.8H12.16z M5.76,91v-3.2h6.4V91H5.76z" />
+                        <path class="st0" d="M25.91,81.4v-3.2h-6.4V75h9.6v6.4H25.91z M19.51,91v-3.2h6.4v-3.2h3.2V91H19.51z M22.71,84.6v-3.2h3.2v3.2
+   H22.71z" />
+                        <path class="st0" d="M33.27,91V75h3.2v6.4h3.2V75h3.2v16h-3.2v-6.4h-3.2V91H33.27z" />
+                        <path class="st0" d="M47.03,91V78.2h3.2v3.2h3.2v-3.2h-3.2V75h6.4v16h-3.2v-6.4h-3.2V91H47.03z" />
+                        <path class="st0" d="M60.78,91V75h3.2v9.6h3.2v3.2h-3.2V91H60.78z M63.98,71.8v-3.2h6.4v3.2H63.98z M70.38,91v-6.4h-3.2v-3.2h3.2
+   V75h3.2v16H70.38z" />
+                        <path class="st0" d="M83.5,91V75h9.6v3.2h-6.4v3.2h3.2v3.2h-3.2v3.2h3.2v-3.2h3.2V91H83.5z" />
+                        <path class="st0" d="M97.26,87.8v-9.6h3.2v9.6H97.26z M100.46,78.2V75h6.4v3.2H100.46z M100.46,91v-3.2h6.4V91H100.46z
+    M106.86,87.8v-9.6h3.2v9.6H106.86z" />
+                        <path class="st0" d="M114.22,91V78.2h3.2V91H114.22z M120.62,91V78.2h-3.2V75h6.4v16H120.62z" />
+                        <path class="st0" d="M127.98,91V75h3.2v6.4h3.2v3.2h-3.2v3.2h3.2v-3.2h3.2V91H127.98z" />
+                        <path class="st0" d="M141.73,91V75h3.2v12.8h3.2v-6.4h3.2v6.4h3.2V75h3.2v16H141.73z" />
+                        <path class="st0" d="M161.89,91V75h9.6v3.2h-6.4v3.2h3.2v3.2h-3.2v3.2h6.4V91H161.89z" />
+                        <path class="st0" d="M181.41,87.8v-9.6h3.2v9.6H181.41z M184.6,78.2V75h6.4v3.2H184.6z M184.6,91v-3.2h6.4V91H184.6z M191,87.8
+   v-9.6h3.2v9.6H191z" />
+                        <path class="st0" d="M204.12,91V75h9.6v16h-3.2V78.2h-3.2V91H204.12z" />
+                        <path class="st0" d="M217.88,91V75h6.4v3.2h-3.2v3.2h3.2v-3.2h3.2v6.4h-6.4V91H217.88z" />
+                        <path class="st0" d="M231.64,87.8v-9.6h3.2v9.6H231.64z M234.83,78.2V75h6.4v3.2H234.83z M234.83,91v-3.2h6.4V91H234.83z
+    M241.23,87.8v-9.6h3.2v9.6H241.23z" />
+                        <path class="st0" d="M248.6,91V75h9.6v3.2h-6.4v3.2h3.2v3.2h-3.2v3.2h6.4V91H248.6z" />
+                        <path class="st0" d="M262.35,91V75h3.2v6.4h3.2v3.2h-3.2V91H262.35z M268.75,81.4V75h3.2v6.4H268.75z M268.75,91v-6.4h3.2V91
+   H268.75z" />
+                        <path class="st0" d="M279.31,91V78.2h-3.2V75h9.6v3.2h-3.2V91H279.31z" />
+                        <path class="st0" d="M289.87,91V75h9.6v3.2h-6.4v3.2h3.2v3.2h-3.2v3.2h6.4V91H289.87z" />
+                        <path class="st1" d="M51.81,116v-16h3.2v3.2h3.2v3.2h-3.2v9.6H51.81z M58.21,109.6v-3.2h3.2v3.2H58.21z M64.61,116v-9.6h-3.2v-3.2
+   h3.2V100h3.2v16H64.61z" />
+                        <path class="st1" d="M75.17,116v-12.8h-3.2V100h9.6v3.2h-3.2V116H75.17z" />
+                        <path class="st1"
+                            d="M85.73,112.8v-9.6h3.2v9.6H85.73z M88.93,103.2V100h6.4v3.2H88.93z M88.93,116v-3.2h6.4v3.2H88.93z" />
+                        <path class="st1"
+                            d="M99.48,116v-12.8h3.2v3.2h3.2v-3.2h-3.2V100h6.4v16h-3.2v-6.4h-3.2v6.4H99.48z" />
+                        <path class="st1" d="M113.24,116v-16h3.2v3.2h3.2v3.2h-3.2v9.6H113.24z M119.64,109.6v-3.2h3.2v3.2H119.64z M126.04,116v-9.6h-3.2
+   v-3.2h3.2V100h3.2v16H126.04z" />
+                        <path class="st1" d="M133.4,116v-16h6.4v3.2h-3.2v3.2h3.2v-3.2h3.2v6.4h-6.4v6.4H133.4z" />
+                        <path class="st1" d="M152.92,109.6v-3.2h9.6v3.2H152.92z" />
+                        <path class="st0" d="M172.43,116v-16h9.6v16h-3.2v-12.8h-3.2V116H172.43z" />
+                        <path class="st0" d="M186.19,116v-16h9.6v3.2h-6.4v3.2h3.2v3.2h-3.2v3.2h6.4v3.2H186.19z" />
+                        <path class="st0" d="M199.94,116v-16h6.4v3.2h-3.2v3.2h3.2v-3.2h3.2v6.4h-6.4v6.4H199.94z" />
+                        <path class="st0"
+                            d="M213.7,116v-16h6.4v3.2h-3.2v3.2h3.2v3.2h-3.2v3.2h3.2v-3.2h3.2v6.4H213.7z M220.1,106.4v-3.2h3.2v3.2H220.1z" />
+                        <path class="st0" d="M227.46,112.8v-9.6h3.2v9.6H227.46z M230.66,103.2V100h6.4v3.2H230.66z M230.66,116v-3.2h6.4v3.2H230.66z
+    M237.05,112.8v-9.6h3.2v9.6H237.05z" />
+                        <path class="st0" d="M244.42,116v-16h3.2v3.2h3.2v3.2h-3.2v9.6H244.42z M250.81,109.6v-3.2h3.2v3.2H250.81z M257.21,116v-9.6h-3.2
+   v-3.2h3.2V100h3.2v16H257.21z" />
+                        <path class="st0" d="M28.78,141v-16h6.4v3.2h-3.2v3.2h3.2v-3.2h3.2v6.4h-6.4v6.4H28.78z" />
+                        <path class="st0" d="M42.54,141v-16h9.6v3.2h-6.4v3.2h3.2v3.2h-3.2v3.2h6.4v3.2H42.54z" />
+                        <path class="st0"
+                            d="M56.3,141v-12.8h3.2v3.2h3.2v-3.2h-3.2V125h6.4v16h-3.2v-6.4h-3.2v6.4H56.3z" />
+                        <path class="st0" d="M70.06,141v-12.8h3.2V141H70.06z M76.45,141v-12.8h-3.2V125h6.4v16H76.45z" />
+                        <path class="st0"
+                            d="M83.81,141v-16h3.2v9.6h3.2v3.2h-3.2v3.2H83.81z M93.41,141v-6.4h-3.2v-3.2h3.2V125h3.2v16H93.41z" />
+                        <path class="st0" d="M103.97,141v-12.8h-3.2V125h9.6v3.2h-3.2V141H103.97z" />
+                        <path class="st0"
+                            d="M114.53,141v-16h3.2v9.6h3.2v3.2h-3.2v3.2H114.53z M124.13,141v-6.4h-3.2v-3.2h3.2V125h3.2v16H124.13z" />
+                        <path class="st0" d="M131.49,134.6v-3.2h6.4v3.2H131.49z" />
+                        <path class="st0" d="M142.05,141v-16h3.2v12.8h3.2v-6.4h3.2v6.4h3.2V125h3.2v16H142.05z" />
+                        <path class="st0" d="M162.21,137.8v-9.6h3.2v9.6H162.21z M165.41,128.2V125h6.4v3.2H165.41z M165.41,141v-3.2h6.4v3.2H165.41z
+    M171.8,137.8v-9.6h3.2v9.6H171.8z" />
+                        <path class="st0"
+                            d="M185.56,137.8v-3.2h-6.4V125h3.2v6.4h3.2V125h3.2v12.8H185.56z M179.17,141v-3.2h6.4v3.2H179.17z" />
+                        <path class="st0" d="M198.68,137.8v-9.6h3.2v9.6H198.68z M201.88,128.2V125h6.4v3.2H201.88z M201.88,141v-3.2h6.4v3.2H201.88z
+    M208.28,137.8v-9.6h3.2v9.6H208.28z" />
+                        <path class="st0" d="M221.4,141v-16h3.2v6.4h3.2v3.2h-3.2v6.4H221.4z M227.79,131.4V125h3.2v6.4H227.79z M227.79,141v-6.4h3.2v6.4
+   H227.79z" />
+                        <path class="st0" d="M235.15,134.6v-3.2h6.4v3.2H235.15z" />
+                        <path class="st0" d="M245.71,141v-16h6.4v3.2h-3.2v3.2h3.2v-3.2h3.2v6.4h-6.4v6.4H245.71z" />
+                        <path class="st0" d="M259.47,137.8v-9.6h3.2v9.6H259.47z M262.67,128.2V125h6.4v3.2H262.67z M262.67,141v-3.2h6.4v3.2H262.67z
+    M269.07,137.8v-9.6h3.2v9.6H269.07z" />
+                        <path class="st0" d="M276.43,141v-16h6.4v3.2h-3.2v3.2h3.2v-3.2h3.2v6.4h-6.4v6.4H276.43z" />
+                        <path class="st0"
+                            d="M92.11,166v-16h6.4v3.2h-3.2v3.2h3.2v3.2h-3.2v3.2h3.2v-3.2h3.2v6.4H92.11z M98.51,156.4v-3.2h3.2v3.2H98.51z" />
+                        <path class="st0" d="M111.62,166v-16h6.4v3.2h-3.2v3.2h3.2v-3.2h3.2v6.4h-6.4v6.4H111.62z" />
+                        <path class="st0" d="M125.38,162.8v-9.6h3.2v9.6H125.38z M128.58,153.2V150h6.4v3.2H128.58z M128.58,166v-3.2h6.4v3.2H128.58z
+    M134.98,162.8v-9.6h3.2v9.6H134.98z" />
+                        <path class="st0"
+                            d="M142.34,162.8v-9.6h3.2v9.6H142.34z M145.54,153.2V150h6.4v3.2H145.54z M145.54,166v-3.2h6.4v3.2H145.54z" />
+                        <path class="st0"
+                            d="M156.1,162.8v-9.6h3.2v9.6H156.1z M159.3,153.2V150h6.4v3.2H159.3z M159.3,166v-3.2h6.4v3.2H159.3z" />
+                        <path class="st0"
+                            d="M169.85,166v-16h3.2v9.6h3.2v3.2h-3.2v3.2H169.85z M179.45,166v-6.4h-3.2v-3.2h3.2V150h3.2v16H179.45z" />
+                        <path class="st0"
+                            d="M186.81,166v-16h3.2v9.6h3.2v3.2h-3.2v3.2H186.81z M196.41,166v-6.4h-3.2v-3.2h3.2V150h3.2v16H196.41z" />
+                        <path class="st0" d="M203.77,159.6V150h3.2v9.6H203.77z M203.77,166v-3.2h3.2v3.2H203.77z" />
+                    </g>
+                </svg>
+
+                <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In  -->
+                <svg class="txt_final2" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="346.18px" height="172.4px"
+                    viewBox="0 0 346.18 172.4" style="enable-background:new 0 0 346.18 172.4;" xml:space="preserve">
+                    <style type="text/css">
+                        .st0 {
+                            fill: #98ED00;
+                        }
+
+                        .st1 {
+                            fill: #E73A95;
+                        }
+                    </style>
+                    <defs>
+                    </defs>
+                    <g>
+                        <path class="st0" d="M14.71,22.4V9.6h-3.2V6.4h9.6v3.2h-3.2v12.8H14.71z" />
+                        <path class="st0"
+                            d="M25.27,22.4v-16h3.2v6.4h3.2V16h-3.2v3.2h3.2V16h3.2v6.4H25.27z M38.07,22.4v-16h3.2v16H38.07z" />
+                        <path class="st0"
+                            d="M51.19,22.4v-16h6.4v3.2h-3.2v9.6h3.2v3.2H51.19z M57.58,19.2V9.6h3.2v9.6H57.58z" />
+                        <path class="st0" d="M64.94,22.4v-16h9.6v3.2h-6.4v3.2h3.2V16h-3.2v3.2h6.4v3.2H64.94z" />
+                        <path class="st0" d="M78.7,22.4v-16h3.2V16h3.2v3.2h-3.2v3.2H78.7z M81.9,3.2V0h6.4v3.2H81.9z M88.3,22.4V16h-3.2v-3.2h3.2V6.4h3.2
+   v16H88.3z" />
+                        <path class="st0"
+                            d="M95.66,19.2V9.6h3.2v9.6H95.66z M98.86,9.6V6.4h6.4v3.2H98.86z M98.86,22.4v-3.2h6.4v3.2H98.86z" />
+                        <path class="st0" d="M112.62,22.4V9.6h-3.2V6.4h9.6v3.2h-3.2v12.8H112.62z" />
+                        <path class="st0"
+                            d="M123.17,22.4v-16h6.4v3.2h-3.2v3.2h3.2V16h-3.2v3.2h3.2V16h3.2v6.4H123.17z M129.57,12.8V9.6h3.2v3.2H129.57z" />
+                        <path class="st0"
+                            d="M136.93,22.4v-16h3.2V16h3.2v3.2h-3.2v3.2H136.93z M146.53,22.4V16h-3.2v-3.2h3.2V6.4h3.2v16H146.53z" />
+                        <path class="st0" d="M157.09,22.4V9.6h-3.2V6.4h9.6v3.2h-3.2v12.8H157.09z" />
+                        <path class="st0" d="M167.65,22.4v-16h9.6v3.2h-6.4v3.2h3.2V16h-3.2v3.2h6.4v3.2H167.65z" />
+                        <path class="st0"
+                            d="M181.41,22.4V9.6h3.2v12.8H181.41z M187.8,22.4V9.6h-3.2V6.4h6.4v16H187.8z" />
+                        <path class="st0" d="M195.16,22.4v-16h3.2v6.4h3.2V16h-3.2v3.2h3.2V16h3.2v6.4H195.16z" />
+                        <path class="st0" d="M208.92,22.4v-16h3.2v6.4h3.2V6.4h3.2v16h-3.2V16h-3.2v6.4H208.92z" />
+                        <path class="st0" d="M222.68,19.2V9.6h3.2v9.6H222.68z M225.88,9.6V6.4h6.4v3.2H225.88z M225.88,22.4v-3.2h6.4v3.2H225.88z
+    M232.27,19.2V9.6h3.2v9.6H232.27z" />
+                        <path class="st0" d="M245.39,12.8V6.4h3.2v6.4H245.39z M245.39,22.4V16h3.2v6.4H245.39z M248.59,16v-3.2h3.2V16H248.59z
+    M251.79,12.8V6.4h3.2v6.4H251.79z M251.79,22.4V16h3.2v6.4H251.79z" />
+                        <path class="st0" d="M259.15,19.2V9.6h3.2v9.6H259.15z M262.35,9.6V6.4h6.4v3.2H262.35z M262.35,22.4v-3.2h6.4v3.2H262.35z
+    M268.75,19.2V9.6h3.2v9.6H268.75z" />
+                        <path class="st0" d="M276.11,22.4v-16h6.4v3.2h-3.2v3.2h3.2V9.6h3.2V16h-6.4v6.4H276.11z" />
+                        <path class="st0" d="M289.87,19.2V9.6h3.2v9.6H289.87z M293.07,9.6V6.4h6.4v3.2H293.07z M293.07,22.4v-3.2h6.4v3.2H293.07z
+    M299.46,19.2V9.6h3.2v9.6H299.46z" />
+                        <path class="st0" d="M306.83,22.4v-16h3.2v12.8h3.2v-6.4h3.2v6.4h3.2V6.4h3.2v16H306.83z" />
+                        <path class="st0" d="M326.99,19.2V9.6h3.2v9.6H326.99z M330.18,9.6V6.4h6.4v3.2H330.18z M330.18,22.4v-3.2h6.4v3.2H330.18z
+    M336.58,19.2V9.6h3.2v9.6H336.58z" />
+                        <path class="st0" d="M3.2,47.4V34.6H0v-3.2h9.6v3.2H6.4v12.8H3.2z" />
+                        <path class="st0"
+                            d="M13.76,47.4V34.6h3.2v3.2h3.2v-3.2h-3.2v-3.2h6.4v16h-3.2V41h-3.2v6.4H13.76z" />
+                        <path class="st0" d="M27.51,47.4v-16h3.2v6.4h3.2v-6.4h3.2v16h-3.2V41h-3.2v6.4H27.51z" />
+                        <path class="st0" d="M41.27,47.4v-16h3.2v12.8h3.2V31.4h3.2v12.8h3.2v3.2H41.27z" />
+                        <path class="st0"
+                            d="M64.63,44.2V41h-6.4v-9.6h3.2v6.4h3.2v-6.4h3.2v12.8H64.63z M58.23,47.4v-3.2h6.4v3.2H58.23z" />
+                        <path class="st0" d="M71.99,47.4v-16h9.6v3.2h-6.4v3.2h3.2V41h-3.2v3.2h6.4v3.2H71.99z" />
+                        <path class="st0" d="M85.74,47.4v-16h3.2v12.8h3.2v-6.4h3.2v6.4h3.2V31.4h3.2v16H85.74z" />
+                        <path class="st0" d="M105.9,47.4v-16h3.2v6.4h3.2V41h-3.2v3.2h3.2V41h3.2v6.4H105.9z" />
+                        <path class="st0" d="M125.42,47.4v-16h3.2v6.4h3.2V41h-3.2v6.4H125.42z M131.82,37.8v-6.4h3.2v6.4H131.82z M131.82,47.4V41h3.2v6.4
+   H131.82z" />
+                        <path class="st0" d="M139.17,44.2v-9.6h3.2v9.6H139.17z M142.37,34.6v-3.2h6.4v3.2H142.37z M142.37,47.4v-3.2h6.4v3.2H142.37z
+    M148.77,44.2v-9.6h3.2v9.6H148.77z" />
+                        <path class="st0" d="M156.13,47.4v-16h6.4v3.2h-3.2v3.2h3.2v-3.2h3.2V41h-6.4v6.4H156.13z" />
+                        <path class="st0" d="M169.89,47.4v-16h9.6v3.2h-6.4v3.2h3.2V41h-3.2v3.2h6.4v3.2H169.89z" />
+                        <path class="st0" d="M183.65,47.4v-16h3.2V41h3.2v3.2h-3.2v3.2H183.65z M186.85,28.2V25h6.4v3.2H186.85z M193.25,47.4V41h-3.2v-3.2
+   h3.2v-6.4h3.2v16H193.25z" />
+                        <path class="st0"
+                            d="M200.61,44.2v-9.6h3.2v9.6H200.61z M203.81,34.6v-3.2h6.4v3.2H203.81z M203.81,47.4v-3.2h6.4v3.2H203.81z" />
+                        <path class="st0" d="M214.37,47.4v-16h3.2v6.4h3.2V41h-3.2v6.4H214.37z M220.76,37.8v-6.4h3.2v6.4H220.76z M220.76,47.4V41h3.2v6.4
+   H220.76z" />
+                        <path class="st0"
+                            d="M228.12,47.4v-16h3.2V41h3.2v3.2h-3.2v3.2H228.12z M237.72,47.4V41h-3.2v-3.2h3.2v-6.4h3.2v16H237.72z" />
+                        <path class="st0" d="M245.08,47.4v-16h9.6v3.2h-6.4v3.2h3.2V41h-3.2v3.2h6.4v3.2H245.08z" />
+                        <path class="st0" d="M267.79,47.4V34.6h-3.2v-3.2h9.6v3.2h-3.2v12.8H267.79z" />
+                        <path class="st0"
+                            d="M278.35,47.4V34.6h3.2v3.2h3.2v-3.2h-3.2v-3.2h6.4v16h-3.2V41h-3.2v6.4H278.35z" />
+                        <path class="st0" d="M292.11,47.4v-16h3.2v6.4h3.2v-6.4h3.2v16h-3.2V41h-3.2v6.4H292.11z" />
+                        <path class="st0" d="M305.87,47.4v-16h3.2v12.8h3.2V31.4h3.2v12.8h3.2v3.2H305.87z" />
+                        <path class="st0"
+                            d="M322.83,47.4v-16h3.2v6.4h3.2V41h-3.2v3.2h3.2V41h3.2v6.4H322.83z M335.62,47.4v-16h3.2v16H335.62z" />
+                        <path class="st0" d="M342.99,41v-9.6h3.2V41H342.99z M342.99,47.4v-3.2h3.2v3.2H342.99z" />
+                        <path class="st0"
+                            d="M35.18,94.2V91h-6.4v-9.6h3.2v6.4h3.2v-6.4h3.2v12.8H35.18z M28.78,97.4v-3.2h6.4v3.2H28.78z" />
+                        <path class="st0" d="M48.94,87.8v-3.2h-6.4v-3.2h9.6v6.4H48.94z M42.54,97.4v-3.2h6.4V91h3.2v6.4H42.54z M45.74,91v-3.2h3.2V91
+   H45.74z" />
+                        <path class="st0" d="M56.3,97.4v-16h3.2v6.4h3.2v-6.4h3.2v16h-3.2V91h-3.2v6.4H56.3z" />
+                        <path class="st0"
+                            d="M70.05,97.4V84.6h3.2v3.2h3.2v-3.2h-3.2v-3.2h6.4v16h-3.2V91h-3.2v6.4H70.05z" />
+                        <path class="st0" d="M83.81,97.4v-16h3.2V91h3.2v3.2h-3.2v3.2H83.81z M87.01,78.2V75h6.4v3.2H87.01z M93.41,97.4V91h-3.2v-3.2h3.2
+   v-6.4h3.2v16H93.41z" />
+                        <path class="st0"
+                            d="M106.53,97.4v-16h9.6v3.2h-6.4v3.2h3.2V91h-3.2v3.2h3.2V91h3.2v6.4H106.53z" />
+                        <path class="st0" d="M120.29,94.2v-9.6h3.2v9.6H120.29z M123.48,84.6v-3.2h6.4v3.2H123.48z M123.48,97.4v-3.2h6.4v3.2H123.48z
+    M129.88,94.2v-9.6h3.2v9.6H129.88z" />
+                        <path class="st0"
+                            d="M137.25,97.4V84.6h3.2v12.8H137.25z M143.64,97.4V84.6h-3.2v-3.2h6.4v16H143.64z" />
+                        <path class="st0" d="M151,97.4v-16h3.2v6.4h3.2V91h-3.2v3.2h3.2V91h3.2v6.4H151z" />
+                        <path class="st0" d="M164.76,97.4v-16h3.2v12.8h3.2v-6.4h3.2v6.4h3.2V81.4h3.2v16H164.76z" />
+                        <path class="st0" d="M184.92,97.4v-16h9.6v3.2h-6.4v3.2h3.2V91h-3.2v3.2h6.4v3.2H184.92z" />
+                        <path class="st0" d="M204.43,94.2v-9.6h3.2v9.6H204.43z M207.63,84.6v-3.2h6.4v3.2H207.63z M207.63,97.4v-3.2h6.4v3.2H207.63z
+    M214.03,94.2v-9.6h3.2v9.6H214.03z" />
+                        <path class="st0" d="M227.15,97.4v-16h9.6v16h-3.2V84.6h-3.2v12.8H227.15z" />
+                        <path class="st0" d="M240.91,97.4v-16h6.4v3.2h-3.2v3.2h3.2v-3.2h3.2V91h-6.4v6.4H240.91z" />
+                        <path class="st0" d="M254.66,94.2v-9.6h3.2v9.6H254.66z M257.86,84.6v-3.2h6.4v3.2H257.86z M257.86,97.4v-3.2h6.4v3.2H257.86z
+    M264.26,94.2v-9.6h3.2v9.6H264.26z" />
+                        <path class="st0" d="M271.62,97.4v-16h9.6v3.2h-6.4v3.2h3.2V91h-3.2v3.2h6.4v3.2H271.62z" />
+                        <path class="st0" d="M285.38,97.4v-16h3.2v6.4h3.2V91h-3.2v6.4H285.38z M291.78,87.8v-6.4h3.2v6.4H291.78z M291.78,97.4V91h3.2v6.4
+   H291.78z" />
+                        <path class="st0" d="M302.34,97.4V84.6h-3.2v-3.2h9.6v3.2h-3.2v12.8H302.34z" />
+                        <path class="st0" d="M312.89,97.4v-16h9.6v3.2h-6.4v3.2h3.2V91h-3.2v3.2h6.4v3.2H312.89z" />
+                        <path class="st1" d="M74.84,122.4v-16h3.2v3.2h3.2v3.2h-3.2v9.6H74.84z M81.24,116v-3.2h3.2v3.2H81.24z M87.64,122.4v-9.6h-3.2
+   v-3.2h3.2v-3.2h3.2v16H87.64z" />
+                        <path class="st1" d="M98.2,122.4v-12.8H95v-3.2h9.6v3.2h-3.2v12.8H98.2z" />
+                        <path class="st1"
+                            d="M108.76,119.2v-9.6h3.2v9.6H108.76z M111.96,109.6v-3.2h6.4v3.2H111.96z M111.96,122.4v-3.2h6.4v3.2H111.96z" />
+                        <path class="st1"
+                            d="M122.51,122.4v-12.8h3.2v3.2h3.2v-3.2h-3.2v-3.2h6.4v16h-3.2V116h-3.2v6.4H122.51z" />
+                        <path class="st1" d="M136.27,122.4v-16h3.2v3.2h3.2v3.2h-3.2v9.6H136.27z M142.67,116v-3.2h3.2v3.2H142.67z M149.07,122.4v-9.6
+   h-3.2v-3.2h3.2v-3.2h3.2v16H149.07z" />
+                        <path class="st1" d="M156.43,122.4v-16h6.4v3.2h-3.2v3.2h3.2v-3.2h3.2v6.4h-6.4v6.4H156.43z" />
+                        <path class="st1" d="M175.94,116v-3.2h9.6v3.2H175.94z" />
+                        <path class="st0" d="M195.46,122.4v-16h9.6v16h-3.2v-12.8h-3.2v12.8H195.46z" />
+                        <path class="st0" d="M209.21,122.4v-16h9.6v3.2h-6.4v3.2h3.2v3.2h-3.2v3.2h6.4v3.2H209.21z" />
+                        <path class="st0" d="M222.97,122.4v-16h6.4v3.2h-3.2v3.2h3.2v-3.2h3.2v6.4h-6.4v6.4H222.97z" />
+                        <path class="st0" d="M236.73,122.4v-16h6.4v3.2h-3.2v3.2h3.2v3.2h-3.2v3.2h3.2V116h3.2v6.4H236.73z M243.13,112.8v-3.2h3.2v3.2
+   H243.13z" />
+                        <path class="st0" d="M250.48,119.2v-9.6h3.2v9.6H250.48z M253.68,109.6v-3.2h6.4v3.2H253.68z M253.68,122.4v-3.2h6.4v3.2H253.68z
+    M260.08,119.2v-9.6h3.2v9.6H260.08z" />
+                        <path class="st0" d="M267.44,122.4v-16h3.2v3.2h3.2v3.2h-3.2v9.6H267.44z M273.84,116v-3.2h3.2v3.2H273.84z M280.24,122.4v-9.6
+   h-3.2v-3.2h3.2v-3.2h3.2v16H280.24z" />
+                        <path class="st0" d="M51.81,147.4v-16h6.4v3.2h-3.2v3.2h3.2v-3.2h3.2v6.4h-6.4v6.4H51.81z" />
+                        <path class="st0" d="M65.57,147.4v-16h9.6v3.2h-6.4v3.2h3.2v3.2h-3.2v3.2h6.4v3.2H65.57z" />
+                        <path class="st0"
+                            d="M79.33,147.4v-12.8h3.2v3.2h3.2v-3.2h-3.2v-3.2h6.4v16h-3.2V141h-3.2v6.4H79.33z" />
+                        <path class="st0"
+                            d="M93.08,147.4v-12.8h3.2v12.8H93.08z M99.48,147.4v-12.8h-3.2v-3.2h6.4v16H99.48z" />
+                        <path class="st0"
+                            d="M106.84,147.4v-16h3.2v9.6h3.2v3.2h-3.2v3.2H106.84z M116.44,147.4V141h-3.2v-3.2h3.2v-6.4h3.2v16H116.44z" />
+                        <path class="st0" d="M127,147.4v-12.8h-3.2v-3.2h9.6v3.2h-3.2v12.8H127z" />
+                        <path class="st0"
+                            d="M137.56,147.4v-16h3.2v9.6h3.2v3.2h-3.2v3.2H137.56z M147.15,147.4V141h-3.2v-3.2h3.2v-6.4h3.2v16H147.15z" />
+                        <path class="st0" d="M154.52,141v-3.2h6.4v3.2H154.52z" />
+                        <path class="st0" d="M165.07,147.4v-16h3.2v12.8h3.2v-6.4h3.2v6.4h3.2v-12.8h3.2v16H165.07z" />
+                        <path class="st0" d="M185.23,144.2v-9.6h3.2v9.6H185.23z M188.43,134.6v-3.2h6.4v3.2H188.43z M188.43,147.4v-3.2h6.4v3.2H188.43z
+    M194.83,144.2v-9.6h3.2v9.6H194.83z" />
+                        <path class="st0"
+                            d="M208.59,144.2V141h-6.4v-9.6h3.2v6.4h3.2v-6.4h3.2v12.8H208.59z M202.19,147.4v-3.2h6.4v3.2H202.19z" />
+                        <path class="st0" d="M221.71,144.2v-9.6h3.2v9.6H221.71z M224.91,134.6v-3.2h6.4v3.2H224.91z M224.91,147.4v-3.2h6.4v3.2H224.91z
+    M231.3,144.2v-9.6h3.2v9.6H231.3z" />
+                        <path class="st0" d="M244.42,147.4v-16h3.2v6.4h3.2v3.2h-3.2v6.4H244.42z M250.82,137.8v-6.4h3.2v6.4H250.82z M250.82,147.4V141
+   h3.2v6.4H250.82z" />
+                        <path class="st0" d="M258.18,141v-3.2h6.4v3.2H258.18z" />
+                        <path class="st0" d="M268.74,147.4v-16h6.4v3.2h-3.2v3.2h3.2v-3.2h3.2v6.4h-6.4v6.4H268.74z" />
+                        <path class="st0" d="M282.5,144.2v-9.6h3.2v9.6H282.5z M285.69,134.6v-3.2h6.4v3.2H285.69z M285.69,147.4v-3.2h6.4v3.2H285.69z
+    M292.09,144.2v-9.6h3.2v9.6H292.09z" />
+                        <path class="st0" d="M299.46,147.4v-16h6.4v3.2h-3.2v3.2h3.2v-3.2h3.2v6.4h-6.4v6.4H299.46z" />
+                        <path class="st0" d="M115.14,172.4v-16h6.4v3.2h-3.2v3.2h3.2v3.2h-3.2v3.2h3.2V166h3.2v6.4H115.14z M121.54,162.8v-3.2h3.2v3.2
+   H121.54z" />
+                        <path class="st0" d="M134.65,172.4v-16h6.4v3.2h-3.2v3.2h3.2v-3.2h3.2v6.4h-6.4v6.4H134.65z" />
+                        <path class="st0" d="M148.41,169.2v-9.6h3.2v9.6H148.41z M151.61,159.6v-3.2h6.4v3.2H151.61z M151.61,172.4v-3.2h6.4v3.2H151.61z
+    M158.01,169.2v-9.6h3.2v9.6H158.01z" />
+                        <path class="st0"
+                            d="M165.37,169.2v-9.6h3.2v9.6H165.37z M168.57,159.6v-3.2h6.4v3.2H168.57z M168.57,172.4v-3.2h6.4v3.2H168.57z" />
+                        <path class="st0"
+                            d="M179.13,169.2v-9.6h3.2v9.6H179.13z M182.32,159.6v-3.2h6.4v3.2H182.32z M182.32,172.4v-3.2h6.4v3.2H182.32z" />
+                        <path class="st0"
+                            d="M192.88,172.4v-16h3.2v9.6h3.2v3.2h-3.2v3.2H192.88z M202.48,172.4V166h-3.2v-3.2h3.2v-6.4h3.2v16H202.48z" />
+                        <path class="st0"
+                            d="M209.84,172.4v-16h3.2v9.6h3.2v3.2h-3.2v3.2H209.84z M219.44,172.4V166h-3.2v-3.2h3.2v-6.4h3.2v16H219.44z" />
+                        <path class="st0" d="M226.8,166v-9.6h3.2v9.6H226.8z M226.8,172.4v-3.2h3.2v3.2H226.8z" />
+                    </g>
+                </svg>
+
+
+                <a onclick="parent.postMessage('banner.redirect', '*')" target="_blank"
+                    href="http://ad.adriver.ru/cgi-bin/click.cgi?sid=1&bt=2&ad=679603&pid=2888711&bid=6103992&bn=6103992&rnd=1324601501">
+                    <div class="btn_master"></div>
+                </a>
+                <a target="_blank"
+                    href="http://ad.adriver.ru/cgi-bin/click.cgi?sid=1&bt=21&ad=679603&pid=2888711&bid=6103989&bn=6103989&rnd=943048045">
+                    <div class="btn_again"></div>
+                </a>
+
+            </div>
+
+        </div>
+        <div class="girl_bg_2 girl_bg_3"></div>
+        <div class="inner_bgf"></div>
+        <audio src="K-POP.mp3" id="audio" ></audio>
+    </div>
+
+
+
+
+
+
+    <script>
+
+
+
+        (function () {
+            window.AudioContext = window.AudioContext || window.webkitAudioContext;
+            if (window.AudioContext) {
+                window.audioContext = new window.AudioContext();
+            }
+            var fixAudioContext = function (e) {
+                if (window.audioContext) {
+                    // Create empty buffer
+                    var buffer = window.audioContext.createBuffer(1, 1, 22050);
+                    var source = window.audioContext.createBufferSource();
+                    source.buffer = buffer;
+                    // Connect to output (speakers)
+                    source.connect(window.audioContext.destination);
+                    // Play sound
+                    if (source.start) {
+                        source.start(0);
+                    } else if (source.play) {
+                        source.play(0);
+                    } else if (source.noteOn) {
+                        source.noteOn(0);
+                    }
+                }
+                // Remove events
+                document.removeEventListener('touchstart', fixAudioContext);
+                document.removeEventListener('touchend', fixAudioContext);
+            };
+            // iOS 6-8
+            document.addEventListener('touchstart', fixAudioContext);
+            // iOS 9
+            document.addEventListener('touchend', fixAudioContext);
+        })();
+
+
+
+
+        parent.postMessage('banner.preventClosing', '*');
+        var aud = document.getElementById("audio");
+        // sound.play()
+
+        // var aud = new Audio('K-POP.mp3');
+        var bannerWR = document.querySelector('#banner');
+        let btnStart = document.querySelector('.btn_start');
+        let gameBtn = document.querySelector('.btn_play');
+        let btnAgain = document.querySelector('.btn_again');
+        var gameTobe = false;
+
+        gameBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            bannerWR.classList.add('state1');
+        });
+
+
+        btnStart.addEventListener('click', function (e) {
+            e.preventDefault();
+            bannerWR.classList.add('state2');
+            preStart();
+            counterClick = 0;
+            result(0);
+
+        });
+        var clickGame = false;
+        function preStart() {
+            var timer_reverse = document.getElementById('timer_reverse');
+            var revTimer = 3;
+            revTimer--;
+            var retTM;
+            timer_reverse.className = 'rev3';
+            clickGame = false;
+            retTM = setInterval(function () {
+                if (revTimer <= 0) {
+                    startGame();
+                    bannerWR.classList.add('state2-1');
+                    clearInterval(retTM);
+                    clickGame = true;
+                    return
+                }
+                if (revTimer === 2) {
+                    timer_reverse.className = 'rev2';
+                } else if (revTimer <= 1) {
+                    timer_reverse.className = 'rev1';
+                }
+                revTimer--;
+            }, 1000);
+        }
+
+        btnAgain.addEventListener('click', function (e) {
+            e.preventDefault();
+            bannerWR.className = '';
+            bannerWR.classList.add('state1');
+
+
+        });
+
+
+
+
+
+
+        function timer() {
+
+            var timerA = document.getElementById('timer_A');
+            var timerB = document.getElementById('timer_B');
+            timerB.className = 'c2';
+            var timerFull = 30;
+            var timerACount = 9;
+            var newtimerTime = setInterval(function () {
+
+                var str = 'd' + timerACount;
+                timerA.className = str;
+                timerACount--;
+                timerFull--;
+
+                if (timerACount < 0) {
+                    timerACount = 9;
+                }
+
+                if ((timerFull < 30) && (timerFull >= 20)) {
+                    timerB.className = 'c1';
+                } else if ((timerFull <= 20) && (timerFull >= 10)) {
+                    timerB.className = 'c0';
+                } else {
+                    timerB.className = 'c00';
+                }
+
+                if (timerFull <= 0) {
+                    clearInterval(newtimerTime);
+                    statrPreFinalState();
+                    parent.postMessage('banner.event.4', '*');
+                    gameTobe = true;
+                }
+
+            }, 1000);
+
+
+        }
+
+
+
+
+
+        function statrPreFinalState() {
+            bannerWR.classList.add('state3');
+            clearInterval(timerside);
+            setTimeout(function () {
+                bannerWR.classList.add('state4');
+            }, 5000);
+
+
+            if (counterClick >= 30) {
+                document.body.className = 'count1';
+            } else {
+                document.body.className = 'count2';
+            }
+        }
+
+
+        var wrap = document.querySelector('.inner').offsetWidth;
+        var boxAlarm = document.querySelector('.box_alarm');
+        var coordAlarm = boxAlarm.getBoundingClientRect();
+        var boxAlarmCOORD = {
+            left: boxAlarm.offsetLeft,
+            right: boxAlarm.offsetLeft + coordAlarm.width
+        }
+
+        function Box() {
+            var div = document.createElement('div');
+            let randomClass = Math.floor(Math.random() * 5);
+            let strClass = '';
+            let dataStr = '';
+            var speed = 3;
+            switch (randomClass) {
+                case 1:
+                    strClass = 'ar_right ar';
+                    dataStr = 'r';
+                    break;
+                case 2:
+                    strClass = 'ar_left ar';
+                    dataStr = 'l';
+                    break;
+                case 3:
+                    strClass = 'ar_top ar';
+                    dataStr = 't';
+                    break;
+                case 4:
+                    strClass = 'ar_bt ar';
+                    dataStr = 'b';
+                    break;
+                default:
+                    dataStr = 'l';
+                    strClass = 'ar_left ar';
+                    break;
+            }
+            div.className = strClass;
+            div.setAttribute('data-side', dataStr);
+            var wrDiv = document.querySelector('.arow_wr');
+            wrDiv.appendChild(div);
+
+
+            this.posX = wrap;
+            this.frame = null;
+
+            this.divCoord = {
+                leftPoint: this.posX,
+                rightPoint: this.posX + div.offsetWidth
+            }
+
+
+            this.init = function () {
+                div.style.left = this.posX + 'px';
+                this.update();
+            }
+            this.update = function () {
+                let self = this;
+                let divCoord = {
+                    leftPoint: this.posX,
+                    rightPoint: this.posX + div.offsetWidth
+                }
+
+                if ((divCoord.leftPoint >= boxAlarmCOORD.left) && (divCoord.leftPoint <= boxAlarmCOORD.right) ||
+                    (divCoord.rightPoint <= boxAlarmCOORD.right) && (divCoord.rightPoint >= boxAlarmCOORD.left)) {
+                    div.classList.add('active_side');
+                } else {
+                    div.classList.remove('active_side');
+                }
+
+                if (this.posX <= (0 - div.offsetWidth)) {
+                    wrDiv.removeChild(div);
+                    cancelAnimationFrame(this.frame);
+                    return;
+                }
+
+                this.posX = this.posX - speed;
+                div.style.left = this.posX + 'px';
+
+
+
+                this.frame = requestAnimationFrame(function () {
+                    self.update();
+                });
+
+            }
+
+            this.init()
+        }
+
+        let timerside;
+        function startSpin() {
+            timerside = setInterval(function () {
+                new Box();
+            }, 750);
+
+        }
+
+
+
+        var counterClick = 1;
+
+        function counter(bool) {
+            if (bool) {
+                counterClick++;
+            } else {
+                if (counterClick === 0) return;
+                // counterClick--;
+            }
+            result(counterClick);
+        }
+
+        function innerClass() {
+            var inner = document.querySelector('.inner');
+            var bannerWR = document.querySelector('#banner');
+
+            inner.classList.add('inner_alarm');
+            bannerWR.classList.add('banner_alarm');
+            setTimeout(function () {
+                inner.classList.remove('inner_alarm');
+                bannerWR.classList.remove('banner_alarm');
+            }, 100);
+        }
+
+        function girl(state) {
+            var girl = document.querySelector('.girl');
+
+            switch (state) {
+                case 'b':
+                    girl.className = '';
+                    girl.classList.add('girl', 'girl_b');
+                    break;
+                case 'r':
+                    girl.className = '';
+                    girl.classList.add('girl', 'girl_r');
+                    break;
+                case 'l':
+                    girl.className = '';
+                    girl.classList.add('girl', 'girl_l');
+                    break;
+                case 't':
+                    girl.className = '';
+                    girl.classList.add('girl', 'girl_t');
+                    break;
+                default:
+                    break;
+            }
+
+            setTimeout(function () {
+                girl.className = '';
+                girl.classList.add('girl', 'girl_base');
+            }, 200);
+        }
+
+        var controller = document.querySelector('.controll');
+        controller.addEventListener('click', function (e) {
+            if (!clickGame) return;
+            var btn = e.target.getAttribute('data-controll');
+            var findActiveSide = document.querySelectorAll('.active_side');
+            var finteActiveSideRelative;
+            girl(btn);
+
+
+
+            if (!findActiveSide[0]) {
+                innerClass();
+                counter(false);
+                return
+            }
+
+            if (findActiveSide[0].classList.contains('l') ||
+                findActiveSide[0].classList.contains('t') ||
+                findActiveSide[0].classList.contains('b') ||
+                findActiveSide[0].classList.contains('r')) {
+                if (findActiveSide[1]) {
+                    finteActiveSideRelative = findActiveSide[1];
+                } else {
+                    innerClass();
+                    counter(false);
+                    return;
+                }
+
+            } else {
+                finteActiveSideRelative = findActiveSide[0];
+            }
+
+
+            if (btn === finteActiveSideRelative.getAttribute('data-side')) {
+                if (finteActiveSideRelative.classList.contains('l') ||
+                    finteActiveSideRelative.classList.contains('t') ||
+                    finteActiveSideRelative.classList.contains('b') ||
+                    finteActiveSideRelative.classList.contains('r')) {
+
+                    innerClass();
+                    counter(false);
+                } else {
+                    finteActiveSideRelative.classList.add(btn);
+                    counter(true);
+                }
+
+            } else {
+                innerClass();
+                counter(false);
+            }
+
+
+
+        });
+
+        function result(counter) {
+
+            var _count = counter;
+            _count += '';
+            var resultA = document.getElementById('resultA');
+            var resultB = document.getElementById('resultB');
+
+
+            if (_count === '0') {
+                resultA.className = 'd0 sh';
+                resultB.className = '';
+            } else if (_count.length > 0) {
+                resultA.className = 'd' + _count[0] + ' sh';
+                if (_count[1]) {
+                    resultB.className = 'd' + _count[1] + ' sh';
+                }
+            } else {
+                resultA.className = 'd' + _count + ' sh';
+                resultB.className = '';
+            }
+        }
+
+
+
+
+
+        function startGame() {
+            counterClick = 0;
+            timer();
+            startSpin();
+            aud.play();
+            if (gameTobe) {
+                parent.postMessage('banner.event.5', '*');
+            }
+
+            parent.postMessage('banner.event.1', '*');
+            setTimeout(function () {
+                parent.postMessage('banner.event.2', '*');
+            }, 7000);
+            setTimeout(function () {
+                parent.postMessage('banner.event.3', '*');
+            }, 15000);
+        }
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
