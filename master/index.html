@@ -17,6 +17,12 @@
             margin: 0;
             padding: 0;
         }
+        #hides {
+            position: absolute;
+            opacity: 0;
+            z-index: -150;
+            
+        }
 
         body,
         html {
@@ -862,6 +868,8 @@
         #timer_reverse {
             display: none;
         }
+
+
 
         #banner.state2 #timer_reverse {
             display: block;
@@ -3116,7 +3124,7 @@
         <div class="inner_bgf"></div>
         <audio src="K-POP.mp3" id="audio" ></audio>
 
-        <input type="button" value="Play1" onclick="myMovie.play()">
+        <input id="hides" type="button" value="Play1" onclick="myMovie.play()">
     </div>
 
 
@@ -3150,7 +3158,7 @@
         gameBtn.addEventListener('click', function (e) {
             e.preventDefault();
             bannerWR.classList.add('state1');
-            myMovie.play()
+            
         });
 
 
@@ -3496,7 +3504,7 @@
             counterClick = 0;
             timer();
             startSpin();
-
+            myMovie.play();
             if (gameTobe) {
                 parent.postMessage('banner.event.5', '*');
             }
