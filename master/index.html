@@ -3114,7 +3114,7 @@
         </div>
         <div class="girl_bg_2 girl_bg_3"></div>
         <div class="inner_bgf"></div>
-        <audio src="K-POP.mp3" id="audio" ></audio>
+        <audio src="K-POP.mp3" id="audio"></audio>
     </div>
 
 
@@ -3126,46 +3126,17 @@
 
 
 
-        (function () {
-            window.AudioContext = window.AudioContext || window.webkitAudioContext;
-            if (window.AudioContext) {
-                window.audioContext = new window.AudioContext();
-            }
-            var fixAudioContext = function (e) {
-                if (window.audioContext) {
-                    // Create empty buffer
-                    var buffer = window.audioContext.createBuffer(1, 1, 22050);
-                    var source = window.audioContext.createBufferSource();
-                    source.buffer = buffer;
-                    // Connect to output (speakers)
-                    source.connect(window.audioContext.destination);
-                    // Play sound
-                    if (source.start) {
-                        source.start(0);
-                    } else if (source.play) {
-                        source.play(0);
-                    } else if (source.noteOn) {
-                        source.noteOn(0);
-                    }
-                }
-                // Remove events
-                document.removeEventListener('touchstart', fixAudioContext);
-                document.removeEventListener('touchend', fixAudioContext);
-            };
-            // iOS 6-8
-            document.addEventListener('touchstart', fixAudioContext);
-            // iOS 9
-            document.addEventListener('touchend', fixAudioContext);
-        })();
 
 
 
 
         parent.postMessage('banner.preventClosing', '*');
-        var aud = document.getElementById("audio");
+        // var aud = document.getElementById("audio");
         // sound.play()
 
-        // var aud = new Audio('K-POP.mp3');
+        var aud = new Audio('K-POP.mp3');
+        
+
         var bannerWR = document.querySelector('#banner');
         let btnStart = document.querySelector('.btn_start');
         let gameBtn = document.querySelector('.btn_play');
@@ -3175,6 +3146,7 @@
         gameBtn.addEventListener('click', function (e) {
             e.preventDefault();
             bannerWR.classList.add('state1');
+            aud = new Audio('K-POP.mp3');
         });
 
 
