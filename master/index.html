@@ -3122,9 +3122,9 @@
         </div>
         <div class="girl_bg_2 girl_bg_3"></div>
         <div class="inner_bgf"></div>
-        <audio src="K-POP.mp3" id="audio" ></audio>
+        <audio src="Untitled.mp3" id="audio" ></audio>
 
-        <input id="hides" type="button" value="123132132 ФЫ" onclick="myMovie.play()">
+        <input id="hides" type="button" value="ФЫР ФЫР ФЫР" onclick="myMovie.play()">
     </div>
 
 
@@ -3133,10 +3133,7 @@
 
 
     <script>
-            var myMovie = new Audio('K-POP.mp3');
-
-
-        
+            var myMovie = new Audio('Untitled.mp3');
 
 
 
@@ -3160,15 +3157,12 @@
 
         btnStart.addEventListener('click', function (e) {
             e.preventDefault();
+            myMovie.play(0);
             bannerWR.classList.add('state2');
             preStart();
             counterClick = 0;
             result(0);
-
-            setTimeout(function() {
-                myMovie.play();
-
-            },3000)
+            
         });
         var clickGame = false;
         function preStart() {
