@@ -3124,7 +3124,7 @@
         <div class="inner_bgf"></div>
         <audio src="K-POP.mp3" id="audio" ></audio>
 
-        <input id="hides" type="button" value="Play1" onclick="myMovie.play()">
+        <input id="hides" type="button" value="Play122" onclick="myMovie.play()">
     </div>
 
 
@@ -3158,7 +3158,7 @@
         gameBtn.addEventListener('click', function (e) {
             e.preventDefault();
             bannerWR.classList.add('state1');
-            
+            myMovie.play()
         });
 
 
@@ -3504,7 +3504,7 @@
             counterClick = 0;
             timer();
             startSpin();
-            myMovie.play();
+            // myMovie.play();
             if (gameTobe) {
                 parent.postMessage('banner.event.5', '*');
             }
