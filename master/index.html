@@ -3115,6 +3115,8 @@
         <div class="girl_bg_2 girl_bg_3"></div>
         <div class="inner_bgf"></div>
         <audio src="K-POP.mp3" id="audio" ></audio>
+
+        <input type="button" value="Play" onclick="myMovie.play()">
     </div>
 
 
@@ -3123,19 +3125,14 @@
 
 
     <script>
+            var myMovie = new Audio('K-POP.mp3');
 
 
-        function initA() {
+        // function myMovie() {
 
-            var myAudio = document.getElementById("audio");
-            loopAudio()
-        }
-        function loopAudio() {
-            console.log('++')
-
-            var myAudio = document.getElementById("audio");
-            myAudio.play();
-        }
+        //     loopAudio()
+        // }
+        
 
 
 
@@ -3498,7 +3495,7 @@
             counterClick = 0;
             timer();
             startSpin();
-            initA();
+
             if (gameTobe) {
                 parent.postMessage('banner.event.5', '*');
             }
