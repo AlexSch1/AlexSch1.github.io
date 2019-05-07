@@ -3114,7 +3114,7 @@
         </div>
         <div class="girl_bg_2 girl_bg_3"></div>
         <div class="inner_bgf"></div>
-        <audio src="K-POP.mp3" id="audio"></audio>
+        <audio src="K-POP.mp3" id="audio" ></audio>
     </div>
 
 
@@ -3125,8 +3125,17 @@
     <script>
 
 
+        function initA() {
 
+            var myAudio = document.getElementById("audio");
+            loopAudio()
+        }
+        function loopAudio() {
+            console.log('++')
 
+            var myAudio = document.getElementById("audio");
+            myAudio.play();
+        }
 
 
 
@@ -3134,9 +3143,7 @@
         // var aud = document.getElementById("audio");
         // sound.play()
 
-        var aud = new Audio('K-POP.mp3');
-        
-
+        // var aud = new Audio('K-POP.mp3');
         var bannerWR = document.querySelector('#banner');
         let btnStart = document.querySelector('.btn_start');
         let gameBtn = document.querySelector('.btn_play');
@@ -3146,7 +3153,6 @@
         gameBtn.addEventListener('click', function (e) {
             e.preventDefault();
             bannerWR.classList.add('state1');
-            aud = new Audio('K-POP.mp3');
         });
 
 
@@ -3492,7 +3498,7 @@
             counterClick = 0;
             timer();
             startSpin();
-            aud.play();
+            initA();
             if (gameTobe) {
                 parent.postMessage('banner.event.5', '*');
             }
