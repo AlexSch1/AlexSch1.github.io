@@ -23,6 +23,11 @@
             z-index: -150;
              */
         }
+        .img-hidden {
+            overflow: hidden;
+            visibility: hidden;
+            position: fixed;
+        }
 
         body,
         html {
@@ -1393,24 +1398,28 @@
     <div id="banner" class=" ">
             <audio src="Untitled.mp3" id="audio"preload ></audio>
 
-        <div class="inner">
+        <div class="inner" onclick="parent.postMessage('banner.redirect', '*')" >
 
             <a target="_blank"
-                href="http://ad.adriver.ru/cgi-bin/click.cgi?sid=1&bt=2&ad=679603&pid=2888711&bid=6103993&bn=6103993&rnd=1675977427">
-                <img src="images/logos.png" class="logo">
+                href="http://ad.adriver.ru/cgi-bin/click.cgi?sid=1&bt=2&ad=679603&pid=2888710&bid=6103991&bn=6103991&rnd=2114554675"
+                
+                id="logoPixel"
+                >
+                <img src="images/logos.png" class="logo" >
             </a>
 
             <!-- state1 -->
             <div class="girl_bg"></div>
             <div class="popdance"></div>
 
-            <a target="_blank"
-                href="http://ad.adriver.ru/cgi-bin/click.cgi?sid=1&bt=21&ad=679603&pid=2888711&bid=6103987&bn=6103987&rnd=1877293981">
+            <a  
+                id="button_play"
+                target="_blank"
+                href="#"
+                >
                 <div class="btn_play"></div>
             </a>
 
-            <!-- <div class="txt_age"></div> -->
-            <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In  -->
             <svg class="txt_age2" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="26.94px" height="20.85px"
                 viewBox="0 0 26.94 20.85" style="enable-background:new 0 0 26.94 20.85;" xml:space="preserve">
@@ -1428,11 +1437,8 @@
                 </g>
             </svg>
 
-
             <div class="txt_machine2">
 
-                <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In  -->
-                <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In  -->
                 <svg class="txt_machine3" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="188.36px" height="12px"
                     viewBox="0 0 188.36 12" style="enable-background:new 0 0 188.36 12;" xml:space="preserve">
@@ -1469,8 +1475,6 @@
                     </g>
                 </svg>
 
-
-                <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In  -->
                 <svg class="txt_machine4" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="5.94px" height="5.91px"
                     viewBox="0 0 5.94 5.91" style="enable-background:new 0 0 5.94 5.91;" xml:space="preserve">
@@ -1492,14 +1496,14 @@
             </div>
 
             <!-- state2 -->
-            <a target="_blank"
-                href="http://ad.adriver.ru/cgi-bin/click.cgi?sid=1&bt=21&ad=679603&pid=2888711&bid=6103988&bn=6103988&rnd=425250036">
+            <a 
+                id="button_start"
+                target="_blank"
+                href="#">
                 <div class="btn_start"></div>
             </a>
             <div class="girl_bg_2"></div>
-            <!-- <div class="txt_regulat"></div> -->
 
-            <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In  -->
             <svg class="txt_regulat" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="343.83px" height="99.81px"
                 viewBox="0 0 343.83 99.81" style="enable-background:new 0 0 343.83 99.81;" xml:space="preserve">
@@ -2195,9 +2199,6 @@
 
                 </div>
 
-
-
-
             </div>
 
             <div class="panel">
@@ -2776,7 +2777,6 @@
 
             <!-- state final -->
             <div class="final">
-                <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In  -->
                 <svg class="txt_final1" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="310.67px" height="166px"
                     viewBox="0 0 310.67 166" style="enable-background:new 0 0 310.67 166;" xml:space="preserve">
@@ -2935,7 +2935,6 @@
                     </g>
                 </svg>
 
-                <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In  -->
                 <svg class="txt_final2" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="346.18px" height="172.4px"
                     viewBox="0 0 346.18 172.4" style="enable-background:new 0 0 346.18 172.4;" xml:space="preserve">
@@ -3110,12 +3109,16 @@
                 </svg>
 
 
-                <a onclick="parent.postMessage('banner.redirect', '*')" target="_blank"
-                    href="http://ad.adriver.ru/cgi-bin/click.cgi?sid=1&bt=2&ad=679603&pid=2888711&bid=6103992&bn=6103992&rnd=1324601501">
+                <a 
+                    id="button_knowmore"
+                    
+                    href="#">
                     <div class="btn_master"></div>
                 </a>
-                <a target="_blank"
-                    href="http://ad.adriver.ru/cgi-bin/click.cgi?sid=1&bt=21&ad=679603&pid=2888711&bid=6103989&bn=6103989&rnd=943048045">
+                <a 
+                    id="button_again"
+                    target="_blank"
+                    href="#">
                     <div class="btn_again"></div>
                 </a>
 
@@ -3125,7 +3128,6 @@
         <div class="girl_bg_2 girl_bg_3"></div>
         <div class="inner_bgf"></div>
 
-        <!-- <input id="hides" type="button" value="ФЫР22" onclick="myMovie.play()"> -->
     </div>
 
 
@@ -3134,17 +3136,41 @@
 
 
     <script>
-            // var myMovie = new Audio('Untitled.mp3');
-
-
-
+        function ar_sendPixel(sz) {
+            var src = sz;
+            if(document.createElement && document.body) {
+                var i = document.createElement('img');
+                i.style.position = 'absolute';
+                i.style.width = i.style.height = '0px';
+                i.src = src;
+                document.body.insertBefore(i, document.body.firstChild);
+            } else {
+                new Image().src = src
+            }
+        } 
+        // function loadPixel(url, options) {
+        //     if (typeof url == 'string' && url.indexOf('http') >= 0) {
+        //         var rndParamName = (options && options.rndParamName) || 'pr';
+        //         var pixel = document.createElement('img');
+        //         pixel.className = 'img-hidden';
+        //         pixel.addEventListener('load', function() {
+        //             pixel.parentNode.removeChild(pixel);
+        //         });
+        //         document.body.appendChild(pixel);
+        //         //randomize url
+        //         var src = url,
+        //             randomNumber = Math.ceil(Math.random() * 9999);
+        //         if (~src.indexOf('[RANDOM]')) src = src.replace('[RANDOM]', randomNumber);
+        //         else if (!~src.indexOf(rndParamName + '=')) {
+        //             src = url.indexOf('?') > 0 ? url + '&' : url + '?';
+        //             src += ~url.indexOf(rndParamName + '=') ? '' : rndParamName + '=' + randomNumber;
+        //         }
+        //         pixel.src = src;
+        //     }
+        // }
         parent.postMessage('banner.preventClosing', '*');
-        // var myMovie = document.getElementById("audio");
         var myMovie = new Audio('Untitled.mp3');
         myMovie.load();
-        // sound.play()
-
-        // var aud = new Audio('K-POP.mp3');
         var bannerWR = document.querySelector('#banner');
         let btnStart = document.querySelector('.btn_start');
         let gameBtn = document.querySelector('.btn_play');
@@ -3154,7 +3180,6 @@
         gameBtn.addEventListener('click', function (e) {
             e.preventDefault();
             bannerWR.classList.add('state1');
-            
         });
 
 
@@ -3202,7 +3227,6 @@
 
 
         function timer() {
-
             var timerA = document.getElementById('timer_A');
             var timerB = document.getElementById('timer_B');
             timerB.className = 'c2';
@@ -3230,8 +3254,11 @@
                 if (timerFull <= 0) {
                     clearInterval(newtimerTime);
                     statrPreFinalState();
-                    parent.postMessage('banner.event.4', '*');
                     gameTobe = true;
+
+                    // 4.  прошли игру (событие 4)
+                    parent.postMessage('banner.event.4', '*');
+                    // loadPixel()
                 }
 
             }, 1000);
@@ -3242,8 +3269,7 @@
             clearInterval(timerside);
             setTimeout(function () {
                 bannerWR.classList.add('state4');
-            }, 5000);
-
+            }, 2500);
 
             if (counterClick >= 30) {
                 document.body.className = 'count1';
@@ -3484,22 +3510,49 @@
 
 
         function startGame() {
-            
             counterClick = 0;
             timer();
             startSpin();
             if (gameTobe) {
+                // 5.  сыграли больше 1 раза (событие 5) 
                 parent.postMessage('banner.event.5', '*');
             }
 
+            // 1.  Начали играть (событие 1) 
             parent.postMessage('banner.event.1', '*');
+
             setTimeout(function () {
+                // 2.  7 секунда игры (событие 2)
                 parent.postMessage('banner.event.2', '*');
             }, 7000);
             setTimeout(function () {
+                // 3.  15 сек игры (событие 3) 
                 parent.postMessage('banner.event.3', '*');
             }, 15000);
         }
+
+
+        //  1)  Logo
+        var logoPixel = document.getElementById('logoPixel');
+        logoPixel.addEventListener('click', function(e) {
+            ar_sendPixel('http://ad.adriver.ru/cgi-bin/click.cgi?sid=1&bt=2&ad=679603&pid=2888710&bid=6103991&bn=6103991&rnd=2114554675')
+        });
+        var button_play = document.getElementById('button_play');
+        button_play.addEventListener('click', function(e) {
+            ar_sendPixel('http://ad.adriver.ru/cgi-bin/click.cgi?sid=1&bt=21&ad=679603&pid=2888710&bid=6103984&bn=6103984&rnd=1423231540')
+        });
+        var button_start = document.getElementById('button_start');
+        button_start.addEventListener('click', function(e) {
+            ar_sendPixel('http://ad.adriver.ru/cgi-bin/click.cgi?sid=1&bt=21&ad=679603&pid=2888710&bid=6103985&bn=6103985&rnd=70541328')
+        });
+        var button_again = document.getElementById('button_again');
+        button_again.addEventListener('click', function(e) {
+            ar_sendPixel('http://ad.adriver.ru/cgi-bin/click.cgi?sid=1&bt=21&ad=679603&pid=2888710&bid=6103986&bn=6103986&rnd=812036792')
+        });
+        var button_knowmore = document.getElementById('button_knowmore');
+        button_knowmore.addEventListener('click', function(e) {
+            ar_sendPixel('http://ad.adriver.ru/cgi-bin/click.cgi?sid=1&bt=2&ad=679603&pid=2888710&bid=6103990&bn=6103990&rnd=1271957119')
+        });
 
 
 
