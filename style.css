@@ -1,0 +1,179 @@
+body {
+    font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
+}
+
+.inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.inner__flex {
+    display: flex;
+}
+
+.inf {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #b4ad9e;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.txt {
+    font-size: 14px;
+    color: #626262;
+}
+
+.title {
+    font-size: 30px;
+    color: #626262;
+}
+
+.s_text {
+    padding: 100px 0 50px;
+}
+
+.s_text__title {
+    font-size: 30px;
+    color: #626262;
+}
+
+.s_text__txt {
+    font-size: 14px;
+    color: #626262;
+}
+
+.header {
+    padding: 40px 0;
+    max-width: 1060px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .log {
+    font-size: 30px;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: 10px;
+}
+
+.header .log span {
+    position: relative;
+}
+
+.header .log span::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #000;
+    top: 16px;
+    left: -4px;
+    transform: rotate(-45deg);
+}
+
+.header__nav {
+    display: flex;
+}
+
+.header__link {
+    text-transform: uppercase;
+    margin-right: 100px;
+}
+
+.header__link:last-child {
+    margin: 0;
+}
+
+.lenta {
+    padding-top: 130px;
+    padding-bottom: 130px;
+}
+
+.lenta .inner__flex {
+    margin-bottom: 130px;
+    justify-content: space-between;
+}
+
+.lenta .inner__flex:last-child {
+    margin: 0;
+}
+
+.lenta .item {
+    width: 46.66%;
+}
+
+.lenta .item img {
+    margin-bottom: 30px;
+    max-width: 100%;
+    width: 100%;
+    display: block;
+}
+
+.sign {
+    padding: 70px 0;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.sign .title {
+    margin-bottom: 70px;
+}
+
+.form {
+    width: 400px;
+    display: block;
+    margin: 0 auto;
+}
+
+.form input {
+    display: inline-block;
+    padding-bottom: 5px;
+    width: 100%;
+    border: none;
+    background: none;
+    border-bottom: 1px solid;
+}
+
+.form input::placeholder {
+    font-size: 14px;
+}
+
+footer {
+    width: 100%;
+    height: 60px;
+    background-color: #f0f0f0;
+    display: block;
+}
+
+
+.banner {
+    max-width: 1060px;
+    position: relative;
+    border: 1px solid;
+    margin: 0 auto;
+    min-height: 500px;
+    transform-style: inherit;
+    position: relative;
+    background: url(../images/image.png) no-repeat center / cover;
+}
+
+.open {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 14px black;
+    position: fixed;
+    top: 30%;
+    cursor: pointer;
+    left: 5%;
+}
+
+
