@@ -4,16 +4,19 @@ window.onload = function() {
     $('.toggle').on('click', function() {
         $(this).toggleClass('on');
         $('.resize').toggleClass('active');
+        $('body').toggleClass('modal');
     });
 
     $('.resize ul li a').on('click', function() {
         $(this).toggleClass('on');
         $('.resize').toggleClass('active');
+        $('body').toggleClass('modal');
     });
 
     $('.close-btn').on('click', function() {
         $(this).toggleClass('on');
         $('.resize').toggleClass('active');
+        $('body').toggleClass('modal');
     });
 
     TweenMax.from('.brand', 1, {

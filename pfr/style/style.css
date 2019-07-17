@@ -45,6 +45,9 @@ body:after {
     border-radius: 2%;
 }
 
+body.modal {
+    overflow: hidden;
+}
 .flex {
     display: flex;
     flex-direction: column;
@@ -270,6 +273,8 @@ ul {
 .resize.active {
     visibility: visible;
     opacity: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 @media(max-width: 991px) {
@@ -666,7 +671,6 @@ textarea:focus {
 
 @media(max-width:991px) {
     .contact-form {
-        margin: 5% -8%;
         width: 98%;
     }
 }
@@ -859,9 +863,11 @@ textarea:focus {
     animation-delay: 3s;
 }
 
+
 @media(max-width: 768px) {
     .upper {
         padding: 0 15px;
+        height: 50%;
     }
 }
 .bottom {
@@ -888,6 +894,7 @@ textarea:focus {
     .left-col, 
     .right-col {
         position: relative;
+        min-height: 500px;
     }
     .hero2 {
         height: auto;
@@ -984,6 +991,17 @@ textarea:focus {
     text-decoration: underline;
 }
 
+@media(max-width: 1024px) {
+    .hero_about {
+        top: 52%;
+    }
+}
+
+@media(max-width:767px) {
+    .hero_about {
+        left: 32%;
+    }
+}
 .hero_media {
     margin-top: 40px;
 }
@@ -1004,6 +1022,13 @@ textarea:focus {
     color: #bcac98;
     padding-right: 10px;
 }
+
+@media(max-width: 1024px) {
+    .hero_media ul {
+        left: -13%;
+    }
+}
+
 
 @media(max-width: 768px) {
     .hero_media ul {
@@ -1051,6 +1076,9 @@ textarea:focus {
 @media(max-width:767px) {
     .block-cover {
         width: 60%;
+    }
+    .more {
+        margin-left: 15px;
     }
 }
 
