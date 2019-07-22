@@ -1,22 +1,20 @@
 window.onload = function() {
+    $('.loader').addClass('loader_close');
     new WOW().init();
     // navigation 
-    $('.toggle').on('click', function() {
+    $('.nav__toggle').on('click', function() {
         $(this).toggleClass('on');
-        $('.resize').toggleClass('active');
-        $('body').toggleClass('modal');
+        $('.resize').toggleClass('resize_active');
     });
 
-    $('.resize ul li a').on('click', function() {
+    $('.resize__link').on('click', function() {
         $(this).toggleClass('on');
-        $('.resize').toggleClass('active');
-        $('body').toggleClass('modal');
+        $('.resize').toggleClass('resize_active');
     });
 
     $('.close-btn').on('click', function() {
         $(this).toggleClass('on');
-        $('.resize').toggleClass('active');
-        $('body').toggleClass('modal');
+        $('.resize').toggleClass('resize_active');
     });
 
     TweenMax.from('.brand', 1, {
@@ -26,7 +24,7 @@ window.onload = function() {
         ease: Expo.easeInOut
     });
 
-    TweenMax.staggerFrom('.menu li a', 1, {
+    TweenMax.staggerFrom('.menu__link', 1, {
         delay: 0.4,
         opacity: 0,
         ease: Expo.easeInOut
