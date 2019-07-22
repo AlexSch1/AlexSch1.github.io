@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<!--[if IE 7 ]><html lang="en" class="no-js ie ie7 lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8 ]><html lang="en" class="no-js ie ie8 lt-ie9"><![endif]-->
+<!--[if IE 9 ]><html lang="en" class="no-js ie ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="ru">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Fanta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="ad.size" content="width=240,height=400">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <style>
+  :root {
+    --main-speed: 58s;
+  }
+
+  .wrapper,
+  #banner {
+    width: 100vw;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    
+  }
+  .wrapper {
+    background: url(images/fanta-bg.png) no-repeat center center / cover;
+    z-index: 3;
+  }
+
+    .inner {
+       width: 1000px;
+      margin: 0 auto;
+      height: 250px;
+      position: relative;
+    }
+
+    a {
+      display: inline-block;
+    }
+
+    .position {
+      position: absolute;
+    }
+
+
+    .bg-left {
+      bottom: 0;
+      left: 7%;
+      z-index: 10;
+    }
+
+    .bg-right {
+      bottom: 0;
+      right: 14.3%;
+      z-index: 100;
+    }
+  
+    .unp {
+      right: 14px;
+      top: 11px;
+      z-index: 800;
+    }
+
+    .star1 {
+      bottom: 56.4%;
+      left: 14.6%;
+    }
+
+    .star3 {
+      top: 34.8%;
+      right: 30.4%;
+    }
+
+    .star2 {
+      right: 11.3%;
+      bottom: 46.8%;
+    }
+
+    .star4 {
+      bottom: 79px;
+      left: 62px;
+    }
+
+    .bottle {
+      bottom: -187px;
+      left: 21.1%;
+      z-index: 20;
+      transform: translateY(100%);
+    }
+
+    @keyframes bounceBottle {
+        0%, 60%, 75%, 90%, 100% {
+          -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+               -o-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                  transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        }
+        0% {
+        opacity: 0;
+          -webkit-transform: translate(0, 3000px);
+                  transform: translate(0, 3000px);
+        }
+        60% {
+          opacity: 1;
+          -webkit-transform: translate(0, -20px);
+                  transform: translate(0, -20px);
+        }
+        75% {
+          -webkit-transform: translate(0, 10px);
+                  transform: translate(0, 10px);
+        }
+        90% {
+          -webkit-transform: translate(0, -5px);
+                  transform: translate(0, -5px);
+        }
+        100% {
+          -webkit-transform: translate(0, 0);
+                  transform: translate(0, 0);
+        }
+      }
+
+      @keyframes swing {
+        1% {
+          -webkit-transform: rotate3d(0, 0, 1, 3deg);
+          transform: rotate3d(0, 0, 1, 3deg);
+          -webkit-filter: blur(1px);
+          filter: blur(1px);
+        }
+        2% {
+          -webkit-transform: rotate3d(0, 0, 1, -3deg);
+          transform: rotate3d(0, 0, 1, -3deg);
+        }
+        3% {
+          -webkit-transform: rotate3d(0, 0, 1, 3deg);
+          transform: rotate3d(0, 0, 1, 3deg);
+        }
+        4% {
+          -webkit-transform: rotate3d(0, 0, 1, -3deg);
+          transform: rotate3d(0, 0, 1, -3deg);
+          -webkit-filter: blur(1px);
+          filter: blur(1px);
+        }
+        5%, 100% {
+          -webkit-filter: blur(0px);
+          filter: blur(0px);
+          -webkit-transform: rotate3d(0, 0, 1, 0deg);
+          transform: rotate3d(0, 0, 1, 0deg);
+        }
+      }
+
+      #banner.scene-1 .bottle {
+        -webkit-animation: bounceBottle 1s both .5s;
+                animation: bounceBottle 1s both .5s;
+      }
+
+      #banner.scene-2 .bottle {
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+      }
+
+      #banner.scene-3 .bottle {
+        -webkit-transform-origin: bottom 50px;
+        -ms-transform-origin: bottom 50px;
+        transform-origin: bottom 50px;
+        animation: swing 7s both infinite 2s, fadeOut 1s linear forwards var(--main-speed);
+      }
+
+
+
+
+
+
+
+
+
+    .orange-fly-all {
+      z-index: 9;
+    }
+
+    .orange-fly1 {
+      bottom: -10px;
+      left: 33%;
+    }
+
+    .orange-fly2 {
+      bottom: -10px;
+      left: 25%;
+    }
+
+    .orange-fly3 {
+      bottom: -11px;
+      left:35% ;
+    }
+
+    .orange-fly4 {
+      left: 20%;
+      bottom: -51px;
+    }
+
+    .orange-fly5 {
+      bottom: 0;
+      left: 35%;  
+      transition: all 1s ease;
+    }
+
+    .orange-fly6 {
+      bottom: -42px;
+      left: 32%;
+    }
+
+
+    .orange-fly7 {
+      bottom: -18px;
+      left: 22%;
+      transition: all 2s ease-in-out;
+    }
+
+    .leaf1 {
+      bottom: -15px;
+      left: 22%;
+
+    }
+
+
+
+    .leaf2 {
+      bottom: -11px;
+      left: 35%;
+    }
+
+    .paper-fanta {
+      left: 37.5%;
+      bottom: 20px;
+      opacity: 0;
+      width: 200px;
+      z-index: 10;
+    }
+
+
+
+    @keyframes bounceA {
+      0% {
+        transform: translate(0, 0);
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+      }
+      100% {
+        transform:  translate(310px, -310px)  rotate(450deg);
+      }
+    } 
+
+    #banner.scene-1 .orange-fly1 {
+      animation: bounceA 3s linear .9s;
+    }
+
+
+
+    @keyframes bounceB {
+      0% {
+        transform: translate(0, 0) rotate(150deg);
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+      }
+      100% {
+        transform:  translate(-260px, -260px);
+      }
+    } 
+
+    #banner.scene-1 .orange-fly2 {
+      animation: bounceB 1.5s linear  both .9s;
+    }
+
+
+
+    @keyframes bounceC {
+      0% {
+        transform: rotate(0deg) translate(0px, 0px) rotate(0deg) scale(1);
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+      }
+      80% {
+        transform: rotate(150deg) translate(-84px, -354px) rotate(0deg) scale(1);
+      }
+      100% {
+        transform: rotate(150deg) translate(-84px, -354px) rotate(0deg) scale(1.2);
+      }
+    } 
+
+    #banner.scene-1 .orange-fly3 {
+      animation: bounceC 3.5s  both .9s;
+    }
+
+
+
+
+
+    @keyframes bounceD {
+      0% {
+        transform: translate(0, 0) rotate(150deg);
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+      }
+      100% {
+        transform:  translate(-500px, -300px);
+      }
+    } 
+
+    #banner.scene-1 .orange-fly4 {
+      animation: bounceD 2s linear  forwards .9s;
+    }
+
+
+  
+
+    @keyframes bounceE{
+      0% {
+        z-index: 30;
+        transform:  translate(0px,0px);
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+      }
+      100% {
+        transform:  translate(97px,-249px) scale(.8);
+      }
+    }
+
+    #banner.scene-1 .orange-fly5 {
+      animation: bounceE  1.5s forwards .9s;
+    }
+
+
+
+    @keyframes bounceF{
+      0% {
+        transform: translate(0, 0) rotate(150deg);
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+      }
+      100% {
+        transform:  translate(500px, -300px);
+      }
+    }
+
+
+    #banner.scene-1 .orange-fly6 {
+      animation: bounceF ease-in 2s forwards .9s;
+    }
+
+
+
+    @keyframes bounceG{
+      0% {
+        transform: translate(0px, 0px) rotate(0deg) scale(1,1);
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        z-index: 20;
+      }
+      90% {
+        opacity: .5;
+      }
+      100% {
+        transform: translate(-350px, -120px) rotate(300deg) scale(.1,.1);
+        opacity: 0;
+        
+      }
+    }
+
+    #banner.scene-1 .orange-fly7{
+      animation: bounceG  1s linear forwards .9s;
+    }
+
+
+
+    @keyframes bounceLeafA {
+      0% {
+        transform: translate(0px, 0px) rotate(100deg);
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+      }
+      100% {
+        transform:  translate(-130px, -285px) rotate(-260deg);
+      }
+    } 
+
+    #banner.scene-1 .leaf1 {
+      animation: bounceLeafA 1s linear  forwards .9s;
+    }
+
+
+
+    @keyframes bounceLeafB {
+      0% {
+        transform: translate(0, 0, 0) rotate(100deg);
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+      }
+      100% {
+        transform:  translate(150px, -150px) rotate(-360deg) scale(.5);
+        opacity: .0;
+      }
+    } 
+
+    #banner.scene-1 .leaf2 {
+      animation: bounceLeafB 1.5s linear  forwards .9s;
+    }
+
+
+    @keyframes fantaIn {
+      0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+      }
+      100% {
+        opacity: 1;
+      }
+    } 
+    #banner.scene-2 .paper-fanta {
+      animation: fantaIn 1s forwards;
+    }
+
+    #banner.scene-3 .paper-fanta {
+      animation: fadeOut 1s linear both var(--main-speed);
+    }
+
+
+
+
+
+    #banner.scene-1 .star2,
+    #banner.scene-1 .star3,
+    #banner.scene-1 .star1,
+    #banner.scene-1 .star4 {
+      animation: fadeIn 1s  forwards;
+    }
+
+ 
+    @keyframes fadeIn {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    } 
+
+    @keyframes fadeOut {
+      0% {opacity: 1;}
+      100% {opacity: 0;}
+    } 
+
+
+    @keyframes shineStar{
+      0% {
+        transform: scaleX(1.00) scaleY(1.00);
+      }
+      4% {
+        transform: scaleX(1.9) scaleY(1.9);
+      } 
+      15%,80%,60%,100% {
+        transform:  scaleX(1.00) scaleY(1.00);
+      } 
+    }
+
+    @keyframes shineStarX{
+      0% {
+      }
+      4% {
+        transform: scaleX(2.3) scaleY(2.3);
+      } 
+      15%,80%,60%,100% {
+        transform:  scaleX(1.00) scaleY(1.00);
+      } 
+    }
+
+    #banner.scene-3 .star1,
+    #banner.scene-3 .star2,
+    #banner.scene-3 .star3 {
+      opacity: 1;
+      animation: shineStar  7s  linear  infinite, fadeOut 1s  forwards var(--main-speed);
+      transform-origin: 50% 50%;
+    }
+    #banner.scene-3 .star1 {
+      animation-delay: 2.71s, var(--main-speed);
+    }
+    #banner.scene-3 .star2 {
+      animation-delay: 2.9s, var(--main-speed);
+    }
+    #banner.scene-3 .star3 {
+      animation-delay: 2.4s, var(--main-speed);
+    }
+    #banner.scene-3 .star4 {
+      animation: shineStar  7s  linear  infinite 3.4s , shineStarX 7s  linear  infinite 3.4s, fadeOut 1s  both var(--main-speed);
+    } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.orange-fly8 {
+  bottom: 16px;
+  left: 64%;
+  z-index: 120;
+  width: 74px;
+  transform: rotate(-20deg);
+}
+@keyframes swingStatic {
+  1% {
+    -webkit-transform: rotate3d(0, 0, 1, -17deg);
+    transform: rotate3d(0, 0, 1, -17deg);
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+  }
+  2% {
+    -webkit-transform: rotate3d(0, 0, 1, -23deg);
+    transform: rotate3d(0, 0, 1, -23deg);
+  }
+  3% {
+    -webkit-transform: rotate3d(0, 0, 1, -17deg);
+    transform: rotate3d(0, 0, 1, -17deg);
+  }
+  4% {
+    -webkit-transform: rotate3d(0, 0, 1, -23deg);
+    transform: rotate3d(0, 0, 1, -23deg);
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+  }
+  5%, 100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    -webkit-transform: rotate3d(0, 0, 1, -20deg);
+    transform: rotate3d(0, 0, 1, -20deg);
+  }
+}
+
+
+#banner.scene-2 .orange-fly8 {
+  animation: swingStatic 7s ease infinite 1.5s;
+}
+
+
+
+
+
+
+  @media screen and (max-width:700px) {
+    .inner {
+      left: -150px;
+    }
+    .unp {
+      position: fixed;
+    }
+  }
+  @media screen and (max-width:400px) {
+    .inner {
+      left: -200px;
+    }
+  }
+
+
+  @keyframes animateoneSn {
+    0% {
+      height: 0%
+    }
+    100% {
+      height: 100%;
+    }
+  }
+
+  @keyframes fadeInIE {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+
+
+
+.cast, .cast2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+}
+
+#banner.scene-2 .cast {
+  animation: animateoneSn 4.1s linear forwards 1 2s;
+}
+
+#banner.scene-2 .cast2 {
+  animation: animateoneSn 2.1s linear forwards 1 2s;
+}
+
+
+_:-ms-fullscreen, :root #banner.scene-2 .ie11up { 
+  animation: fadeInIE 4s linear both 1 2s;
+}
+
+_:-ms-fullscreen, :root #banner.scene-3 .ie11up { 
+  animation: fadeInIE 4s linear both 1 2s;
+}
+
+_:-ms-fullscreen, :root #banner.scene-2 .cast { 
+  animation: none;
+  height: 100%;
+}
+
+_:-ms-fullscreen, :root #banner.scene-2 .cast2 { 
+  animation: none;
+  height: 100%;
+}
+
+
+/*SNOW*/
+#snowbanner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 150;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: repeat ;}
+
+.snow {
+    background-image: url("images/snow.svg");
+    background-repeat: repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation-timing-function: linear;
+    transition: all 3s;
+    background-position:center;
+  }
+
+ 
+  #banner.scene-1 .snow-2,
+  #banner.scene-1 .cast2,
+  #banner.scene-1 .cast, 
+  #banner.scene-1 .snow-1{
+    animation: none;
+  }
+
+
+  .snow-1 {
+    animation-name: animateone;
+    background-size: 500px 500px;
+  }
+  .snow-2 {
+    animation-name: animatetwo;
+    background-size: 300px 300px;
+  }
+
+  #banner.scene-2 .snow-1 {
+    animation: animateone 8s linear infinite, fadeOut 1s linear both 60s;
+  }
+
+  #banner.scene-2 .snow-2 {
+    animation: animatetwo 8s linear infinite, fadeOut 1s linear both 60s;
+  }
+
+
+@keyframes animateone {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 500px 500px;
+  }
+}
+
+@keyframes animatetwo {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 300px 900px;
+  }
+}
+
+
+
+
+  </style>
+</head>
+
+<body>
+  
+
+  <a href="#">
+    <div id="banner" class="">
+      <div class="wrapper">
+         <section id="snowbanner" class="ie11up">
+          <div class="cast">
+            <div class="snow snow-1 "></div>
+          </div>
+            <div class="cast2">
+              <div class="snow snow-2 "></div>
+            </div>
+            
+          </section>
+          
+        <div class="inner">
+
+          <img src="images/fanta-unp.png" class="position unp  ">
+          <img src="images/bg-left.png" class="position   bg-left ">
+          <img src="images/bg-right.png" class="position   bg-right ">
+          <img  src="images/Star1.png" class="position star1">
+          <img  src="images/Star2.png" class="position star2">
+          <img  src="images/Star3.png" class="position star3">
+          <img  src="images/Star2.png" class="position star4">
+
+          <img  src="images/bottle.png" class="position bottle">
+
+          <img  src="images/m2.png" class="position orange-fly1 orange-fly-all">
+          <img  src="images/m2.png" class="position orange-fly2 orange-fly-all">
+          <img  src="images/m2.png" class="position orange-fly3 orange-fly-all">
+          <img  src="images/m3.png" class="position orange-fly4 orange-fly-all">
+          <img  src="images/m2.png" class="position orange-fly5 orange-fly-all">
+          <img  src="images/m3.png" class="position orange-fly6 orange-fly-all">
+          <img  src="images/m1.png" class="position orange-fly7 orange-fly-all">
+
+          <img  src="images/leaf.png" class="position leaf1">
+          <img  src="images/leaf.png" class="position leaf2">
+          <img  src="images/Paper.png" class="position paper-fanta">
+
+          <img  src="images/m2.png" class="position orange-fly8 orange-fly-all orange-static">
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <script type="text/javascript">
+    'use strict';
+
+
+
+    document.addEventListener("DOMContentLoaded", function (event) {
+
+      var banner = document.getElementById('banner');
+      var classNameBody;
+      function loop() {
+        classNameBody = 'scene';
+        banner.classList.add("scene-1");
+        var count = 1;
+        var timer = setInterval(function () {
+          if (count === 2) {
+            banner.classList.add("scene-3");
+            setTimeout(function() {
+              banner.classList.remove("scene-2");
+              banner.classList.remove("scene-3");
+              loop();
+            },60000)
+            clearInterval(timer);
+            return
+          }
+          classNameBody = 'scene' + '-' + count;
+          banner.classList.remove(classNameBody);
+          count++;
+          classNameBody = 'scene' + '-' + count;
+          banner.classList.add(classNameBody);
+        }, 2500);
+      }
+      loop();
+    });
+
+
+  </script>
+
+</body>
+
+</html>
