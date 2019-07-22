@@ -24,11 +24,17 @@ window.onload = function() {
         ease: Expo.easeInOut
     });
 
-    TweenMax.staggerFrom('.menu__link', 1, {
+    TweenMax.to('.menu__link', 1, {
         delay: 0.4,
-        opacity: 0,
+        opacity: 1,
         ease: Expo.easeInOut
-    }, 0.1);
+    }, 0.2);
+
+    // TweenMax.staggerFrom('.menu__link', 1, {
+    //     delay: 0.4,
+    //     opacity: 0,
+    //     ease: Expo.easeInOut
+    // }, 0.1);
 
     let docWidth = $('body').width();
     let $wrap = $('.wrap');

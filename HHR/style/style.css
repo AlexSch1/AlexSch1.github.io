@@ -241,6 +241,7 @@ ul {
 }
 
 .menu__link {
+	opacity: 0;
     color: #fff;
     transition: all .3s ease-out;
 }
