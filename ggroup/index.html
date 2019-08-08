@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- style start -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="libs/slick/slick.css">
+    <link rel="stylesheet" href="libs/slick/slick-theme.css">
+    <link rel="stylesheet" href="libs/nice-select.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- style end -->
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- header start -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="hedaer__naming">
+                    <div class="header__logo">
+                        <img src="images/logo.jpg" alt="logo" width="100px" height="100px">
+                    </div>
+                    <div class="header__company">
+                        <p class="header__company-name">Название <br> компании</p>
+                        <p class="header__company-sub-name">самая клевая компания</p>
+                    </div>
+                </div>
+                <div class="hedaer__tel">
+                    <a class="header__link" href="tel:+74997777777">+7(499)777 77 77</a>
+                    <a class="header__link" href="tel:+74997777777">+7(499)777 77 77</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- hero start -->
+    <div class="hero">
+        <div class="container">
+            <div class="hero__form">
+                <p class="hero__title">Форма с кнопкой</p>
+                <form action="#" class="form">
+                    <p class="form__text">Оставь телефон и получи что-то офигенное</p>
+                    <div class="form__input_wr">
+                        <input type="tel"  class="form__input-text form__input" placeholder="Введите номер" required >
+                        <input type="submit" class="form__btn form__input modal-btn" value="ПОЛУЧИТЬ">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- hero end -->
+
+    <!-- gallery start -->
+    <div class="gallery">
+        <div class="container">
+            <div class="gallery__title">Тут у нас слайдер</div>
+            <div class="gallery__slider">
+                <div>
+                    <div class="gallery__item">
+                        <img class="gallery__img" src="images/d2.jpg" alt="">
+                    </div>
+                </div>
+                <div>
+                    <div class="gallery__item">
+                        <img class="gallery__img" src="images/d2.jpg" alt="">
+                    </div>
+                </div>
+                <div>
+                    <div class="gallery__item">
+                        <img class="gallery__img" src="images/d2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- gallery end -->
+
+    <!-- s-content start -->
+    <div class="s-content">
+        <div class="container">
+            <h3 class="s-content__title">Просто текстовый блок</h3>
+            <p class="s-content__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere quis arcu
+                sit
+                amet commodo. Nullam ac dui lacus. Nulla dapibus interdum interdum. Curabitur ut diam nisl. Vivamus
+                libero lacus, viverra at dolor sit amet, commodo faucibus orci. Vivamus laoreet ornare nisi, id pharetra
+                tellus ullamcorper volutpat. Sed lacinia placerat accumsan. Praesent pharetra ipsum scelerisque, sodales
+                urna ut, placerat nulla. Duis nunc urna, semper non arcu ut, sagittis dapibus lorem. Nunc nec urna id
+                velit sodales sodales. Sed porttitor quam eget mollis consequat. Curabitur aliquet nec dui eget aliquet.
+                Nulla in risus ante.</p>
+        </div>
+    </div>
+    <!-- s-content end -->
+
+    <!-- order start -->
+    <div class="s-order">
+        <div class="container">
+            <h4 class="s-order__title">Калькулятор</h4>
+            <p class="s-order__sub-title">(стоимость пользователь узнает по телефону)</p>
+            <div class="order tabs">
+                <ul class="tabs-navigation order-navigation">
+                    <li class="tabs-navigation__item order-navigation__item tabs-navigation__item--active"
+                        data-show-tab="one">
+                        <img class="tabs-navigation__img" src="images/1.png" alt="">
+                        <span>Одностворчатое</span>
+                    </li>
+                    <li class="tabs-navigation__item order-navigation__item" data-show-tab="two">
+                        <img src="images/2.png" alt="">
+                        <span>Двухстворчатое</span>
+                    </li>
+                    <li class="tabs-navigation__item order-navigation__item" data-show-tab="three">
+                        <img src="images/3.png" alt="">
+                        <span>Трехстворчатое</span>
+                    </li>
+                    <li class="tabs-navigation__item order-navigation__item" data-show-tab="balcony">
+                        <img src="images/4.png" alt="">
+                        <span>Балконный блок</span>
+                    </li>
+                    <li class="tabs-navigation__item order-navigation__item" data-show-tab="balcony-full">
+                        <img src="images/5.png" alt="">
+                        <span>Остекление балкона</span>
+                    </li>
+                </ul>
+                <div class="tabs__body order__body">
+                    <div class="tab tab-hits tab--active one">
+                        <form action="" class="tab__form tab__form-1">
+                            <div class="tab-left">
+                                <div class="preview">
+                                    <div class="preview__picture">
+                                        <img src="images/1 копия.png" alt="" class="preview__img">
+                                    </div>
+                                    <div class="preview__footer">
+                                        <div class="preview__input">
+                                            <span>ширина,см</span>
+                                            <input type="number" placeholder="120" required>
+                                        </div>
+                                        <span class="icon-and">x</span>
+                                        <div class="preview__input">
+                                            <span>высота,см</span>
+                                            <input type="number" placeholder="120" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-right">
+                                <p class="tab__title">Одностворчатое окно KBE</p>
+                                <div class="tab__choose">
+                                    <p class="tab__name">1. Критерий выбора</p>
+                                    <div class="tab__list">
+                                        <label for="radio1" class="radio-input">
+                                            <input type="radio" name="p1" id="radio1" class="radio" required checked>
+                                            <span></span>
+                                            <p>пункт выбора 1</p>
+                                        </label>
+                                        <label for="radio2" class="radio-input">
+                                            <input type="radio" name="p1" id="radio2" class="radio" required>
+                                            <span></span>
+                                            <p>пункт выбора 2</p>
+                                        </label>
+                                        <label for="radio3" class="radio-input">
+                                            <input type="radio" name="p1" id="radio3" class="radio" required>
+                                            <span></span>
+                                            <p>пункт выбора 3</p>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="tab__select">
+                                    <p class="tab__name">2. Выберите открывание створки</p>
+                                    <div class="form-select" id="default-select"">
+										<select >
+                                            <option value="">Не открывается</option>
+										    <option value=" 1">Не открывается 2</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="tab__footer">
+                                <div class="input-w-icon">
+                                    <img src="images/user.png" alt="">
+                                    <input type="text" class="tab__input" placeholder="Введите номер" required>
+                                </div>
+                                <input type="submit" value="рассчитать" class="tab__btn">
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="tab tab-hits two">2</div>
+                    <div class="tab tab-hits  three">3</div>
+                    <div class="tab tab-hits  balcony">4</div>
+                    <div class="tab tab-hits  balcony-full">5</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- order end -->
+
+    <!-- footer start -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">просто</p>
+            <p class="footer__text">скромный футер</p>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- modal start -->
+    <div class="modal">
+        <div class="overlay">
+            <div class="modal__inner">
+                <div class="modal-1 ">
+                    <p class="modal__title">Title modal</p>
+                    <p class="modal__txt">сообщение отправлено</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal end -->
+
+    <!-- scripts start -->
+    <script src="libs/jquery.js"></script>
+    <script src="libs/jquery.nice-select.min.js"></script>
+    <script src="libs/slick/slick.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- scripts end -->
+</body>
+
+</html>
