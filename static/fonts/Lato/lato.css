@@ -1,38 +1,13 @@
 @font-face {
     font-family: 'Lato';
-    src: url('Lato-Regular.ttf') format('ttf');
+    src: url('Lato-Regular.ttf') format('ttf'), url('Lato-Regular.svg') format('svg'), url('Lato-Regular.woff') format('woff');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Lato';
-    src: url('Lato-Black.ttf') format('ttf');
+    src: url('Lato-Black.ttf') format('ttf'), url('Lato-Black.svg') format('svg'), url('Lato-Black.woff') format('woff');
     font-weight: 900;
     font-style: normal;
 }
-/* 
-@font-face {
-    font-family: 'EtelkaPro';
-    src: url('EtelkaTextPro-Bold.woff2') format('woff2'),
-        url('EtelkaTextPro-Bold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'EtelkaPro';
-    src: url('EtelkaMediumPro-Bold.woff2') format('woff2'),
-        url('EtelkaMediumPro-Bold.woff') format('woff');
-    font-weight: 800;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'EtelkaPro';
-    src: url('EtelkaTextPro.woff2') format('woff2'),
-        url('EtelkaTextPro.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-} */
-
