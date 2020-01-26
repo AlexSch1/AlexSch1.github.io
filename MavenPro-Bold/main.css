@@ -1,0 +1,18 @@
+/*
+@font-face {
+  font-family: 'MavenPro-Bold';
+  src: url('MavenPro-Bold.eot') format('embedded-opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+*/
+
+
+
+span {
+	font-size: 300px;
+
+	font-family: 'Maven Pro', sans-serif;
+	font-weight: 700;
+}
